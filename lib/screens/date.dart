@@ -16,11 +16,13 @@ class Date extends StatefulWidget {
 }
 
 class _DateState extends State<Date> {
+  final mainKey = GlobalKey<ScaffoldState>();
   DateTime? date;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      key: mainKey,
       // extendBodyBehindAppBar: true,
       backgroundColor: Colors.indigo[400],
       appBar: AppBar(
@@ -35,7 +37,8 @@ class _DateState extends State<Date> {
             animatedTexts: [
               TypewriterAnimatedText(
                 'Crop',
-                textStyle: GoogleFonts.robotoCondensed(fontSize: 27,color: kWhite,fontWeight: FontWeight.w600),
+                textStyle: GoogleFonts.robotoCondensed(
+                    fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
                 speed: const Duration(milliseconds: 400),
               ),
             ],
@@ -69,6 +72,7 @@ class _DateState extends State<Date> {
               children: [
                 LottieContainer(
                     func: () {
+                      setState(() {
                       showDatePicker(
                               builder: (context, child) {
                                 return Theme(
@@ -101,11 +105,13 @@ class _DateState extends State<Date> {
                           date = DateFormat.yMMM().format(date!) as DateTime?;
                         });
                       });
+                      });
                     },
                     lottieUrl:
                         "https://assets10.lottiefiles.com/packages/lf20_dAHzdX.json"),
                 SizedBox(width: size.width * 0.13),
-                Text(date == null ? "input a number" : date.toString(),
+                Text(
+                    date == null ? "input a number" : date.toString(),
                     style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
               ],
             ),
@@ -178,7 +184,11 @@ class _DateState extends State<Date> {
         },
         tooltip: "Next Page",
         child: Center(
-            child: Container(padding: const EdgeInsets.all(5),child: Lottie.network("https://assets9.lottiefiles.com/packages/lf20_Nce4dJ/forward_02.json",width: size.width * 0.2))),
+            child: Container(
+                padding: const EdgeInsets.all(5),
+                child: Lottie.network(
+                    "https://assets9.lottiefiles.com/packages/lf20_Nce4dJ/forward_02.json",
+                    width: size.width * 0.2))),
       ),
     );
   }
