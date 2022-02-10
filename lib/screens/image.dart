@@ -51,7 +51,20 @@ class _PictureState extends State<Picture> {
           ),
         ],
       ),
-      
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 189, 139, 31),
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: ((context) => Picture())));
+        },
+        tooltip: "Next Page",
+        child: Center(
+            child: Container(
+                padding: const EdgeInsets.all(5),
+                child: Lottie.network(
+                    "https://assets9.lottiefiles.com/packages/lf20_Nce4dJ/forward_02.json",
+                    width: size.width * 0.2))),
+      ),
     );
   }
 }
