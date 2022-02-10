@@ -6,10 +6,10 @@ class BuildContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
-      padding: const EdgeInsets.all(15),
-      child: child
-
-    );
+      height: size.height * 0.98,
+      width: size.width * 0.98,
+      padding: const EdgeInsets.all(4), child: child);
   }
 }
