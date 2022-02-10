@@ -50,7 +50,9 @@ class _PictureState extends State<Picture> {
             width: size.width,
             fit: BoxFit.fill,
           ),
-          
+          Container(
+            
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
