@@ -30,6 +30,7 @@ class _DateState extends State<Date> {
             padding: const EdgeInsets.only(top: 5),
             child: Center(child: TextConstant(body: "Date")),
           ),
+          SizedBox(height: 10),
           SizedBox(
             height: size.height * 0.5,
             width: size.width * 0.5,
