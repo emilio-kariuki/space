@@ -16,7 +16,7 @@ class BuildContainer extends StatelessWidget {
       ),
       
       height: 50,
-      width: 45,
-      padding: const EdgeInsets.all(4), child: child);
+      width: 50,
+      padding: const EdgeInsets.all(2), child: child);
   }
 }

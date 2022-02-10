@@ -51,7 +51,11 @@ class _DateState extends State<Date> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                LottieContainer(lottieUrl: "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json")
+                LottieContainer(
+                  func: (){
+                    
+                  },
+                  lottieUrl: "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json")
               ],
             )
             ),
