@@ -63,7 +63,7 @@ class _DateState extends State<Date> {
                           colorScheme: ColorScheme.light(
                             primary: Color.fromARGB(255, 201, 22, 31), // header background color
                             onPrimary: Colors.black, // header text color
-                            onSurface: Color.fromARGB(255, 230, 11, 164), // body text color
+                            onSurface: Color.fromARGB(255, 0, 0, 0), // body text color
                           ),
                           textButtonTheme: TextButtonThemeData(
                             style: TextButton.styleFrom(
