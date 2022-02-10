@@ -19,7 +19,6 @@ class _DateState extends State<Date> {
         title: Text("Kenya Space Agency",style: GoogleFonts.robotoCondensed(fontSize: 27,color: kBlack)),
       ),
       body: Column(
-        // ignore: prefer_const_literals_to_create_immutables
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 5),
