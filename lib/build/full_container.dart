@@ -10,6 +10,7 @@ class LottieContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: BuildContainer(
+          color: Color.fromARGB(255, 189, 139, 31),
       child: Lottie.network(lottieUrl),
     ));
   }
