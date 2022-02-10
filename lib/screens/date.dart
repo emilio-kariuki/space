@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:google_fonts/google_fonts.dart";
+import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/build/full_container.dart';
 import 'package:space/constants.dart/Text.dart';
@@ -13,6 +14,7 @@ class Date extends StatefulWidget {
 }
 
 class _DateState extends State<Date> {
+  DateTime? date;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -53,7 +55,17 @@ class _DateState extends State<Date> {
               children: [
                 LottieContainer(
                   func: (){
-                    
+                    showDatePicker(
+                  context: context,
+                  initialDate: date ?? DateTime.now(),
+                  firstDate: DateTime(2000),
+                  lastDate: DateTime(2023))
+                    .then((value) {
+                  setState(() {
+                    date = value;
+                    date = DateFormat.yMMM().format(date!) as DateTime?;
+                  });
+                });
                   },
                   lottieUrl: "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json")
               ],
