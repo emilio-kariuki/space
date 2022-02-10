@@ -110,9 +110,15 @@ class _DateState extends State<Date> {
                     lottieUrl:
                         "https://assets10.lottiefiles.com/packages/lf20_dAHzdX.json"),
                 SizedBox(width: size.width * 0.13),
-                Text(
-                    date == null ? "input a number" : date.toString(),
-                    style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                    });
+                  },
+                  child: Text(
+                      date == null ? "input a number" : date.toString(),
+                      style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
+                ),
               ],
             ),
           ),
