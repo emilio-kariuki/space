@@ -19,9 +19,9 @@ class _DateState extends State<Date> {
     return Scaffold(
       backgroundColor: Colors.indigo[400],
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 42, 163, 46),
+        backgroundColor: Color.fromARGB(255, 189, 139, 31),
         title: Text("Kenya Space Agency",
-            style: GoogleFonts.robotoCondensed(fontSize: 27, color: kBlack)),
+            style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
       ),
       body: Column(
         mainAxisSize: MainAxisSize.min,
@@ -32,12 +32,12 @@ class _DateState extends State<Date> {
           ),
           SizedBox(height: 10),
           Lottie.network(
-              "https://assets5.lottiefiles.com/temporary_files/PH5YkW.json",
+              "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json",
               animate : true,
-              height: size.height * 0.5,
-              width: 900 ,
+              height: size.height * 0.3,
+              width: size.width ,
               fit: BoxFit.fill,),
-          Text("name")
+          Text("Date Today", style : GoogleFonts.roboto(fontSize: 24,color : kWhite))
         ],
       ),
     );
