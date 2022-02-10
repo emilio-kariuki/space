@@ -21,7 +21,7 @@ class _DateState extends State<Date> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      // extendBodyBehindAppBar: true,
       backgroundColor: Colors.indigo[400],
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
