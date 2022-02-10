@@ -17,7 +17,8 @@ class Date extends StatefulWidget {
 
 class _DateState extends State<Date> {
   final mainKey = GlobalKey<ScaffoldState>();
-  DateTime? date;
+  DateTime? today;
+  DateTime? plantation;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -96,13 +97,13 @@ class _DateState extends State<Date> {
                                 );
                               },
                               context: context,
-                              initialDate: date ?? DateTime.now(),
+                              initialDate: today ?? DateTime.now(),
                               firstDate: DateTime(2000),
                               lastDate: DateTime(2023))
                           .then((value) {
                         setState(() {
-                          date = value;
-                          date = DateFormat.yMMM().format(date!) as DateTime?;
+                          today = value;
+                          today = DateFormat.yMMM().format(today!) as DateTime?;
                         });
                       });
                       });
@@ -116,7 +117,7 @@ class _DateState extends State<Date> {
                     });
                   },
                   child: Text(
-                      date == null ? "input a number" : date.toString(),
+                      today == null ? "input a number" : today.toString(),
                       style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
                 ),
               ],
@@ -162,21 +163,28 @@ class _DateState extends State<Date> {
                                 );
                               },
                               context: context,
-                              initialDate: date ?? DateTime.now(),
+                              initialDate: plantation ?? DateTime.now(),
                               firstDate: DateTime(2000),
                               lastDate: DateTime(2023))
                           .then((value) {
                         setState(() {
-                          date = value;
-                          date = DateFormat.yMMM().format(date!) as DateTime?;
+                          plantation = value;
+                          plantation = DateFormat.yMMM().format(plantation!) as DateTime?;
                         });
                       });
                     },
                     lottieUrl:
                         "https://assets10.lottiefiles.com/packages/lf20_dAHzdX.json"),
                 SizedBox(width: size.width * 0.13),
-                Text(date == null ? "input a number" : date.toString(),
-                    style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
+                GestureDetector(
+                  onTap: (){
+                    setState(() {
+                    });
+                  },
+                  child: Text(
+                      plantation == null ? "input a number" : plantation.toString(),
+                      style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
+                ),
               ],
             ),
           ),
