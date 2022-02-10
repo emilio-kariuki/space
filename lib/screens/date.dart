@@ -49,7 +49,7 @@ class _DateState extends State<Date> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20,bottom: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -89,9 +89,51 @@ class _DateState extends State<Date> {
                   SizedBox(width: size.width * 0.13),
                   Text(date == null ? "input a number" : date.toString(), style : GoogleFonts.roboto(fontSize: 24,color : kWhite)),
               ],
-            )
             ),
-            
+            ),
+            Padding(
+            padding: const EdgeInsets.only(left: 20,top:5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                LottieContainer(
+                  func: (){
+                    showDatePicker(
+                      
+                      builder: (context, child) {
+                      return Theme(
+                        data: Theme.of(context).copyWith(
+                          colorScheme: ColorScheme.light(
+                            primary: Color.fromARGB(255, 201, 22, 31), // header background color
+                            onPrimary: Colors.black, // header text color
+                            onSurface: Color.fromARGB(255, 0, 0, 0), // body text color
+                          ),
+                          textButtonTheme: TextButtonThemeData(
+                            style: TextButton.styleFrom(
+                              primary: Colors.red, // button text color
+                            ),
+                          ),
+                        ),
+                        child: child!,
+                      );
+                    },
+                  context: context,
+                  initialDate: date ?? DateTime.now(),
+                  firstDate: DateTime(2000),
+                  lastDate: DateTime(2023))
+                    .then((value) {
+                  setState(() {
+                    date = value;
+                    date = DateFormat.yMMM().format(date!) as DateTime?;
+                  });
+                });
+                  },
+                  lottieUrl: "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json"),
+                  SizedBox(width: size.width * 0.13),
+                  Text(date == null ? "input a number" : date.toString(), style : GoogleFonts.roboto(fontSize: 24,color : kWhite)),
+              ],
+            ),
+            ),
         ],
       ),
     );
