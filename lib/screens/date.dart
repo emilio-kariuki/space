@@ -85,7 +85,8 @@ class _DateState extends State<Date> {
                   });
                 });
                   },
-                  lottieUrl: "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json")
+                  lottieUrl: "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json"),
+                  Text(date == null ? "input a number" : date.toString(), style : GoogleFonts.roboto(fontSize: 24,color : kWhite)),
               ],
             )
             ),
