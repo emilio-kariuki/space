@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:google_fonts/google_fonts.dart";
+import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 
@@ -23,7 +24,12 @@ class _DateState extends State<Date> {
           Padding(
             padding: const EdgeInsets.only(top: 5),
             child: Center(child: TextConstant(body: "Date")),
-          )
+          ),
+          SizedBox(
+            child: Lottie.network("https://lottiefiles.com/5066-meeting-and-stuff"),
+            width: 100,
+            height: 100
+            )
         ],
       ),
     );
