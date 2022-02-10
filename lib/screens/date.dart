@@ -167,11 +167,7 @@ class _DateState extends State<Date> {
         },
         tooltip: "Next Page",
         child: Center(
-            child: Icon(
-          Icons.forward,
-          color: kBlack,
-          size: 30,
-        )),
+            child: Lottie.network("https://assets9.lottiefiles.com/packages/lf20_xd08s9hr.json",width: size.width * 0.1)),
       ),
     );
   }
