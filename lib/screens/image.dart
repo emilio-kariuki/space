@@ -44,7 +44,7 @@ class _PictureState extends State<Picture> {
           ),
           SizedBox(height: 10),
           Lottie.network(
-            "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json",
+            "https://assets5.lottiefiles.com/packages/lf20_knv0iktv.json",
             animate: true,
             height: size.height * 0.4,
             width: size.width,
