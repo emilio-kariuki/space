@@ -32,7 +32,11 @@ class _DateState extends State<Date> {
           ),
           SizedBox(height: 10),
           Lottie.network(
-              "https://assets5.lottiefiles.com/temporary_files/PH5YkW.json",animate : true,height: size.height * 0.5,width: size.width * 0.9),
+              "https://assets5.lottiefiles.com/temporary_files/PH5YkW.json",
+              animate : true,
+              height: size.height * 0.5,
+              width: 900 ,
+              fit: BoxFit.fill,),
           Text("name")
         ],
       ),
