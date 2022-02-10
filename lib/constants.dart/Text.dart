@@ -8,6 +8,6 @@ class TextConstant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(body, style: GoogleFonts.roboto(fontSize: 36, color: kBlack,fontWeight: FontWeight.w600));
+    return Text(body, style: GoogleFonts.roboto(fontSize: 36, color: kWhite,fontWeight: FontWeight.w600));
   }
 }
