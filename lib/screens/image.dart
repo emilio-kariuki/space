@@ -26,7 +26,7 @@ class _PictureState extends State<Picture> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top:8),
             child: AnimatedTextKit(
               animatedTexts: [
                 TypewriterAnimatedText(
@@ -42,7 +42,6 @@ class _PictureState extends State<Picture> {
               stopPauseOnTap: true,
             ),
           ),
-          SizedBox(height: 10),
           Lottie.network(
             "https://assets5.lottiefiles.com/packages/lf20_knv0iktv.json",
             animate: true,
@@ -52,6 +51,7 @@ class _PictureState extends State<Picture> {
           ),
         ],
       ),
+      
     );
   }
 }
