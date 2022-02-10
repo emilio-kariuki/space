@@ -36,11 +36,11 @@ class _DateState extends State<Date> {
           Lottie.network(
               "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json",
               animate : true,
-              height: size.height * 0.3,
+              height: size.height * 0.4,
               width: size.width ,
               fit: BoxFit.fill,),
           Padding(
-            padding: const EdgeInsets.only(left: 20,bottom: 10),
+            padding: const EdgeInsets.only(left: 20,bottom: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -92,6 +92,15 @@ class _DateState extends State<Date> {
             ),
             ),
             Padding(
+            padding: const EdgeInsets.only(left: 20,bottom: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text("Date of Plantation", style : GoogleFonts.roboto(fontSize: 24,color : kWhite)),
+              ],
+            ),
+          ),
+            Padding(
             padding: const EdgeInsets.only(left: 20,top:5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -135,6 +144,12 @@ class _DateState extends State<Date> {
             ),
             ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: kWhite,
+        onPressed: () {},
+        tooltip: "Next Page",
+        child: Center(child: Icon(Icons.forward,color: kBlack,size: 30,)),
       ),
     );
   }
