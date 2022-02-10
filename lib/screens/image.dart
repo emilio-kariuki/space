@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
+import 'package:space/screens/crop.dart';
 
 class Picture extends StatefulWidget {
   Picture({Key? key}) : super(key: key);
@@ -49,13 +50,14 @@ class _PictureState extends State<Picture> {
             width: size.width,
             fit: BoxFit.fill,
           ),
+          
         ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Picture())));
+              .push(MaterialPageRoute(builder: ((context) => Crop())));
         },
         tooltip: "Next Page",
         child: Center(
