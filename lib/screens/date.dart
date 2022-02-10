@@ -37,7 +37,16 @@ class _DateState extends State<Date> {
               height: size.height * 0.3,
               width: size.width ,
               fit: BoxFit.fill,),
-          Text("Date Today", style : GoogleFonts.roboto(fontSize: 24,color : kWhite))
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text("Date Today", style : GoogleFonts.roboto(fontSize: 24,color : kWhite)),
+              ],
+              
+            ),
+          )
         ],
       ),
     );
