@@ -56,6 +56,23 @@ class _DateState extends State<Date> {
                 LottieContainer(
                   func: (){
                     showDatePicker(
+                      builder: (context, child) {
+                      return Theme(
+                        data: Theme.of(context).copyWith(
+                          colorScheme: ColorScheme.light(
+                            primary: Color.fromARGB(255, 119, 87, 231), // header background color
+                            onPrimary: Colors.black, // header text color
+                            onSurface: Color.fromARGB(255, 206, 168, 43), // body text color
+                          ),
+                          textButtonTheme: TextButtonThemeData(
+                            style: TextButton.styleFrom(
+                              primary: Colors.red, // button text color
+                            ),
+                          ),
+                        ),
+                        child: child!,
+                      );
+                    },
                   context: context,
                   initialDate: date ?? DateTime.now(),
                   firstDate: DateTime(2000),
