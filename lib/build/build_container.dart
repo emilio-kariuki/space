@@ -11,10 +11,11 @@ class BuildContainer extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        shape: BoxShape.rectangle
+        shape: BoxShape.rectangle,
+        color : color,
       ),
-      color : color,
-      height: 45,
+      
+      height: 50,
       width: 45,
       padding: const EdgeInsets.all(4), child: child);
   }
