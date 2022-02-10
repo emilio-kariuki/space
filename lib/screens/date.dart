@@ -24,7 +24,6 @@ class _DateState extends State<Date> {
             style: GoogleFonts.robotoCondensed(fontSize: 27, color: kBlack)),
       ),
       body: Column(
-        mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 5),
@@ -32,10 +31,8 @@ class _DateState extends State<Date> {
           ),
           SizedBox(height: 10),
           SizedBox(
-            height: size.height * 0.5,
-            width: size.width * 0.5,
             child: Lottie.network(
-                "https://assets5.lottiefiles.com/temporary_files/PH5YkW.json",animate : true),
+                "https://assets5.lottiefiles.com/temporary_files/PH5YkW.json",animate : true,hei),
           ),
           Text("name")
         ],
