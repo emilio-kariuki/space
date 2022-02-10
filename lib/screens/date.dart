@@ -30,7 +30,7 @@ class _DateState extends State<Date> {
             padding: const EdgeInsets.only(top: 5),
             child: Center(child: TextConstant(body: "Date")),
           ),
-          Container(
+          SizedBox(
             height: size.height * 0.5,
             width: size.width * 0.5,
             child: Lottie.network(
