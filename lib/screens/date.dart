@@ -92,7 +92,7 @@ class _DateState extends State<Date> {
             ),
             ),
             Padding(
-            padding: const EdgeInsets.only(left: 20,bottom: 10),
+            padding: const EdgeInsets.only(top: 5,left: 20,bottom: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -101,7 +101,7 @@ class _DateState extends State<Date> {
             ),
           ),
             Padding(
-            padding: const EdgeInsets.only(left: 20,top:5),
+            padding: const EdgeInsets.only(left: 20,top:10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
