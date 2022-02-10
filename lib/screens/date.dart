@@ -56,6 +56,7 @@ class _DateState extends State<Date> {
                 LottieContainer(
                   func: (){
                     showDatePicker(
+                      
                       builder: (context, child) {
                       return Theme(
                         data: Theme.of(context).copyWith(
