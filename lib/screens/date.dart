@@ -15,6 +15,7 @@ class _DateState extends State<Date> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blue,
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 45, 196, 50),
         title: Text("Kenya Space Agency",style: GoogleFonts.robotoCondensed(fontSize: 27,color: kBlack)),
@@ -25,11 +26,7 @@ class _DateState extends State<Date> {
             padding: const EdgeInsets.only(top: 5),
             child: Center(child: TextConstant(body: "Date")),
           ),
-          SizedBox(
-            child: Lottie.network("https://lottiefiles.com/5066-meeting-and-stuff"),
-            width: 100,
-            height: 100
-            )
+          
         ],
       ),
     );
