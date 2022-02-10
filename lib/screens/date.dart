@@ -7,6 +7,7 @@ import 'package:space/build/full_container.dart';
 import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/crop.dart';
+import 'package:space/screens/image.dart';
 
 class Date extends StatefulWidget {
   const Date({Key? key}) : super(key: key);
@@ -30,6 +31,7 @@ class _DateState extends State<Date> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         title: Text("Kenya Space Agency",
             style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
+            elevation: 0,
       ),
       body: Column(
         mainAxisSize: MainAxisSize.min,
@@ -197,7 +199,7 @@ class _DateState extends State<Date> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Crop())));
+              .push(MaterialPageRoute(builder: ((context) => Picture())));
         },
         tooltip: "Next Page",
         child: Center(
