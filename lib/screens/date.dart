@@ -34,7 +34,7 @@ class _DateState extends State<Date> {
             height: size.height * 0.5,
             width: size.width * 0.5,
             child: Lottie.network(
-                "https://assets5.lottiefiles.com/temporary_files/PH5YkW.json"),
+                "https://assets5.lottiefiles.com/temporary_files/PH5YkW.json",animate : true),
           ),
           Text("name")
         ],
