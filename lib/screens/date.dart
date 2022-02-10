@@ -34,19 +34,22 @@ class _DateState extends State<Date> {
       body: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          AnimatedTextKit(
-            animatedTexts: [
-              TypewriterAnimatedText(
-                'Crop',
-                textStyle: GoogleFonts.robotoCondensed(
-                    fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
-                speed: const Duration(milliseconds: 400),
-              ),
-            ],
-            totalRepeatCount: 4,
-            pause: const Duration(milliseconds: 1000),
-            displayFullTextOnTap: true,
-            stopPauseOnTap: true,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: AnimatedTextKit(
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  'Crop',
+                  textStyle: GoogleFonts.robotoCondensed(
+                      fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
+                  speed: const Duration(milliseconds: 400),
+                ),
+              ],
+              totalRepeatCount: 4,
+              pause: const Duration(milliseconds: 1000),
+              displayFullTextOnTap: true,
+              stopPauseOnTap: true,
+            ),
           ),
           SizedBox(height: 10),
           Lottie.network(
