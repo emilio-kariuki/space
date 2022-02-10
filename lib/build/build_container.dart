@@ -9,10 +9,10 @@ class BuildContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     // final size = MediaQuery.of(context).size;
     return Container(
-      // decoration: BoxDecoration(
-      //   borderRadius: BorderRadius.circular(10),
-      //   shape: BoxShape.rectangle
-      // ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        shape: BoxShape.rectangle
+      ),
       color : color,
       height: 45,
       width: 45,
