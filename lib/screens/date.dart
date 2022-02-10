@@ -38,15 +38,23 @@ class _DateState extends State<Date> {
               width: size.width ,
               fit: BoxFit.fill,),
           Padding(
-            padding: const EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20,bottom: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text("Date Today", style : GoogleFonts.roboto(fontSize: 24,color : kWhite)),
               ],
-              
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                LottieContainer(lottieUrl: "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json")
+              ],
+            )
+            ),
         ],
       ),
     );
