@@ -15,9 +15,9 @@ class _DateState extends State<Date> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.indigo[400],
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 45, 196, 50),
+        backgroundColor: Color.fromARGB(255, 42, 163, 46),
         title: Text("Kenya Space Agency",style: GoogleFonts.robotoCondensed(fontSize: 27,color: kBlack)),
       ),
       body: Column(
