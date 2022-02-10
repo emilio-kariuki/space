@@ -34,14 +34,10 @@ class _DateState extends State<Date> {
             animatedTexts: [
               TypewriterAnimatedText(
                 'Crop',
-                textStyle: const TextStyle(
-                  fontSize: 32.0,
-                  fontWeight: FontWeight.bold,
-                ),
-                speed: const Duration(milliseconds: 200),
+                textStyle: GoogleFonts.robotoCondensed(fontSize: 27,color: kWhite,fontWeight: FontWeight.w600),
+                speed: const Duration(milliseconds: 400),
               ),
             ],
-            
             totalRepeatCount: 4,
             pause: const Duration(milliseconds: 1000),
             displayFullTextOnTap: true,
