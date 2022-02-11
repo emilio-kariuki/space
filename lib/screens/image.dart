@@ -27,7 +27,7 @@ class _PictureState extends State<Picture> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top:8),
+            padding: const EdgeInsets.only(top: 8),
             child: AnimatedTextKit(
               animatedTexts: [
                 TypewriterAnimatedText(
@@ -53,22 +53,32 @@ class _PictureState extends State<Picture> {
           Padding(
             padding: const EdgeInsets.only(top: 10),
             child: Stack(
-              children:[ Material(
-                elevation: 10,
-                borderRadius: BorderRadius.circular(30),
-                child: Container(
-                  height: size.height * 0.3,
-                  width: size.width ,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: kWhite
+              children: [
+                Material(
+                  elevation: 10,
+                  borderRadius: BorderRadius.circular(30),
+                  child: Container(
+                    height: size.height * 0.3,
+                    width: size.width,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30), color: kWhite),
                   ),
                 ),
-              ),
-              Positioned(
-                top: 5,
-                right: 5,
-                child: IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo,size: 30,)))
+                Positioned(
+                    top: 5,
+                    right: 5,
+                    child: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            AlertDialog(
+                              title: Text("Choose"),
+                              cont);
+                          });
+                        },
+                        icon: Icon(
+                          Icons.add_a_photo,
+                          size: 30,
+                        )))
               ],
             ),
           ),
