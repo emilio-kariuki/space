@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
@@ -13,6 +15,7 @@ class Picture extends StatefulWidget {
 }
 
 class _PictureState extends State<Picture> {
+  File? image;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -78,7 +81,8 @@ class _PictureState extends State<Picture> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10)),
                                 child: AlertDialog(
-                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20)),
                                   contentPadding: EdgeInsets.all(5),
                                   title: const Text('choose image from: '),
                                   content: SingleChildScrollView(
@@ -86,15 +90,7 @@ class _PictureState extends State<Picture> {
                                       ListTile(
                                         selectedColor: Colors.grey,
                                         onTap: () {
-                                          setState(() {
-                                            ScaffoldMessenger.of(context)
-                                                .showSnackBar(SnackBar(
-                                              content:
-                                                  Text(" camera Clicked"),
-                                              backgroundColor: Colors.red,
-                                            ));
-                                            Navigator.pop(context);
-                                          });
+                                          setState(() {});
                                         },
                                         leading: Icon(Icons.camera),
                                         title: Text("Camera"),
@@ -102,15 +98,7 @@ class _PictureState extends State<Picture> {
                                       ListTile(
                                         selectedColor: Colors.grey,
                                         onTap: () {
-                                          setState(() {
-                                            ScaffoldMessenger.of(context)
-                                                .showSnackBar(SnackBar(
-                                              content:
-                                                  Text(" camera Clicked"),
-                                              backgroundColor: Colors.red,
-                                            ));
-                                            Navigator.pop(context);
-                                          });
+                                          setState(() {});
                                         },
                                         leading: Icon(Icons.layers),
                                         title: Text("Gallery"),
