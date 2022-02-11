@@ -22,14 +22,13 @@ class _PictureState extends State<Picture> {
   File? image;
   ImagePicker picker = ImagePicker();
 
-  void getImage(ImageSource source) async {
-    final image = await ImagePicker().pickImage(
-        source: source, maxHeight: 720, maxWidth: 720, imageQuality: 100);
+  void takePhoto(ImageSource source) async {
+    final image = await ImagePicker().pickImage(source: source);
     try {
       if (image == null) return;
 
       final imageTempo = File(image.path);
-      setState(() async {
+      setState(() {
         this.image = imageTempo;
       });
     } on PlatformException catch (e) {
@@ -116,10 +115,8 @@ class _PictureState extends State<Picture> {
                                       ListTile(
                                         selectedColor: Colors.grey,
                                         onTap: () {
-                                          setState(() {
-                                            getImage(ImageSource.camera);
+                                            takePhoto(ImageSource.camera);
                                             Navigator.pop(context);
-                                          });
                                         },
                                         leading: Icon(Icons.camera),
                                         title: Text("Camera"),
@@ -128,7 +125,7 @@ class _PictureState extends State<Picture> {
                                         selectedColor: Colors.grey,
                                         onTap: () {
                                           setState(() {
-                                            getImage(ImageSource.gallery);
+                                            takePhoto(ImageSource.gallery);
                                             Navigator.pop(context);
                                           });
                                         },
