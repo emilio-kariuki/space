@@ -112,7 +112,7 @@ class _PictureState extends State<Picture> {
                                             Navigator.pop(context);
                                           });
                                         },
-                                        leading: Icon(Icons.camera),
+                                        leading: Icon(Icons.layers),
                                         title: Text("Gallery"),
                                       ),
                                     ]),
