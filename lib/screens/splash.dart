@@ -23,8 +23,9 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.blue[500],
       extendBodyBehindAppBar: true,
-      body: Lottie.asset("assets/splash.json",width: size.width,height: size.height * 2),
+      body: Container(width: size.width,height: size.height,child: Lottie.asset("assets/splash.json",width: size.width,height: size.height * 2)),
     );
   }
 }
