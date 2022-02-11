@@ -68,12 +68,15 @@ class _PictureState extends State<Picture> {
                     top: 5,
                     right: 5,
                     child: IconButton(
-                        onPressed: () { showDialog<String>(
+                        onPressed: () {
+                          setState(() {
+                            showDialog<String>(
                               context: context,
                               builder: (BuildContext context) => Container(
                                 width: size.width,
                                 height: size.height * 0.2,
-                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10)),
                                 child: AlertDialog(
                                   title: const Text('choose image from: '),
                                   content: SingleChildScrollView(
@@ -85,9 +88,11 @@ class _PictureState extends State<Picture> {
                                               setState(() {
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(SnackBar(
-                                                  content: Text("Clicked"),
+                                                  content:
+                                                      Text(" camera Clicked"),
                                                   backgroundColor: Colors.red,
                                                 ));
+                                                Navigator.pop(context);
                                               });
                                             },
                                             child: Text("Camera")),
@@ -99,9 +104,11 @@ class _PictureState extends State<Picture> {
                                               setState(() {
                                                 ScaffoldMessenger.of(context)
                                                     .showSnackBar(SnackBar(
-                                                  content: Text("Clicked"),
+                                                  content:
+                                                      Text(" gallery Clicked"),
                                                   backgroundColor: Colors.red,
                                                 ));
+                                                Navigator.pop(context);
                                               });
                                             },
                                             child: Text("Gallery")),
@@ -111,12 +118,12 @@ class _PictureState extends State<Picture> {
                                 ),
                               ),
                             );
+                          });
                         },
                         icon: Icon(
                           Icons.add_a_photo,
                           size: 30,
                         )))
-                        
               ],
             ),
           ),
