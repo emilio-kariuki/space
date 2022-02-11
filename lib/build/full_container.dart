@@ -14,7 +14,7 @@ class LottieContainer extends StatelessWidget {
       onTap: func,
       child: BuildContainer(
         color: Color.fromARGB(255, 189, 139, 31),
-        child: Lottie.network(lottieUrl),
+        child: Lottie.asset(lottieUrl),
       ),
     ));
   }

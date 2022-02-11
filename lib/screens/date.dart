@@ -54,8 +54,8 @@ class _DateState extends State<Date> {
             ),
           ),
           SizedBox(height: 10),
-          Lottie.network(
-            "https://assets7.lottiefiles.com/packages/lf20_ytg7s6tx.json",
+          Lottie.asset(
+            "assets/date.json",
             animate: true,
             height: size.height * 0.4,
             width: size.width,
@@ -114,7 +114,7 @@ class _DateState extends State<Date> {
                       });
                     },
                     lottieUrl:
-                        "https://assets10.lottiefiles.com/packages/lf20_dAHzdX.json"),
+                        "assets/icon.json"),
                 SizedBox(width: size.width * 0.13),
                 GestureDetector(
                   onTap: (){
@@ -179,7 +179,7 @@ class _DateState extends State<Date> {
                       });
                     },
                     lottieUrl:
-                        "https://assets10.lottiefiles.com/packages/lf20_dAHzdX.json"),
+                        "assets/icon.json"),
                 SizedBox(width: size.width * 0.13),
                 GestureDetector(
                   onTap: (){
