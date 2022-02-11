@@ -80,9 +80,11 @@ class _PictureState extends State<Picture> {
                   elevation: 10,
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
-                    child: image == null
-                        ? Text("No image selected")
-                        : Image.file(image!, height: 120, width: 120),
+                    child: Center(
+                      child: image == null
+                          ? Text("No image selected")
+                          : Image.file(image!, height: 120, width: 120),
+                    ),
                     height: size.height * 0.3,
                     width: size.width,
                     decoration: BoxDecoration(
@@ -114,6 +116,7 @@ class _PictureState extends State<Picture> {
                                         onTap: () {
                                           setState(() {
                                             getImage(ImageSource.camera);
+                                            Navigator.pop(context);
                                           });
                                         },
                                         leading: Icon(Icons.camera),
@@ -124,6 +127,7 @@ class _PictureState extends State<Picture> {
                                         onTap: () {
                                           setState(() {
                                             getImage(ImageSource.gallery);
+                                            Navigator.pop(context);
                                           });
                                         },
                                         leading: Icon(Icons.layers),
