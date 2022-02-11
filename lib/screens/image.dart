@@ -87,7 +87,7 @@ class _PictureState extends State<Picture> {
                       child: Center(
                         child: image == null
                             ? Text("No image selected")
-                            : Image.file(image!, height: size.height * 0.3, width: size.width),
+                            : Image.file(image!, height: size.height * 0.3, width: size.width,fit: BoxFit.fill,),
                       ),
                     ),
                     height: size.height * 0.3,
