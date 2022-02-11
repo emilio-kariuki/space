@@ -66,8 +66,8 @@ class _PictureState extends State<Picture> {
               // stopPauseOnTap: true,
             ),
           ),
-          Lottie.network(
-            "",
+          Lottie.asset(
+            "assets/welcome.json",
             animate: true,
             height: size.height * 0.4,
             width: size.width,
