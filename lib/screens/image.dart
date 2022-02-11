@@ -78,6 +78,7 @@ class _PictureState extends State<Picture> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10)),
                                 child: AlertDialog(
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                                   contentPadding: EdgeInsets.all(5),
                                   title: const Text('choose image from: '),
                                   content: SingleChildScrollView(
