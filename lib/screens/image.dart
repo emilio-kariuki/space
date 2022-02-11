@@ -131,7 +131,14 @@ class _PictureState extends State<Picture> {
                                           });
                                         },
                                         leading: Icon(Icons.layers),
-                                        title: Text("Gallery"),
+                                        title: GestureDetector(
+                                          onTap: (){
+                                            setState(() {
+                                            takePhoto(ImageSource.gallery);
+                                            Navigator.pop(context);
+                                          });
+                                          },
+                                          child: Text("Gallery")),
                                       ),
                                     ]),
                                   ),
