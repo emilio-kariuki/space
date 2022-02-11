@@ -91,7 +91,7 @@ class _PictureState extends State<Picture> {
                                   child: Image.file(
                                     image!,
                                     width: size.width,
-                                    height: 100,
+                                    height: size.height * 0.32,
                                     fit: BoxFit.cover,
                                   ),
                                 ) : Text("Select Image"),
