@@ -97,7 +97,7 @@ class _PictureState extends State<Picture> {
                     right: 5,
                     child: IconButton(
                         onPressed: () {
-                          takePhoto(ImageSource.camera);
+                          // takePhoto(ImageSource.camera);
                           setState(() {
                             showDialog<String>(
                               context: context,
