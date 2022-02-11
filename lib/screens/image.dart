@@ -78,6 +78,7 @@ class _PictureState extends State<Picture> {
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10)),
                                 child: AlertDialog(
+                                  
                                   title: const Text('choose image from: '),
                                   content: SingleChildScrollView(
                                     child: ListBody(children: [
@@ -97,21 +98,21 @@ class _PictureState extends State<Picture> {
                                         leading: Icon(Icons.camera),
                                         title: Text("Camera"),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: GestureDetector(
-                                            onTap: () {
-                                              setState(() {
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(SnackBar(
-                                                  content:
-                                                      Text(" gallery Clicked"),
-                                                  backgroundColor: Colors.red,
-                                                ));
-                                                Navigator.pop(context);
-                                              });
-                                            },
-                                            child: Text("Gallery")),
+                                      ListTile(
+                                        selectedColor: Colors.grey,
+                                        onTap: () {
+                                          setState(() {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(SnackBar(
+                                              content:
+                                                  Text(" camera Clicked"),
+                                              backgroundColor: Colors.red,
+                                            ));
+                                            Navigator.pop(context);
+                                          });
+                                        },
+                                        leading: Icon(Icons.camera),
+                                        title: Text("Gallery"),
                                       ),
                                     ]),
                                   ),
