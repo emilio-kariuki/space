@@ -51,7 +51,11 @@ class _PictureState extends State<Picture> {
             fit: BoxFit.fill,
           ),
           Container(
-            
+            height: size.height * 0.3,
+            width: size.width ,
+            decoration: BoxDecoration(
+              color: kWhite
+            ),
           ),
         ],
       ),
