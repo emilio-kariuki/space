@@ -2,10 +2,12 @@ import 'dart:io';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/crop.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Picture extends StatefulWidget {
   Picture({Key? key}) : super(key: key);
@@ -16,6 +18,24 @@ class Picture extends StatefulWidget {
 
 class _PictureState extends State<Picture> {
   File? image;
+  
+   Future getImage() async {
+    final image = await ImagePicker().pickImage(
+        source: ImageSource.camera,
+        maxHeight: 720,
+        maxWidth: 720,
+        imageQuality: 100);
+    try {
+      if (image == null) return;
+      
+      final imageTempo = File(image.path);
+      setState(() async{
+        this.image = imageTempo;
+      });
+    } on PlatformException catch (e) {
+      print("Failed to pick image $e");
+    }
+  }
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
