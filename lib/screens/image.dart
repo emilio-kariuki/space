@@ -82,8 +82,6 @@ class _PictureState extends State<Picture> {
                                   content: SingleChildScrollView(
                                     child: ListBody(children: [
                                       ListTile(
-                                        leading: Icon(Icons.camera),
-                                        title: GestureDetector(
                                             onTap: () {
                                               setState(() {
                                                 ScaffoldMessenger.of(context)
@@ -95,7 +93,8 @@ class _PictureState extends State<Picture> {
                                                 Navigator.pop(context);
                                               });
                                             },
-                                            child: Text("Camera")),
+                                        leading: Icon(Icons.camera),
+                                        title: Text("Camera"),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
