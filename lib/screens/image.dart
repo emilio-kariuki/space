@@ -82,17 +82,18 @@ class _PictureState extends State<Picture> {
                                   content: SingleChildScrollView(
                                     child: ListBody(children: [
                                       ListTile(
-                                            onTap: () {
-                                              setState(() {
-                                                ScaffoldMessenger.of(context)
-                                                    .showSnackBar(SnackBar(
-                                                  content:
-                                                      Text(" camera Clicked"),
-                                                  backgroundColor: Colors.red,
-                                                ));
-                                                Navigator.pop(context);
-                                              });
-                                            },
+                                        selectedColor: Colors.grey,
+                                        onTap: () {
+                                          setState(() {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(SnackBar(
+                                              content:
+                                                  Text(" camera Clicked"),
+                                              backgroundColor: Colors.red,
+                                            ));
+                                            Navigator.pop(context);
+                                          });
+                                        },
                                         leading: Icon(Icons.camera),
                                         title: Text("Camera"),
                                       ),
