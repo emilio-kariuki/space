@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:io';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -21,7 +23,7 @@ class _PictureState extends State<Picture> {
   ImagePicker picker = ImagePicker();
 
   Future getImage(ImageSource source) async {
-    final image = await ImagePicker().pickImage(
+    final image = await ImagePicker().getImage(
         source: source, maxHeight: 720, maxWidth: 720, imageQuality: 100);
     try {
       if (image == null) return;
