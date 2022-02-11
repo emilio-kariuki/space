@@ -18,15 +18,10 @@ class Picture extends StatefulWidget {
 
 class _PictureState extends State<Picture> {
   File? image;
-  ImageSource camera = ImageSource.camera;
-  ImageSource gallery = ImageSource.gallery;
 
-  Future getImage() async {
+  Future getImage(ImageSource source) async {
     final image = await ImagePicker().pickImage(
-        source: ImageSource.camera,
-        maxHeight: 720,
-        maxWidth: 720,
-        imageQuality: 100);
+        source: source, maxHeight: 720, maxWidth: 720, imageQuality: 100);
     try {
       if (image == null) return;
 
@@ -116,7 +111,9 @@ class _PictureState extends State<Picture> {
                                       ListTile(
                                         selectedColor: Colors.grey,
                                         onTap: () {
-                                          setState(() {});
+                                          setState(() {
+                                            getImage(ImageSource.camera);
+                                          });
                                         },
                                         leading: Icon(Icons.camera),
                                         title: Text("Camera"),
@@ -124,7 +121,9 @@ class _PictureState extends State<Picture> {
                                       ListTile(
                                         selectedColor: Colors.grey,
                                         onTap: () {
-                                          setState(() {});
+                                          setState(() {
+                                            getImage(ImageSource.gallery);
+                                          });
                                         },
                                         leading: Icon(Icons.layers),
                                         title: Text("Gallery"),
