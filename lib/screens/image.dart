@@ -18,6 +18,7 @@ class Picture extends StatefulWidget {
 
 class _PictureState extends State<Picture> {
   File? image;
+  ImagePicker picker = ImagePicker();
 
   Future getImage(ImageSource source) async {
     final image = await ImagePicker().pickImage(
