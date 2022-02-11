@@ -22,8 +22,8 @@ class _PictureState extends State<Picture> {
   File? image;
   ImagePicker picker = ImagePicker();
 
-  Future getImage(ImageSource source) async {
-    final image = await ImagePicker().getImage(
+  void getImage(ImageSource source) async {
+    final image = await ImagePicker().pickImage(
         source: source, maxHeight: 720, maxWidth: 720, imageQuality: 100);
     try {
       if (image == null) return;
