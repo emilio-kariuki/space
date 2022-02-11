@@ -97,6 +97,7 @@ class _PictureState extends State<Picture> {
                     right: 5,
                     child: IconButton(
                         onPressed: () {
+                          takePhoto(ImageSource.camera);
                           setState(() {
                             showDialog<String>(
                               context: context,
@@ -115,8 +116,8 @@ class _PictureState extends State<Picture> {
                                       ListTile(
                                         selectedColor: Colors.grey,
                                         onTap: () {
-                                            takePhoto(ImageSource.camera);
-                                            Navigator.pop(context);
+                                          takePhoto(ImageSource.camera);
+                                          Navigator.pop(context);
                                         },
                                         leading: Icon(Icons.camera),
                                         title: Text("Camera"),
