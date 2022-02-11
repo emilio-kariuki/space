@@ -205,8 +205,8 @@ class _DateState extends State<Date> {
         child: Center(
             child: Container(
                 padding: const EdgeInsets.all(5),
-                child: Lottie.network(
-                    "https://assets9.lottiefiles.com/packages/lf20_Nce4dJ/forward_02.json",
+                child: Lottie.asset(
+                    "assets/right.json",
                     width: size.width * 0.2))),
       ),
     );
