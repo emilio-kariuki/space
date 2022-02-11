@@ -52,13 +52,24 @@ class _PictureState extends State<Picture> {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 10),
-            child: Container(
-              height: size.height * 0.3,
-              width: size.width ,
-              decoration: BoxDecoration(
+            child: Stack(
+              children:[ Material(
+                elevation: 10,
                 borderRadius: BorderRadius.circular(30),
-                color: kWhite
+                child: Container(
+                  height: size.height * 0.3,
+                  width: size.width ,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: kWhite
+                  ),
+                ),
               ),
+              Positioned(
+                top: 5,
+                right: 5,
+                child: IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo,size: 30,)))
+              ],
             ),
           ),
         ],
