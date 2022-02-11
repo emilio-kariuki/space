@@ -85,9 +85,16 @@ class _PictureState extends State<Picture> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
-                        child: image == null
-                            ? Text("No image selected")
-                            : Image.file(image!, height: size.height * 0.3, width: size.width,fit: BoxFit.fill,),
+                        child: image != null
+                              ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(50),
+                                  child: Image.file(
+                                    image!,
+                                    width: size.width,
+                                    height: 100,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ) : Text("Select Image"),
                       ),
                     ),
                     height: size.height * 0.3,
