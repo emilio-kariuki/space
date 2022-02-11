@@ -13,7 +13,7 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     Future.delayed(
-        const Duration(seconds: 6),
+        const Duration(seconds: 7),
         () => Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Date()),
@@ -23,6 +23,7 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      extendBodyBehindAppBar: true,
       body: Lottie.asset("assets/splash.json",width: size.width,height: size.height * 2),
     );
   }
