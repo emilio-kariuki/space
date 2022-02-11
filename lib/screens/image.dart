@@ -81,15 +81,17 @@ class _PictureState extends State<Picture> {
                   elevation: 10,
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
+                     
                     child: Center(
                       child: image == null
                           ? Text("No image selected")
-                          : Image.file(image!, height: 120, width: 120),
+                          : Image.file(image!, height: size.height * 0.3, width: 120),
                     ),
                     height: size.height * 0.3,
                     width: size.width,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30), color: kWhite),
+                        
                   ),
                 ),
                 Positioned(
