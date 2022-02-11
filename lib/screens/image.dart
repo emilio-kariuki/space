@@ -69,22 +69,37 @@ class _PictureState extends State<Picture> {
                     right: 5,
                     child: IconButton(
                         onPressed: () => showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('AlertDialog Title'),
-                          content: const Text('AlertDialog description'),
-                          actions: <Widget>[
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, 'Cancel'),
-                              child: const Text('Cancel'),
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: const Text('AlertDialog Title'),
+                                content: SingleChildScrollView(
+                                  child: ListBody(children: [
+                                    GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(SnackBar(
+                                                    content: Text("Clicked"),backgroundColor: Colors.red,));
+                                          });
+                                        },
+                                        child: Text("Camera")),
+                                    Text("Gallery")
+                                  ]),
+                                ),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(context, 'Cancel'),
+                                    child: const Text('Cancel'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () =>
+                                        Navigator.pop(context, 'OK'),
+                                    child: const Text('OK'),
+                                  ),
+                                ],
+                              ),
                             ),
-                            TextButton(
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                              child: const Text('OK'),
-                            ),
-                          ],
-                        ),
-                      ),
                         icon: Icon(
                           Icons.add_a_photo,
                           size: 30,
