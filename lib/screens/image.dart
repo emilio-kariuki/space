@@ -18,8 +18,10 @@ class Picture extends StatefulWidget {
 
 class _PictureState extends State<Picture> {
   File? image;
-  
-   Future getImage() async {
+  ImageSource camera = ImageSource.camera;
+  ImageSource gallery = ImageSource.gallery;
+
+  Future getImage() async {
     final image = await ImagePicker().pickImage(
         source: ImageSource.camera,
         maxHeight: 720,
@@ -27,15 +29,16 @@ class _PictureState extends State<Picture> {
         imageQuality: 100);
     try {
       if (image == null) return;
-      
+
       final imageTempo = File(image.path);
-      setState(() async{
+      setState(() async {
         this.image = imageTempo;
       });
     } on PlatformException catch (e) {
       print("Failed to pick image $e");
     }
   }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -82,8 +85,8 @@ class _PictureState extends State<Picture> {
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
                     child: image == null
-              ? Text("No image selected")
-              : Image.file(image!, height: 120, width: 120),
+                        ? Text("No image selected")
+                        : Image.file(image!, height: 120, width: 120),
                     height: size.height * 0.3,
                     width: size.width,
                     decoration: BoxDecoration(
