@@ -71,33 +71,39 @@ class _PictureState extends State<Picture> {
                         onPressed: () => showDialog<String>(
                               context: context,
                               builder: (BuildContext context) => AlertDialog(
-                                title: const Text('AlertDialog Title'),
+                                title: const Text('choose image from: '),
                                 content: SingleChildScrollView(
                                   child: ListBody(children: [
-                                    GestureDetector(
-                                        onTap: () {
-                                          setState(() {
-                                            ScaffoldMessenger.of(context)
-                                                .showSnackBar(SnackBar(
-                                                    content: Text("Clicked"),backgroundColor: Colors.red,));
-                                          });
-                                        },
-                                        child: Text("Camera")),
-                                    Text("Gallery")
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(SnackBar(
+                                                content: Text("Clicked"),
+                                                backgroundColor: Colors.red,
+                                              ));
+                                            });
+                                          },
+                                          child: Text("Camera")),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: GestureDetector(
+                                          onTap: () {
+                                            setState(() {
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(SnackBar(
+                                                content: Text("Clicked"),
+                                                backgroundColor: Colors.red,
+                                              ));
+                                            });
+                                          },
+                                          child: Text("Gallery")),
+                                    ),
                                   ]),
                                 ),
-                                actions: <Widget>[
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(context, 'Cancel'),
-                                    child: const Text('Cancel'),
-                                  ),
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(context, 'OK'),
-                                    child: const Text('OK'),
-                                  ),
-                                ],
                               ),
                             ),
                         icon: Icon(
