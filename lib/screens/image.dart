@@ -82,10 +82,13 @@ class _PictureState extends State<Picture> {
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
                      
-                    child: Center(
-                      child: image == null
-                          ? Text("No image selected")
-                          : Image.file(image!, height: size.height * 0.3, width: 120),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Center(
+                        child: image == null
+                            ? Text("No image selected")
+                            : Image.file(image!, height: size.height * 0.3, width: size.width),
+                      ),
                     ),
                     height: size.height * 0.3,
                     width: size.width,
