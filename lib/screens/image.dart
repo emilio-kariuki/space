@@ -69,16 +69,18 @@ class _PictureState extends State<Picture> {
                     right: 5,
                     child: IconButton(
                         onPressed: () {
-                          setState(() {
+                          
                             AlertDialog(
                                 title: Text("Choose"),
                                 content: SingleChildScrollView(
-                                  child: ListBody(children: [
-                                    Text("Camera"),
-                                    Text("Camera")
-                                  ]),
-                                ));
-                          });
+                                child: ListBody(
+                                  children: const <Widget>[
+                                    Text('This is a demo alert dialog.'),
+                                    Text('Would you like to approve of this message?'),
+                                  ],
+                                ),
+                              ),);
+                          
                         },
                         icon: Icon(
                           Icons.add_a_photo,
