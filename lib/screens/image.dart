@@ -81,7 +81,7 @@ class _PictureState extends State<Picture> {
                   elevation: 10,
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
-                     
+                    //  color: Colors.grey,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Center(
