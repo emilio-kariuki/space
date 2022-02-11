@@ -71,8 +71,13 @@ class _PictureState extends State<Picture> {
                         onPressed: () {
                           setState(() {
                             AlertDialog(
-                              title: Text("Choose"),
-                              cont);
+                                title: Text("Choose"),
+                                content: SingleChildScrollView(
+                                  child: ListBody(children: [
+                                    Text("Camera"),
+                                    Text("Camera")
+                                  ]),
+                                ));
                           });
                         },
                         icon: Icon(
