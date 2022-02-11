@@ -10,7 +10,7 @@ import 'package:space/screens/crop.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Picture extends StatefulWidget {
-  Picture({Key? key}) : super(key: key);
+  const Picture({Key? key}) : super(key: key);
 
   @override
   State<Picture> createState() => _PictureState();
@@ -81,6 +81,9 @@ class _PictureState extends State<Picture> {
                   elevation: 10,
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
+                    child: image == null
+              ? Text("No image selected")
+              : Image.file(image!, height: 120, width: 120),
                     height: size.height * 0.3,
                     width: size.width,
                     decoration: BoxDecoration(
