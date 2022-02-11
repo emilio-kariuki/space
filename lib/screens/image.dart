@@ -94,7 +94,7 @@ class _PictureState extends State<Picture> {
                     width: size.width,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30), color: kWhite),
-                        
+                        // image: image
                   ),
                 ),
                 Positioned(
