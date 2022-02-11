@@ -74,7 +74,7 @@ class _PictureState extends State<Picture> {
             fit: BoxFit.fill,
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.all(10),
             child: Stack(
               children: [
                 Material(
@@ -82,20 +82,17 @@ class _PictureState extends State<Picture> {
                   borderRadius: BorderRadius.circular(30),
                   child: Container(
                     //  color: Colors.grey,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Center(
-                        child: image != null
-                              ? ClipRRect(
-                                  borderRadius: BorderRadius.circular(50),
-                                  child: Image.file(
-                                    image!,
-                                    width: size.width,
-                                    height: size.height * 0.32,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ) : Text("Select Image"),
-                      ),
+                    child: Center(
+                      child: image != null
+                            ? ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: Image.file(
+                                  image!,
+                                  width: size.width,
+                                  height: size.height * 0.32,
+                                  fit: BoxFit.cover,
+                                ),
+                              ) : Text("Select Image"),
                     ),
                     height: size.height * 0.3,
                     width: size.width,
