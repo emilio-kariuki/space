@@ -23,7 +23,7 @@ class _PictureState extends State<Picture> {
   ImagePicker picker = ImagePicker();
 
   void takePhoto(ImageSource source) async {
-    final image = await ImagePicker().pickImage(source: source);
+    final image = await picker.pickImage(source: source);
     try {
       if (image == null) return;
 
