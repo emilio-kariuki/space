@@ -68,7 +68,7 @@ class _PictureState extends State<Picture> {
                     top: 5,
                     right: 5,
                     child: IconButton(
-                        onPressed: () => showDialog<String>(
+                        onPressed: () { showDialog<String>(
                               context: context,
                               builder: (BuildContext context) => AlertDialog(
                                 title: const Text('choose image from: '),
@@ -105,11 +105,13 @@ class _PictureState extends State<Picture> {
                                   ]),
                                 ),
                               ),
-                            ),
+                            );
+                        },
                         icon: Icon(
                           Icons.add_a_photo,
                           size: 30,
                         )))
+                        
               ],
             ),
           ),
