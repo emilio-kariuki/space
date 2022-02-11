@@ -81,9 +81,9 @@ class _PictureState extends State<Picture> {
                                   title: const Text('choose image from: '),
                                   content: SingleChildScrollView(
                                     child: ListBody(children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: GestureDetector(
+                                      ListTile(
+                                        leading: Icon(Icons.camera),
+                                        title: GestureDetector(
                                             onTap: () {
                                               setState(() {
                                                 ScaffoldMessenger.of(context)
