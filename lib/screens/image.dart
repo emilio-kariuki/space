@@ -70,39 +70,44 @@ class _PictureState extends State<Picture> {
                     child: IconButton(
                         onPressed: () { showDialog<String>(
                               context: context,
-                              builder: (BuildContext context) => AlertDialog(
-                                title: const Text('choose image from: '),
-                                content: SingleChildScrollView(
-                                  child: ListBody(children: [
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              ScaffoldMessenger.of(context)
-                                                  .showSnackBar(SnackBar(
-                                                content: Text("Clicked"),
-                                                backgroundColor: Colors.red,
-                                              ));
-                                            });
-                                          },
-                                          child: Text("Camera")),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: GestureDetector(
-                                          onTap: () {
-                                            setState(() {
-                                              ScaffoldMessenger.of(context)
-                                                  .showSnackBar(SnackBar(
-                                                content: Text("Clicked"),
-                                                backgroundColor: Colors.red,
-                                              ));
-                                            });
-                                          },
-                                          child: Text("Gallery")),
-                                    ),
-                                  ]),
+                              builder: (BuildContext context) => Container(
+                                width: size.width,
+                                height: size.height * 0.2,
+                                decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                                child: AlertDialog(
+                                  title: const Text('choose image from: '),
+                                  content: SingleChildScrollView(
+                                    child: ListBody(children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(SnackBar(
+                                                  content: Text("Clicked"),
+                                                  backgroundColor: Colors.red,
+                                                ));
+                                              });
+                                            },
+                                            child: Text("Camera")),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(SnackBar(
+                                                  content: Text("Clicked"),
+                                                  backgroundColor: Colors.red,
+                                                ));
+                                              });
+                                            },
+                                            child: Text("Gallery")),
+                                      ),
+                                    ]),
+                                  ),
                                 ),
                               ),
                             );
