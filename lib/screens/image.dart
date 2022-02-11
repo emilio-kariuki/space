@@ -67,7 +67,7 @@ class _PictureState extends State<Picture> {
             ),
           ),
           Lottie.network(
-            "https://assets5.lottiefiles.com/packages/lf20_knv0iktv.json",
+            "",
             animate: true,
             height: size.height * 0.4,
             width: size.width,
@@ -166,8 +166,8 @@ class _PictureState extends State<Picture> {
         child: Center(
             child: Container(
                 padding: const EdgeInsets.all(5),
-                child: Lottie.network(
-                    "https://assets9.lottiefiles.com/packages/lf20_Nce4dJ/forward_02.json",
+                child: Lottie.asset(
+                    "assets/right.json",
                     width: size.width * 0.2))),
       ),
     );
