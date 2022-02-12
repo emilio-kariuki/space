@@ -18,33 +18,10 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
-  GoogleMapController? newGoogleMapController;
-  Completer<GoogleMapController> _controller = Completer();
+  
+  getpermission(){
 
-  Position? currentPosition;
-  var geoLocator = Geolocator();
-  CameraPosition? cameraPosition;
-
-  void locatePosition() async {
-    // ignore: unused_local_variable
-    LocationPermission permission = await Geolocator.requestPermission();
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-    currentPosition = position;
-
-    LatLng ltPosition = LatLng(position.latitude, position.longitude);
-    print(ltPosition);
-
-    cameraPosition = CameraPosition(target: ltPosition, zoom: 15);
-    // ignore: unused_local_variable
-    newGoogleMapController
-        ?.animateCamera(CameraUpdate.newCameraPosition(cameraPosition!));
   }
-
-  final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(-0.39817471446402214, 36.96075003863469),
-    zoom: 14.4746,
-  );
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -91,17 +68,7 @@ class _LocationState extends State<Location> {
                       fontWeight: FontWeight.w600))),
           Stack(children: [
             Container(
-              child: GoogleMap(
-                  mapType: MapType.hybrid,
-                  initialCameraPosition: _kGooglePlex,
-                  myLocationButtonEnabled: true,
-                  zoomGesturesEnabled: true,
-                  zoomControlsEnabled: false,
-                  onMapCreated: (GoogleMapController controller) {
-                    _controller.complete(controller);
-                  }
-                  //  is a gesture recognizer that eagerly claims victory in all gesture arenas
-                  ),
+              child: Center(child: Text("name")),
               height: size.height * 0.3,
               width: size.width,
               decoration: BoxDecoration(
@@ -111,7 +78,7 @@ class _LocationState extends State<Location> {
               top: 5,
               right: 5,
               child: GestureDetector(
-                onTap: _goToTheLake,
+                onTap: (){},
                 child: Lottie.asset(
                   "assets/point.json",
                   animate: true,
@@ -140,8 +107,5 @@ class _LocationState extends State<Location> {
     );
   }
 
-  Future<void> _goToTheLake() async {
-    final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_kGooglePlex));
-  }
+  
 }
