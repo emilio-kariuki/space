@@ -1,7 +1,7 @@
-// ignore_for_file: avoid_print, prefer_final_fields
+// ignore_for_file: avoid_print, prefer_final_fields, unused_import
 import "dart:async";
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:flutter/foundation.dart';
+// import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:geolocator/geolocator.dart';
@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter_map/flutter_map.dart';
 
 class Location extends StatefulWidget {
   const Location({Key? key}) : super(key: key);
@@ -18,10 +19,10 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
-  
-  getpermission(){
+  MapController controller = MapController();
 
-  }
+  getpermission() {}
+  buildMap() {}
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -68,7 +69,21 @@ class _LocationState extends State<Location> {
                       fontWeight: FontWeight.w600))),
           Stack(children: [
             Container(
-              child: Center(child: Text("name")),
+              child: Center(
+                  child: FlutterMap(
+                mapController: controller,
+                options: MapOptions(center: buildMap(), minZoom: 5.0),
+                layers: [
+                  TileLayerOptions(
+                    urlTemplate:
+                        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    subdomains: ['a', 'b', 'c'],
+                    attributionBuilder: (_) {
+                      return Text("© OpenStreetMap contributors");
+                    },
+                  ),
+                ],
+              )),
               height: size.height * 0.3,
               width: size.width,
               decoration: BoxDecoration(
@@ -78,7 +93,7 @@ class _LocationState extends State<Location> {
               top: 5,
               right: 5,
               child: GestureDetector(
-                onTap: (){},
+                onTap: () {},
                 child: Lottie.asset(
                   "assets/point.json",
                   animate: true,
@@ -106,6 +121,4 @@ class _LocationState extends State<Location> {
       ),
     );
   }
-
-  
 }
