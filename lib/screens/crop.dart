@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
+import 'package:space/screens/location.dart';
 
 class Crop extends StatefulWidget {
   Crop({Key? key}) : super(key: key);
@@ -219,7 +220,7 @@ class _CropState extends State<Crop> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Crop())));
+              .push(MaterialPageRoute(builder: ((context) => Location())));
         },
         tooltip: "Next Page",
         child: Center(
