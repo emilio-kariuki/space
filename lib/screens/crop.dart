@@ -14,7 +14,6 @@ class Crop extends StatefulWidget {
 }
 
 class _CropState extends State<Crop> {
-  String? selectedValue;
   List<String> items = [
     'Emilio',
     "Kariuki",
@@ -26,6 +25,9 @@ class _CropState extends State<Crop> {
     "Peter",
     "Rachel"
   ];
+
+  String? selectedValue;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -82,7 +84,69 @@ class _CropState extends State<Crop> {
               ),
           Row(
             children: [
-              TextConstant(body: "Type"),
+              Padding(
+                padding: const EdgeInsets.only(left: 13),
+                child: Text("Type",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600)),
+              ),
+              SizedBox(width: size.width * 0.13),
+              DropdownButton2(
+                value: selectedValue,
+                onChanged: (value) {
+                  setState(() {
+                    selectedValue = value as String;
+                    print(selectedValue);
+                  });
+                },
+                icon: const Icon(
+                  Icons.arrow_forward_ios_outlined,
+                ),
+                iconSize: 18,
+                iconEnabledColor: Color.fromARGB(255, 250, 2, 2),
+                iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
+                buttonHeight: size.height * 0.06,
+                buttonWidth: size.width * 0.65,
+                items: items
+                    .map((item) => DropdownMenuItem<String>(
+                          value: item,
+                          child: Text(
+                            item,
+                            style: GoogleFonts.roboto(fontSize: 16, color: Colors.blueGrey[800],fontWeight: FontWeight.w600),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ))
+                    .toList(),
+                    buttonPadding: const EdgeInsets.only(left: 14, right: 14),
+                buttonDecoration: BoxDecoration(
+                  
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(
+                    color: Color.fromARGB(255, 52, 70, 78),
+                  ),
+                  color: Color.fromARGB(255, 211, 204, 204),
+                ),
+                buttonElevation: 0,
+                itemHeight: 40,
+                itemPadding: const EdgeInsets.only(left: 14, right: 14),
+                dropdownMaxHeight: 200,
+                dropdownWidth: 200,
+                dropdownPadding: null,
+                dropdownDecoration: BoxDecoration(
+                  color: Color.fromARGB(255, 236, 234, 234),
+                ),
+                dropdownElevation: 8,
+                scrollbarRadius: const Radius.circular(40),
+                scrollbarThickness: 6,
+                scrollbarAlwaysShow: true,
+                offset: const Offset(-20, 0),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 13),
+                child: Text("Type",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600)),
+              ),
               SizedBox(width: size.width * 0.13),
               DropdownButton2(
                 value: selectedValue,
