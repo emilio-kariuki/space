@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 // import 'package:latlong/latlong.dart';
 // import 'package:latlng/latlng.dart';
 import "package:latlong2/latlong.dart" as latLng;
@@ -36,29 +37,10 @@ class _LocationState extends State<Location> {
     return result;
   }
 
-  getLocation() {
-    return getpermission().then((result) async {
-      if (result.isSuccessful) {
-        final coords =
-            await Geolocation.currentLocation(accuracy: LocationAccuracy.best);
-            
-      }
-    });
-  }
-
-  buildMap() {
-    getLocation().then((response) {
-      if (response.isSuccessful) {
-        response.listen((value) {
-          controller.move(
-            latLng.LatLng(value.location.latitude, value.location.longitude), 15.0);
-        });
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
+    final CameraPosition initial = CameraPosition(
+        target: LatLng(-0.39244357411624337, 36.958791836761094));
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.indigo[400],
@@ -104,19 +86,9 @@ class _LocationState extends State<Location> {
           Stack(children: [
             Container(
               child: Center(
-                  child: FlutterMap(
-                mapController: controller,
-                options: MapOptions(center: buildMap(), minZoom: 5.0),
-                layers: [
-                  TileLayerOptions(
-                    urlTemplate:
-                        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                    subdomains: ['a', 'b', 'c'],
-                    attributionBuilder: (_) {
-                      return Text("© OpenStreetMap contributors");
-                    },
-                  ),
-                ],
+                  child: GoogleMap(
+                initialCameraPosition: initial,
+                mapType: MapType.normal,
               )),
               height: size.height * 0.3,
               width: size.width,
