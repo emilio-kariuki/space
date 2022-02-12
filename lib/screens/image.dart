@@ -114,7 +114,8 @@ class _PictureState extends State<Picture> {
                                 width: size.width,
                                 height: size.height * 0.2,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10)),
+                                    border: Border.all(color: Color.fromARGB(255, 182, 36, 116),width:1 ),
+                                    borderRadius: BorderRadius.circular(10),),
                                   child: AlertDialog(
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(20)),
