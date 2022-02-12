@@ -37,7 +37,7 @@ class _LocationState extends State<Location> {
       print(latitude);
       LatLng ltPosition = LatLng(latitude, longitude);
       CameraPosition cameraPosition =
-          CameraPosition(target: ltPosition, zoom: 15);
+          CameraPosition(target: ltPosition, zoom: 10);
       // ignore: unused_local_variable
       newGoogleMapController
           ?.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
@@ -66,8 +66,9 @@ class _LocationState extends State<Location> {
           GoogleMap(
             mapType: MapType.hybrid,
             myLocationEnabled: true,
-            zoomControlsEnabled: true,
+            zoomControlsEnabled: false,
             zoomGesturesEnabled: true,
+            
             initialCameraPosition: _kGooglePlex,
             onMapCreated: (GoogleMapController controller) {
               _controller.complete(controller);
