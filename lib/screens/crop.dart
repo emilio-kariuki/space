@@ -106,7 +106,7 @@ class _CropState extends State<Crop> {
                           child: Text(
                             item,
                             style: const TextStyle(
-                              fontSize: 14,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
                             ),
@@ -130,7 +130,7 @@ class _CropState extends State<Crop> {
                 dropdownWidth: 200,
                 dropdownPadding: null,
                 dropdownDecoration: BoxDecoration(
-                  color: Color.fromARGB(255, 85, 82, 82),
+                  color: Color.fromARGB(255, 236, 234, 234),
                 ),
                 dropdownElevation: 8,
                 scrollbarRadius: const Radius.circular(40),
