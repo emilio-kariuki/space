@@ -19,7 +19,7 @@ class Location extends StatefulWidget {
 
 class _LocationState extends State<Location> {
   double? latitude;
-  double? longitude;
+  double longitude = 10.9;
   getPermission() async {
     var locate = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best,
@@ -32,7 +32,7 @@ class _LocationState extends State<Location> {
   getLocation() {
     getPermission().then((locate) {
       CameraPosition location = CameraPosition(
-        target: LatLng(latitude!, longitude!),
+        target: LatLng(latitude!, longitude),
         zoom: 19,
       );
       print(longitude);
