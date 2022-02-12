@@ -8,6 +8,7 @@ import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import "package:latlong2/latlong.dart" as latLng;
+import 'package:geolocator/geolocator.dart';
 
 class Location extends StatefulWidget {
   const Location({Key? key}) : super(key: key);
@@ -17,19 +18,39 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
+  double? latitude;
+  double? longitude;
+  getPermission() async {
+    var locate = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.best,
+    );
+    print(locate.longitude);
+    latitude = locate.latitude;
+    longitude = locate.longitude;
+  }
+
+  getLocation() {
+    getPermission().then((locate) {
+      CameraPosition location = CameraPosition(
+        target: LatLng(latitude!, longitude!),
+        zoom: 19,
+      );
+      print(longitude);
+    });
+    
+  }
+
   Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.4746,
   );
-  
+
   @override
   Widget build(BuildContext context) {
-    
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         title: Text("Kenya Space Agency",
@@ -38,19 +59,17 @@ class _LocationState extends State<Location> {
       ),
       body: Stack(
         children: [
-         GoogleMap(
-        mapType: MapType.hybrid,
-        initialCameraPosition: _kGooglePlex,
-        
-      ),
+          GoogleMap(
+            mapType: MapType.hybrid,
+            initialCameraPosition: _kGooglePlex,
+          ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: (){},
-        label: Text('To the lake!'),
-        icon: Icon(Icons.directions_boat),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        onPressed: getLocation,
+        child: Icon(Icons.map_rounded, color: Colors.white),
       ),
     );
   }
-  
 }
