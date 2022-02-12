@@ -41,6 +41,7 @@ class _LocationState extends State<Location> {
       if (result.isSuccessful) {
         final coords =
             await Geolocation.currentLocation(accuracy: LocationAccuracy.best);
+            
       }
     });
   }
