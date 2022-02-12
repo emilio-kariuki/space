@@ -11,6 +11,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import "package:latlong2/latlong.dart" as latLng;
 import 'package:geolocator/geolocator.dart';
 import 'package:space/screens/image.dart';
+import 'package:space/screens/submit.dart';
 
 class Location extends StatefulWidget {
   const Location({Key? key}) : super(key: key);
@@ -87,7 +88,7 @@ class _LocationState extends State<Location> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Picture())));
+              .push(MaterialPageRoute(builder: ((context) => Submit())));
         },
         tooltip: "Next Page",
         child: Center(
