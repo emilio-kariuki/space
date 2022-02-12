@@ -34,7 +34,7 @@ class _LocationState extends State<Location> {
         children: [
           GoogleMap(
             initialCameraPosition: initial,
-            mapType: MapType.normal
+            mapType: MapType.satellite
           )
         ],
       )
