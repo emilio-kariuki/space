@@ -9,6 +9,7 @@ import 'package:space/constants.dart/colors.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import "package:latlong2/latlong.dart" as latLng;
 import 'package:geolocator/geolocator.dart';
+import 'package:space/screens/image.dart';
 
 class Location extends StatefulWidget {
   const Location({Key? key}) : super(key: key);
@@ -43,7 +44,6 @@ class _LocationState extends State<Location> {
     });
   }
 
-
   Completer<GoogleMapController> _controller = Completer();
 
   static final CameraPosition _kGooglePlex = CameraPosition(
@@ -65,14 +65,30 @@ class _LocationState extends State<Location> {
         children: [
           GoogleMap(
             mapType: MapType.hybrid,
+            myLocationEnabled: true,
+            zoomControlsEnabled: true,
+            zoomGesturesEnabled: true,
             initialCameraPosition: _kGooglePlex,
+            onMapCreated: (GoogleMapController controller) {
+              _controller.complete(controller);
+              getLocation();
+            },
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.blue,
-        onPressed: getLocation,
-        child: Icon(Icons.map_rounded, color: Colors.white),
+        backgroundColor: Color.fromARGB(255, 189, 139, 31),
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: ((context) => Picture())));
+        },
+        tooltip: "Next Page",
+        child: Center(
+            child: Container(
+                padding: const EdgeInsets.all(5),
+                child: Lottie.asset(
+                    "assets/right.json",
+                    width: size.width * 0.2))),
       ),
     );
   }
