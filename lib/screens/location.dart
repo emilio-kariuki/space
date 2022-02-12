@@ -19,7 +19,7 @@ class Location extends StatefulWidget {
 
 class _LocationState extends State<Location> {
   double? latitude;
-  double longitude = 10.9;
+  double ?longitude;
   getPermission() async {
     var locate = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best,
@@ -29,8 +29,6 @@ class _LocationState extends State<Location> {
     longitude = locate.longitude;
   }
 
-  
-  
 
   Completer<GoogleMapController> _controller = Completer();
 
