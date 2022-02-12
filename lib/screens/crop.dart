@@ -65,9 +65,21 @@ class _CropState extends State<Crop> {
           ),
           SizedBox(height: 5),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(5.0),
             child: Center(child: Text("Plants",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600))),
           ),
+          Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                        margin: const EdgeInsets.only(left: 15.0, right: 10.0),
+                        child: Divider(
+                          color: Colors.white,
+                          height: 18,
+                        )),
+                  ),
+                ],
+              ),
           Row(
             children: [
               TextConstant(body: "Type"),
@@ -87,7 +99,7 @@ class _CropState extends State<Crop> {
                 iconEnabledColor: Color.fromARGB(255, 250, 2, 2),
                 iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
                 buttonHeight: size.height * 0.06,
-                buttonWidth: size.width * 0.63,
+                buttonWidth: size.width * 0.65,
                 items: items
                     .map((item) => DropdownMenuItem<String>(
                           value: item,
