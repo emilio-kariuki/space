@@ -1,5 +1,5 @@
-// ignore_for_file: avoid_print
-
+// ignore_for_file: avoid_print, prefer_final_fields
+import "dart:async";
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -18,11 +18,12 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
-   GoogleMapController? newGoogleMapController;
-   //Completer<GoogleMapController> _controller = Completer();
+  GoogleMapController? newGoogleMapController;
+  Completer<GoogleMapController> _controller = Completer();
 
   Position? currentPosition;
   var geoLocator = Geolocator();
+  CameraPosition? cameraPosition;
 
   void locatePosition() async {
     // ignore: unused_local_variable
@@ -33,15 +34,13 @@ class _LocationState extends State<Location> {
 
     LatLng ltPosition = LatLng(position.latitude, position.longitude);
     print(ltPosition);
-    
 
-    CameraPosition cameraPosition =
-        CameraPosition(target: ltPosition, zoom: 15);
+    cameraPosition = CameraPosition(target: ltPosition, zoom: 15);
     // ignore: unused_local_variable
     newGoogleMapController
-        ?.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
-    
+        ?.animateCamera(CameraUpdate.newCameraPosition(cameraPosition!));
   }
+
   final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(-0.39817471446402214, 36.96075003863469),
     zoom: 14.4746,
@@ -84,20 +83,25 @@ class _LocationState extends State<Location> {
             fit: BoxFit.fill,
           ),
           // SizedBox(height: 5),
-          Center(child: Text("Location",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600))),
-          Stack(
-            children:[ Container(
+          Center(
+              child: Text("Location",
+                  style: GoogleFonts.roboto(
+                      fontSize: 26,
+                      color: kWhite,
+                      fontWeight: FontWeight.w600))),
+          Stack(children: [
+            Container(
               child: GoogleMap(
-                mapType: MapType.hybrid,
-                initialCameraPosition: _kGooglePlex,
-                myLocationButtonEnabled: true,
-                zoomGesturesEnabled: true,
-                zoomControlsEnabled: false,
-                onMapCreated: (GoogleMapController controller){
-                  
-                }
-                //  is a gesture recognizer that eagerly claims victory in all gesture arenas
-              ),
+                  mapType: MapType.hybrid,
+                  initialCameraPosition: _kGooglePlex,
+                  myLocationButtonEnabled: true,
+                  zoomGesturesEnabled: true,
+                  zoomControlsEnabled: false,
+                  onMapCreated: (GoogleMapController controller) {
+                    _controller.complete(controller);
+                  }
+                  //  is a gesture recognizer that eagerly claims victory in all gesture arenas
+                  ),
               height: size.height * 0.3,
               width: size.width,
               decoration: BoxDecoration(
@@ -107,21 +111,17 @@ class _LocationState extends State<Location> {
               top: 5,
               right: 5,
               child: GestureDetector(
-                onTap: (){
-                  setState(() {
-                    
-                  });
-                },
+                onTap: _goToTheLake,
                 child: Lottie.asset(
-                          "assets/point.json",
-                          animate: true,
-                          height: size.height * 0.07,
-                          width: size.width * 0.17,
-                          fit: BoxFit.fill,
-                        ),
-              ),)
-            ]
-          ),
+                  "assets/point.json",
+                  animate: true,
+                  height: size.height * 0.07,
+                  width: size.width * 0.17,
+                  fit: BoxFit.fill,
+                ),
+              ),
+            )
+          ]),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -139,7 +139,9 @@ class _LocationState extends State<Location> {
       ),
     );
   }
-}
 
-class OneSequenceGestureRecognizer {
+  Future<void> _goToTheLake() async {
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(cameraPosition!));
+  }
 }
