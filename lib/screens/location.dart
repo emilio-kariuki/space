@@ -1,6 +1,8 @@
 // ignore_for_file: avoid_print
 
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,6 +42,10 @@ class _LocationState extends State<Location> {
         ?.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
     
   }
+  final CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(-0.39817471446402214, 36.96075003863469),
+    zoom: 14.4746,
+  );
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -81,6 +87,17 @@ class _LocationState extends State<Location> {
           Center(child: Text("Location",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600))),
           Stack(
             children:[ Container(
+              child: GoogleMap(
+                mapType: MapType.hybrid,
+                initialCameraPosition: _kGooglePlex,
+                myLocationButtonEnabled: true,
+                zoomGesturesEnabled: true,
+                zoomControlsEnabled: false,
+                onMapCreated: (GoogleMapController controller){
+                  
+                }
+                //  is a gesture recognizer that eagerly claims victory in all gesture arenas
+              ),
               height: size.height * 0.3,
               width: size.width,
               decoration: BoxDecoration(
@@ -122,4 +139,7 @@ class _LocationState extends State<Location> {
       ),
     );
   }
+}
+
+class OneSequenceGestureRecognizer {
 }
