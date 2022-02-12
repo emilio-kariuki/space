@@ -93,8 +93,20 @@ class _LocationState extends State<Location> {
                 myLocationButtonEnabled: true,
                 zoomGesturesEnabled: true,
                 zoomControlsEnabled: false,
-                onMapCreated: (GoogleMapController controller){
-                  
+                onMapCreated: (GoogleMapController controller) async {
+                  LocationPermission permission = await Geolocator.requestPermission();
+                      Position position = await Geolocator.getCurrentPosition(
+                          desiredAccuracy: LocationAccuracy.high);
+                      currentPosition = position;
+
+                      LatLng ltPosition = LatLng(position.latitude, position.longitude);
+                      print(ltPosition);
+                      
+
+                      CameraPosition cameraPosition =
+                          CameraPosition(target: ltPosition, zoom: 15);
+                      // ignore: unused_local_variable
+                      controller.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
                 }
                 //  is a gesture recognizer that eagerly claims victory in all gesture arenas
               ),
