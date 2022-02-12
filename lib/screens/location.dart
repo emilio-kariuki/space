@@ -29,16 +29,8 @@ class _LocationState extends State<Location> {
     longitude = locate.longitude;
   }
 
-  getLocation() {
-    getPermission().then((locate) {
-      CameraPosition location = CameraPosition(
-        target: LatLng(latitude!, longitude),
-        zoom: 19,
-      );
-      print(longitude);
-    });
-    
-  }
+  
+  
 
   Completer<GoogleMapController> _controller = Completer();
 
@@ -67,7 +59,7 @@ class _LocationState extends State<Location> {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.blue,
-        onPressed: getLocation,
+        onPressed: getPermission,
         child: Icon(Icons.map_rounded, color: Colors.white),
       ),
     );
