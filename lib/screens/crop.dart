@@ -148,7 +148,7 @@ class _CropState extends State<Crop> {
                 padding: const EdgeInsets.only(left: 13),
                 child: Text("Variety",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600)),
               ),
-              SizedBox(width: size.width * 0.13),
+              SizedBox(width: size.width * 0.07),
               DropdownButton2(
                 value: selectedValue,
                 onChanged: (value) {
