@@ -115,44 +115,44 @@ class _PictureState extends State<Picture> {
                                 height: size.height * 0.2,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10)),
-                                child: AlertDialog(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20)),
-                                  contentPadding: EdgeInsets.all(5),
-                                  title: const Text('choose image from: '),
-                                  content: SingleChildScrollView(
-                                    child: ListBody(children: [
-                                      ListTile(
-                                        selectedColor: Colors.grey,
-                                        onTap: () {
-                                          takePhoto(ImageSource.camera);
-                                          Navigator.pop(context);
-                                        },
-                                        leading: Icon(Icons.camera),
-                                        title: Text("Camera"),
-                                      ),
-                                      ListTile(
-                                        selectedColor: Colors.grey,
-                                        onTap: () {
-                                          setState(() {
-                                            takePhoto(ImageSource.gallery);
+                                  child: AlertDialog(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20)),
+                                    contentPadding: EdgeInsets.all(5),
+                                    title: const Text('choose image from: '),
+                                    content: SingleChildScrollView(
+                                      child: ListBody(children: [
+                                        ListTile(
+                                          selectedColor: Colors.grey,
+                                          onTap: () {
+                                            takePhoto(ImageSource.camera);
                                             Navigator.pop(context);
-                                          });
-                                        },
-                                        leading: Icon(Icons.layers),
-                                        title: GestureDetector(
-                                          onTap: (){
-                                            setState(() {
-                                            takePhoto(ImageSource.gallery);
-                                            Navigator.pop(context);
-                                          });
                                           },
-                                          child: Text("Gallery")),
-                                      ),
-                                    ]),
+                                          leading: Icon(Icons.camera),
+                                          title: Text("Camera"),
+                                        ),
+                                        ListTile(
+                                          selectedColor: Colors.grey,
+                                          onTap: () {
+                                            setState(() {
+                                              takePhoto(ImageSource.gallery);
+                                              Navigator.pop(context);
+                                            });
+                                          },
+                                          leading: Icon(Icons.layers),
+                                          title: GestureDetector(
+                                            onTap: (){
+                                              setState(() {
+                                              takePhoto(ImageSource.gallery);
+                                              Navigator.pop(context);
+                                            });
+                                            },
+                                            child: Text("Gallery")),
+                                        ),
+                                      ]),
+                                    ),
                                   ),
                                 ),
-                              ),
                             );
                           });
                         },
