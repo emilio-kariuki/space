@@ -1,10 +1,11 @@
 // ignore_for_file: avoid_print, prefer_final_fields, unused_import
 import "dart:async";
+import 'dart:html';
 import 'package:animated_text_kit/animated_text_kit.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
-import 'package:geolocator/geolocator.dart';
+import 'package:geolocation/geolocation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
@@ -21,7 +22,17 @@ class Location extends StatefulWidget {
 class _LocationState extends State<Location> {
   MapController controller = MapController();
 
-  getpermission() {}
+  getpermission() async {
+    final GeolocationResult result = await Geolocation.requestLocationPermission(
+      permission: const LocationPermission(
+        android: LocationPermissionAndroid.fine,
+        ios: LocationPermissionIOS.always,
+      ),
+      openSettingsIfDenied: true,
+);
+    return result;
+  }
+
   buildMap() {}
   @override
   Widget build(BuildContext context) {
