@@ -46,7 +46,7 @@ class _CropState extends State<Crop> {
             child: AnimatedTextKit(
               animatedTexts: [
                 TypewriterAnimatedText(
-                  'Image',
+                  'Plant',
                   textStyle: GoogleFonts.robotoCondensed(
                       fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
                   speed: const Duration(milliseconds: 400),
