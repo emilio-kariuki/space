@@ -67,8 +67,8 @@ class _CropState extends State<Crop> {
           TextConstant(body: "Plants"),
           Row(
             children: [
-              TextConstant(body: "Type"),
-              
+              Center(child: TextConstant(body: "Type")),
+              SizedBox(width: size.width * 0.13),
               DropdownButton2(
                 value: selectedValue,
                 onChanged: (value) {
@@ -81,10 +81,10 @@ class _CropState extends State<Crop> {
                   Icons.arrow_forward_ios_outlined,
                 ),
                 iconSize: 14,
-                iconEnabledColor: Colors.yellow,
-                iconDisabledColor: Colors.grey,
-                buttonHeight: 50,
-                buttonWidth: 160,
+                iconEnabledColor: Color.fromARGB(255, 250, 2, 2),
+                iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
+                buttonHeight: size.height * 0.06,
+                buttonWidth: size.width * 0.63,
                 items: items
                     .map((item) => DropdownMenuItem<String>(
                           value: item,
@@ -101,7 +101,7 @@ class _CropState extends State<Crop> {
                     .toList(),
                     buttonPadding: const EdgeInsets.only(left: 14, right: 14),
                 buttonDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(2),
+                  borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: Colors.black26,
                   ),
