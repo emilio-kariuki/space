@@ -1,8 +1,12 @@
+// ignore_for_file: avoid_print
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import "package:flutter/material.dart";
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Location extends StatefulWidget {
   const Location({Key? key}) : super(key: key);
@@ -12,6 +16,30 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
+   GoogleMapController? newGoogleMapController;
+   //Completer<GoogleMapController> _controller = Completer();
+
+  Position? currentPosition;
+  var geoLocator = Geolocator();
+
+  void locatePosition() async {
+    // ignore: unused_local_variable
+    LocationPermission permission = await Geolocator.requestPermission();
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    currentPosition = position;
+
+    LatLng ltPosition = LatLng(position.latitude, position.longitude);
+    print(ltPosition);
+    
+
+    CameraPosition cameraPosition =
+        CameraPosition(target: ltPosition, zoom: 15);
+    // ignore: unused_local_variable
+    newGoogleMapController
+        ?.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
+    
+  }
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
