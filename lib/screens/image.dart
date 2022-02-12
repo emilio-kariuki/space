@@ -114,7 +114,7 @@ class _PictureState extends State<Picture> {
                                 width: size.width,
                                 height: size.height * 0.2,
                                 decoration: BoxDecoration(
-                                    border: Border.all(color: Color.fromARGB(255, 182, 36, 116),width:1 ),
+                                    //border: Border.all(color: Color.fromARGB(255, 182, 36, 116),width:1 ),
                                     borderRadius: BorderRadius.circular(10),),
                                   child: AlertDialog(
                                     shape: RoundedRectangleBorder(
@@ -129,7 +129,7 @@ class _PictureState extends State<Picture> {
                                             takePhoto(ImageSource.camera);
                                             Navigator.pop(context);
                                           },
-                                          leading: Icon(Icons.camera),
+                                          leading: Icon(Icons.camera,color: Colors.blueGrey[900]),
                                           title: Text("Camera"),
                                         ),
                                         ListTile(
@@ -140,7 +140,7 @@ class _PictureState extends State<Picture> {
                                               Navigator.pop(context);
                                             });
                                           },
-                                          leading: Icon(Icons.layers),
+                                          leading: Icon(Icons.layers,color: Colors.blueGrey[900]),
                                           title: GestureDetector(
                                             onTap: (){
                                               setState(() {
