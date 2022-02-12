@@ -1,18 +1,12 @@
 // ignore_for_file: avoid_print, prefer_final_fields, unused_import, import_of_legacy_library_into_null_safe
 import "dart:async";
-// import 'dart:html';
 import 'package:animated_text_kit/animated_text_kit.dart';
-// import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
-import 'package:geolocation/geolocation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
-import 'package:flutter_map/flutter_map.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-// import 'package:latlong/latlong.dart';
-// import 'package:latlng/latlng.dart';
 import "package:latlong2/latlong.dart" as latLng;
 
 class Location extends StatefulWidget {
@@ -23,20 +17,6 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
-  MapController controller = MapController();
-
-  getpermission() async {
-    final GeolocationResult result =
-        await Geolocation.requestLocationPermission(
-      permission: const LocationPermission(
-        android: LocationPermissionAndroid.fine,
-        ios: LocationPermissionIOS.always,
-      ),
-      openSettingsIfDenied: true,
-    );
-    return result;
-  }
-
   @override
   Widget build(BuildContext context) {
     final CameraPosition initial = CameraPosition(
