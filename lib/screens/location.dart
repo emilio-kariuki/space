@@ -18,13 +18,13 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
-  double? latitude;
-  double ?longitude;
+  double latitude = 37.42796133580664;
+  double longitude = -122.085749655962;
   getPermission() async {
     var locate = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best,
     );
-    print(locate.longitude);
+    // print(locate.longitude);
     latitude = locate.latitude;
     longitude = locate.longitude;
   }
@@ -36,8 +36,8 @@ class _LocationState extends State<Location> {
         zoom: 19,
       );
       print(longitude);
+      print(latitude);
     });
-    
   }
 
   Completer<GoogleMapController> _controller = Completer();
