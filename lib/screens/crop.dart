@@ -101,7 +101,7 @@ class _CropState extends State<Crop> {
                   Icons.arrow_forward_ios_outlined,
                 ),
                 iconSize: 18,
-                iconEnabledColor: Color.fromARGB(255, 250, 2, 2),
+                iconEnabledColor: Color.fromARGB(255, 209, 160, 0),
                 iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
                 buttonHeight: size.height * 0.06,
                 buttonWidth: size.width * 0.65,
@@ -141,6 +141,7 @@ class _CropState extends State<Crop> {
               ),
             ],
           ),
+          SizedBox(height: 10),
           Row(
             children: [
               Padding(
@@ -160,7 +161,7 @@ class _CropState extends State<Crop> {
                   Icons.arrow_forward_ios_outlined,
                 ),
                 iconSize: 18,
-                iconEnabledColor: Color.fromARGB(255, 250, 2, 2),
+                iconEnabledColor: Color.fromARGB(255, 216, 166, 3),
                 iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
                 buttonHeight: size.height * 0.06,
                 buttonWidth: size.width * 0.65,
