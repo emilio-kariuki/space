@@ -49,7 +49,8 @@ class _LocationState extends State<Location> {
             width: size.width,
             fit: BoxFit.fill,
           ),
-          SizedBox(height: 5),
+          // SizedBox(height: 5),
+          Center(child: Text("Plants",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600))),
         ],
       ),
       floatingActionButton: FloatingActionButton(
