@@ -23,88 +23,21 @@ class _LocationState extends State<Location> {
         target: LatLng(-0.39244357411624337, 36.958791836761094));
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.indigo[400],
+      
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         title: Text("Kenya Space Agency",
             style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
         elevation: 0,
       ),
-      body: Column(
+      body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: AnimatedTextKit(
-              animatedTexts: [
-                TypewriterAnimatedText(
-                  'Location',
-                  textStyle: GoogleFonts.robotoCondensed(
-                      fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
-                  speed: const Duration(milliseconds: 400),
-                ),
-              ],
-              totalRepeatCount: 4,
-              pause: const Duration(milliseconds: 1000),
-              displayFullTextOnTap: true,
-              // stopPauseOnTap: true,
-            ),
-          ),
-          Lottie.asset(
-            "assets/location.json",
-            animate: true,
-            height: size.height * 0.37,
-            width: size.width,
-            fit: BoxFit.fill,
-          ),
-          // SizedBox(height: 5),
-          Center(
-              child: Text("Location",
-                  style: GoogleFonts.roboto(
-                      fontSize: 26,
-                      color: kWhite,
-                      fontWeight: FontWeight.w600))),
-          Stack(children: [
-            Container(
-              child: Center(
-                  child: GoogleMap(
-                initialCameraPosition: initial,
-                mapType: MapType.normal,
-              )),
-              height: size.height * 0.3,
-              width: size.width,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: kWhite),
-            ),
-            Positioned(
-              top: 5,
-              right: 5,
-              child: GestureDetector(
-                onTap: () {},
-                child: Lottie.asset(
-                  "assets/point.json",
-                  animate: true,
-                  height: size.height * 0.07,
-                  width: size.width * 0.17,
-                  fit: BoxFit.fill,
-                ),
-              ),
-            )
-          ]),
+          GoogleMap(
+            initialCameraPosition: initial,
+            mapType: MapType.normal
+          )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 189, 139, 31),
-        onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Location())));
-        },
-        tooltip: "Next Page",
-        child: Center(
-            child: Container(
-                padding: const EdgeInsets.all(5),
-                child: Lottie.asset("assets/right.json",
-                    width: size.width * 0.2))),
-      ),
+      )
     );
   }
 }
