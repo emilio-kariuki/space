@@ -43,13 +43,27 @@ class _CropState extends State<Crop> {
             ),
           ),
           Lottie.asset(
-            "assets/welcome.json",
+            "assets/plant.json",
             animate: true,
             height: size.height * 0.37,
             width: size.width,
             fit: BoxFit.fill,
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 189, 139, 31),
+        onPressed: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: ((context) => Crop())));
+        },
+        tooltip: "Next Page",
+        child: Center(
+            child: Container(
+                padding: const EdgeInsets.all(5),
+                child: Lottie.asset(
+                    "assets/right.json",
+                    width: size.width * 0.2))),
       ),
     );
   }
