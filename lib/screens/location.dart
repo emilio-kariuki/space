@@ -89,9 +89,20 @@ class _LocationState extends State<Location> {
             Positioned(
               top: 5,
               right: 5,
-              child: IconButton(
-                onPressed: (){},
-                icon: Icon(Icons.map_rounded)))
+              child: GestureDetector(
+                onTap: (){
+                  setState(() {
+                    
+                  });
+                },
+                child: Lottie.asset(
+                          "assets/point.json",
+                          animate: true,
+                          height: size.height * 0.07,
+                          width: size.width * 0.17,
+                          fit: BoxFit.fill,
+                        ),
+              ),)
             ]
           ),
         ],
