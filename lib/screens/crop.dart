@@ -25,8 +25,20 @@ class _CropState extends State<Crop> {
     "Peter",
     "Rachel"
   ];
+  List<String> itemz = [
+    'Emilio',
+    "Kariuki",
+    "Gichuru",
+    "Jane",
+    "Rosie",
+    "Joy",
+    "Kennedy",
+    "Peter",
+    "Rachel"
+  ];
 
-  String? selectedValue;
+  String? selectedType;
+  String? selectedVariety;
 
   @override
   Widget build(BuildContext context) {
@@ -90,11 +102,11 @@ class _CropState extends State<Crop> {
               ),
               SizedBox(width: size.width * 0.13),
               DropdownButton2(
-                value: selectedValue,
+                value: selectedType,
                 onChanged: (value) {
                   setState(() {
-                    selectedValue = value as String;
-                    print(selectedValue);
+                    selectedType = value as String;
+                    print(selectedType);
                   });
                 },
                 icon: const Icon(
@@ -122,7 +134,7 @@ class _CropState extends State<Crop> {
                   border: Border.all(
                     color: Color.fromARGB(255, 52, 70, 78),
                   ),
-                  color: Color.fromARGB(255, 211, 204, 204),
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
                 buttonElevation: 0,
                 itemHeight: 40,
@@ -150,11 +162,11 @@ class _CropState extends State<Crop> {
               ),
               SizedBox(width: size.width * 0.07),
               DropdownButton2(
-                value: selectedValue,
+                value: selectedVariety,
                 onChanged: (value) {
                   setState(() {
-                    selectedValue = value as String;
-                    print(selectedValue);
+                    selectedVariety = value as String;
+                    print(selectedVariety);
                   });
                 },
                 icon: const Icon(
@@ -165,7 +177,7 @@ class _CropState extends State<Crop> {
                 iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
                 buttonHeight: size.height * 0.06,
                 buttonWidth: size.width * 0.65,
-                items: items
+                items: itemz
                     .map((item) => DropdownMenuItem<String>(
                           value: item,
                           child: Text(
@@ -182,7 +194,7 @@ class _CropState extends State<Crop> {
                   border: Border.all(
                     color: Color.fromARGB(255, 52, 70, 78),
                   ),
-                  color: Color.fromARGB(255, 211, 204, 204),
+                  color: Color.fromARGB(255, 255, 255, 255),
                 ),
                 buttonElevation: 0,
                 itemHeight: 40,
