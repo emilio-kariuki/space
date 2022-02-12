@@ -7,6 +7,7 @@ import "package:flutter/material.dart";
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/crop.dart';
 import 'package:image_picker/image_picker.dart';
@@ -69,10 +70,11 @@ class _PictureState extends State<Picture> {
           Lottie.asset(
             "assets/welcome.json",
             animate: true,
-            height: size.height * 0.4,
+            height: size.height * 0.37,
             width: size.width,
             fit: BoxFit.fill,
           ),
+          TextConstant(body: "Take Picture"),
           Padding(
             padding: const EdgeInsets.all(10),
             child: Stack(

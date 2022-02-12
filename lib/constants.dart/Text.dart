@@ -8,6 +8,14 @@ class TextConstant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(body, style: GoogleFonts.roboto(fontSize: 36, color: kWhite,fontWeight: FontWeight.w600));
+    return Padding(
+      padding: const EdgeInsets.only(left: 13),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(body, style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600)),
+        ],
+      ),
+    );
   }
 }
