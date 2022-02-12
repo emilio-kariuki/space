@@ -18,6 +18,7 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
+  GoogleMapController? newGoogleMapController;
   double latitude = 37.42796133580664;
   double longitude = -122.085749655962;
   getPermission() async {
@@ -31,14 +32,17 @@ class _LocationState extends State<Location> {
 
   getLocation() {
     getPermission().then((locate) {
-      CameraPosition location = CameraPosition(
-        target: LatLng(latitude!, longitude!),
-        zoom: 19,
-      );
       print(longitude);
       print(latitude);
+      LatLng ltPosition = LatLng(latitude, longitude);
+      CameraPosition cameraPosition =
+          CameraPosition(target: ltPosition, zoom: 15);
+      // ignore: unused_local_variable
+      newGoogleMapController
+          ?.animateCamera(CameraUpdate.newCameraPosition(cameraPosition));
     });
   }
+
 
   Completer<GoogleMapController> _controller = Completer();
 
