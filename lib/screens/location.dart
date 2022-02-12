@@ -23,6 +23,7 @@ class _LocationState extends State<Location> {
   GoogleMapController? newGoogleMapController;
   double ?latitude;
   double ?longitude;
+  // LatLng ltPosition = LatLng(latitude!, longitude!);
   getPermission() async {
     var locate = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.best,
@@ -98,5 +99,4 @@ class _LocationState extends State<Location> {
       ),
     );
   }
-  
 }
