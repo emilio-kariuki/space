@@ -30,7 +30,7 @@ class _LocationState extends State<Location> {
             child: AnimatedTextKit(
               animatedTexts: [
                 TypewriterAnimatedText(
-                  'Plant',
+                  'Location',
                   textStyle: GoogleFonts.robotoCondensed(
                       fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
                   speed: const Duration(milliseconds: 400),
