@@ -17,11 +17,13 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
-  @override
-  Widget build(BuildContext context) {
-    final CameraPosition initial = CameraPosition(
+  final CameraPosition initial = CameraPosition(
       zoom: 15.0,
         target: LatLng(-0.39244357411624337, 36.958791836761094));
+  
+  @override
+  Widget build(BuildContext context) {
+    
     final size = MediaQuery.of(context).size;
     return Scaffold(
       
