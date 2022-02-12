@@ -64,7 +64,10 @@ class _CropState extends State<Crop> {
             fit: BoxFit.fill,
           ),
           SizedBox(height: 5),
-          Center(child: TextConstant(body: "Plants")),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text("Plants",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600))),
+          ),
           Row(
             children: [
               TextConstant(body: "Type"),
