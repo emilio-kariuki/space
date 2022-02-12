@@ -64,10 +64,10 @@ class _CropState extends State<Crop> {
             fit: BoxFit.fill,
           ),
           SizedBox(height: 5),
-          TextConstant(body: "Plants"),
+          Center(child: TextConstant(body: "Plants")),
           Row(
             children: [
-              Center(child: TextConstant(body: "Type")),
+              TextConstant(body: "Type"),
               SizedBox(width: size.width * 0.13),
               DropdownButton2(
                 value: selectedValue,
