@@ -89,7 +89,7 @@ class _CropState extends State<Crop> {
                         margin: const EdgeInsets.only(left: 15.0, right: 10.0),
                         child: Divider(
                           color: Colors.white,
-                          height: 18,
+                          height: 38,
                         )),
                   ),
                 ],
