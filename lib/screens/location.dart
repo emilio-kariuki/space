@@ -79,11 +79,20 @@ class _LocationState extends State<Location> {
           ),
           // SizedBox(height: 5),
           Center(child: Text("Location",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600))),
-          Container(
-            height: size.height * 0.3,
-            width: size.width,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30), color: kWhite),
+          Stack(
+            children:[ Container(
+              height: size.height * 0.3,
+              width: size.width,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30), color: kWhite),
+            ),
+            Positioned(
+              top: 5,
+              right: 5,
+              child: IconButton(
+                onPressed: (){},
+                icon: Icon(Icons.map_rounded)))
+            ]
           ),
         ],
       ),
