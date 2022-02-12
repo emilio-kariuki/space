@@ -72,7 +72,7 @@ class _LocationState extends State<Location> {
             initialCameraPosition: _kGooglePlex,
             onMapCreated: (GoogleMapController controller) {
               _controller.complete(controller);
-              // getLocation();
+               getLocation();
             },
           ),
         ],
