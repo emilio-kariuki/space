@@ -10,6 +10,7 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+  @override
   void initState() {
     super.initState();
     Future.delayed(
@@ -23,7 +24,7 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromARGB(65, 105, 225, 235),
+      backgroundColor: Color.fromARGB(65, 38, 139, 223),
       extendBodyBehindAppBar: true,
       body: Lottie.asset("assets/splash.json",width: size.width,height: size.height * 2),
     );
