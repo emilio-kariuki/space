@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 
 class Crop extends StatefulWidget {
@@ -49,6 +50,8 @@ class _CropState extends State<Crop> {
             width: size.width,
             fit: BoxFit.fill,
           ),
+          SizedBox(height: 5),
+          TextConstant(body: "Plants")
         ],
       ),
       floatingActionButton: FloatingActionButton(
