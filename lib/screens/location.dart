@@ -1,6 +1,6 @@
-// ignore_for_file: avoid_print, prefer_final_fields, unused_import
+// ignore_for_file: avoid_print, prefer_final_fields, unused_import, import_of_legacy_library_into_null_safe
 import "dart:async";
-import 'dart:html';
+// import 'dart:html';
 import 'package:animated_text_kit/animated_text_kit.dart';
 // import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -9,8 +9,10 @@ import 'package:geolocation/geolocation.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter_map/flutter_map.dart';
+// import 'package:latlong/latlong.dart';
+// import 'package:latlng/latlng.dart';
+import "package:latlong2/latlong.dart" as latLng;
 
 class Location extends StatefulWidget {
   const Location({Key? key}) : super(key: key);
@@ -43,7 +45,17 @@ class _LocationState extends State<Location> {
     });
   }
 
-  buildMap() {}
+  buildMap() {
+    getLocation().then((response) {
+      if (response.isSuccessful) {
+        response.listen((value) {
+          controller.move(
+            latLng.LatLng(value.location.latitude, value.location.longitude), 15.0);
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
