@@ -5,6 +5,7 @@ import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import "package:latlong2/latlong.dart" as latLng;
@@ -63,6 +64,10 @@ class _LocationState extends State<Location> {
       ),
       body: Stack(
         children: [
+          Positioned(
+            top:2,
+            left: 2,
+            child: TextConstant(body: "Get Location")),
           GoogleMap(
             mapType: MapType.hybrid,
             myLocationEnabled: true,
