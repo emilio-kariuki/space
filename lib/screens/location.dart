@@ -142,6 +142,6 @@ class _LocationState extends State<Location> {
 
   Future<void> _goToTheLake() async {
     final GoogleMapController controller = await _controller.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(cameraPosition!));
+    controller.animateCamera(CameraUpdate.newCameraPosition(_kGooglePlex));
   }
 }
