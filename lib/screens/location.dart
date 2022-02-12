@@ -23,14 +23,24 @@ class _LocationState extends State<Location> {
   MapController controller = MapController();
 
   getpermission() async {
-    final GeolocationResult result = await Geolocation.requestLocationPermission(
+    final GeolocationResult result =
+        await Geolocation.requestLocationPermission(
       permission: const LocationPermission(
         android: LocationPermissionAndroid.fine,
         ios: LocationPermissionIOS.always,
       ),
       openSettingsIfDenied: true,
-);
+    );
     return result;
+  }
+
+  getLocation() {
+    return getpermission().then((result) async {
+      if (result.isSuccessful) {
+        final coords =
+            await Geolocation.currentLocation(accuracy: LocationAccuracy.best);
+      }
+    });
   }
 
   buildMap() {}
