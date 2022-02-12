@@ -105,11 +105,7 @@ class _CropState extends State<Crop> {
                           value: item,
                           child: Text(
                             item,
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
+                            style: GoogleFonts.roboto(fontSize: 16, color: Colors.blueGrey[800],fontWeight: FontWeight.w600),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ))
