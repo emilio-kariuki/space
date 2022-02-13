@@ -46,15 +46,15 @@ class _DateState extends State<Date> {
                 shadowColor: Color.fromARGB(255, 97, 94, 94),
                 shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30))),
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40))),
                 child: Container(
                   height: size.height * 0.15,
                   width: size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(30),
-                        bottomRight: Radius.circular(30)),
+                        bottomLeft: Radius.circular(40),
+                        bottomRight: Radius.circular(40)),
                     color: Colors.white,
                     shape: BoxShape.rectangle,
                   ),
@@ -72,7 +72,7 @@ class _DateState extends State<Date> {
                               },
                             ),
                           ),
-                          SizedBox(width: 25),
+                          SizedBox(width: 30),
                           Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
                         ],
                       ),
