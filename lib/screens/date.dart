@@ -201,6 +201,7 @@ class _DateState extends State<Date> {
               child: Material(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                 elevation: 10,
+                shadowColor: Colors.blueGrey[800],
                 child: Container(
                   // padding: const EdgeInsets.all(1),
                   decoration: BoxDecoration(
