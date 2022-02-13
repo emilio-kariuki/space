@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/location.dart';
+import "dart:async";
 
 class Submit extends StatefulWidget {
   final User4 value_4;
@@ -15,6 +16,7 @@ class Submit extends StatefulWidget {
 }
 
 class _SubmitState extends State<Submit> {
+  Completer<GoogleMapController> _controller = Completer();
   @override
   Widget build(BuildContext context) {
     print(widget.value_4.date_plantation);
@@ -26,13 +28,22 @@ class _SubmitState extends State<Submit> {
     print(widget.value_4.y_coordinate);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 189, 139, 31),
-        title: Text("Kenya Space Agency",
-            style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
-        elevation: 0,
-      ),
-      body: GoogleMap(initialCameraPosition: CameraPosition(target: LatLng(widget.value_4.x_coordinate,widget.value_4.y_coordinate)),mapType: MapType.hybrid,)
-    );
+        appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 189, 139, 31),
+          title: Text("Kenya Space Agency",
+              style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
+          elevation: 0,
+        ),
+        body: GoogleMap(
+          initialCameraPosition: CameraPosition(
+              target: LatLng(
+                  widget.value_4.y_coordinate, widget.value_4.x_coordinate),zoom: 15.0),
+          mapType: MapType.hybrid,
+          zoomControlsEnabled: false,
+          zoomGesturesEnabled: true,
+          onMapCreated: (GoogleMapController controller) {
+            _controller.complete(controller);
+          },
+        ));
   }
 }
