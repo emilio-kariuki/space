@@ -92,6 +92,13 @@ class _LocationState extends State<Location> {
       ),
       body: Column(
         children: [
+          Lottie.asset(
+            "assets/location.json",
+            animate: true,
+            height: size.height * 0.37,
+            width: size.width,
+            fit: BoxFit.fill,
+          ),
           Material(
             elevation: 10,
             borderRadius: BorderRadius.circular(30),
