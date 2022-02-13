@@ -9,6 +9,13 @@ import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/date.dart';
 import 'package:space/screens/image.dart';
 
+class User2 {
+  String type;
+  String variety;
+
+  User2({required this.type, required this.variety});
+}
+
 class Crop extends StatefulWidget {
   final User1 value_1;
   const Crop({Key? key, required this.value_1}) : super(key: key);
@@ -47,6 +54,7 @@ class _CropState extends State<Crop> {
   @override
   Widget build(BuildContext context) {
     print(widget.value_1.date_plantation);
+    print(widget.value_1.date_today);
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.indigo[400],

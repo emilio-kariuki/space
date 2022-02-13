@@ -180,7 +180,7 @@ class _DateState extends State<Date> {
                           .then((value) {
                         setState(() {
                           plantation = value;
-                          plantation = DateFormat.yMMMMd().format(plantation!)
+                          plantation = DateFormat.yMMM().format(plantation!)
                               as DateTime?;
                         });
                       });
