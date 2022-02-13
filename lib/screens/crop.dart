@@ -132,7 +132,7 @@ class _CropState extends State<Crop> {
               ),
               SizedBox(height: 10),
             Lottie.asset(
-              "assets/plants.json",
+              "assets/vase.json",
               animate: true,
               height: size.height * 0.37,
               width: size.width,
