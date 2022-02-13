@@ -33,13 +33,23 @@ class _DateState extends State<Date> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       key: mainKey,
-      // extendBodyBehindAppBar: true,
       backgroundColor: Color.fromARGB(255, 36, 47, 53),
-      
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Material(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),bottomRight:Radius.circular(30))),
+              child:Container(
+                height: size.height * 0.2,
+                width: size.width,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),bottomRight:Radius.circular(30)),
+                  color: Colors.white,
+                  shape: BoxShape.rectangle,
+                 ),
+              )
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: AnimatedTextKit(
