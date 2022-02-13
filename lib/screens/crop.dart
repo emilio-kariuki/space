@@ -6,10 +6,12 @@ import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
+import 'package:space/screens/date.dart';
 import 'package:space/screens/image.dart';
 
 class Crop extends StatefulWidget {
-  const Crop({Key? key}) : super(key: key);
+  final User1 value;
+  const Crop({Key? key, required this.value}) : super(key: key);
 
   @override
   State<Crop> createState() => _CropState();
@@ -82,25 +84,34 @@ class _CropState extends State<Crop> {
           SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.all(5.0),
-            child: Center(child: Text("Plants",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600))),
+            child: Center(
+                child: Text("Plants",
+                    style: GoogleFonts.roboto(
+                        fontSize: 26,
+                        color: kWhite,
+                        fontWeight: FontWeight.w600))),
           ),
           Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                        margin: const EdgeInsets.only(left: 15.0, right: 10.0),
-                        child: Divider(
-                          color: Colors.white,
-                          height: 38,
-                        )),
-                  ),
-                ],
+            children: [
+              Expanded(
+                child: Container(
+                    margin: const EdgeInsets.only(left: 15.0, right: 10.0),
+                    child: Divider(
+                      color: Colors.white,
+                      height: 38,
+                    )),
               ),
+            ],
+          ),
           Row(
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 13),
-                child: Text("Type",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600)),
+                child: Text("Type",
+                    style: GoogleFonts.roboto(
+                        fontSize: 26,
+                        color: kWhite,
+                        fontWeight: FontWeight.w600)),
               ),
               SizedBox(width: size.width * 0.13),
               DropdownButton2(
@@ -124,14 +135,16 @@ class _CropState extends State<Crop> {
                           value: item,
                           child: Text(
                             item,
-                            style: GoogleFonts.roboto(fontSize: 16, color: Colors.blueGrey[800],fontWeight: FontWeight.w600),
+                            style: GoogleFonts.roboto(
+                                fontSize: 16,
+                                color: Colors.blueGrey[800],
+                                fontWeight: FontWeight.w600),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ))
                     .toList(),
-                    buttonPadding: const EdgeInsets.only(left: 14, right: 14),
+                buttonPadding: const EdgeInsets.only(left: 14, right: 14),
                 buttonDecoration: BoxDecoration(
-                  
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: Color.fromARGB(255, 52, 70, 78),
@@ -160,7 +173,11 @@ class _CropState extends State<Crop> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 13),
-                child: Text("Variety",style: GoogleFonts.roboto(fontSize: 26, color: kWhite,fontWeight: FontWeight.w600)),
+                child: Text("Variety",
+                    style: GoogleFonts.roboto(
+                        fontSize: 26,
+                        color: kWhite,
+                        fontWeight: FontWeight.w600)),
               ),
               SizedBox(width: size.width * 0.07),
               DropdownButton2(
@@ -184,14 +201,16 @@ class _CropState extends State<Crop> {
                           value: item,
                           child: Text(
                             item,
-                            style: GoogleFonts.roboto(fontSize: 16, color: Colors.blueGrey[800],fontWeight: FontWeight.w600),
+                            style: GoogleFonts.roboto(
+                                fontSize: 16,
+                                color: Colors.blueGrey[800],
+                                fontWeight: FontWeight.w600),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ))
                     .toList(),
-                    buttonPadding: const EdgeInsets.only(left: 14, right: 14),
+                buttonPadding: const EdgeInsets.only(left: 14, right: 14),
                 buttonDecoration: BoxDecoration(
-                  
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: Color.fromARGB(255, 52, 70, 78),
@@ -227,8 +246,7 @@ class _CropState extends State<Crop> {
         child: Center(
             child: Container(
                 padding: const EdgeInsets.all(5),
-                child: Lottie.asset(
-                    "assets/right.json",
+                child: Lottie.asset("assets/right.json",
                     width: size.width * 0.2))),
       ),
     );
