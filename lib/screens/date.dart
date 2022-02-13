@@ -181,7 +181,7 @@ class _DateState extends State<Date> {
             ),
             Positioned(
               top:3,
-              right: 3,
+              right: 5,
               child: IconButton(
                 onPressed: (){
                   setState(() {});
