@@ -26,7 +26,7 @@ class _SplashState extends State<Splash> {
     return Scaffold(
       backgroundColor: Color.fromARGB(239, 35, 156, 255),
       extendBodyBehindAppBar: true,
-      body: Lottie.asset("assets/splash.json",width: size.width,height: size.height * 2),
+      body: Lottie.asset("assets/update_splash.json",width: size.width,height: size.height * 2),
     );
   }
 }
