@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use, avoid_print
+// ignore_for_file: deprecated_member_use, avoid_print, non_constant_identifier_names
 
 import 'dart:io';
 
@@ -12,6 +12,22 @@ import 'package:space/constants.dart/colors.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:space/screens/crop.dart';
 import 'package:space/screens/location.dart';
+
+class User3 {
+  String type;
+  String variety;
+  String date_plantation;
+  String date_today;
+  File image;
+
+  User3(
+      {
+      required this.image,
+      required this.type,
+      required this.variety,
+      required this.date_plantation,
+      required this.date_today});
+}
 
 class Picture extends StatefulWidget {
   final User2 value_2;
