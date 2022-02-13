@@ -82,22 +82,34 @@ class _DateState extends State<Date> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 20, bottom: 20),
+                      padding: const EdgeInsets.only(left: 20, bottom: 5),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 5),
+                            padding: const EdgeInsets.only(top:10),
                             child: Text("Date Today",
-                                style: GoogleFonts.roboto(fontSize: 24, color: Colors.indigo)),
+                                style: GoogleFonts.roboto(fontSize: 22, color: Colors.indigo)),
                           ),
                         ],
                       ),
                     ),
+                     Row(
+                      children: [
+                        Expanded(
+                          child: Container(
+                              margin: const EdgeInsets.only(left: 15.0, right: 10.0),
+                              child: Divider(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                                height: 5,
+                              )),
+                        ),
+                      ],
+                    ),
                      Padding(
                   padding: const EdgeInsets.only(left: 10, bottom: 5),
                   child: Padding(
-                    padding: const EdgeInsets.only(left:8,bottom: 8),
+                    padding: const EdgeInsets.only(left:8,bottom: 8,top:5),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
