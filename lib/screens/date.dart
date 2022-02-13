@@ -69,10 +69,64 @@ class _DateState extends State<Date> {
             width: size.width,
             fit: BoxFit.fill,
           ),
-          Column(
-            children:[
-              
-            ]), 
+          Padding(
+            padding: const EdgeInsets.only(left: 20, bottom: 5),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  LottieContainer(
+                      func: () {
+                        setState(() {
+                          showDatePicker(
+                                  builder: (context, child) {
+                                    return Theme(
+                                      data: Theme.of(context).copyWith(
+                                        colorScheme: ColorScheme.light(
+                                          primary: Color.fromARGB(255, 201, 22,
+                                              31), // header background color
+                                          onPrimary:
+                                              Colors.black, // header text color
+                                          onSurface: Color.fromARGB(
+                                              255, 0, 0, 0), // body text color
+                                        ),
+                                        textButtonTheme: TextButtonThemeData(
+                                          style: TextButton.styleFrom(
+                                            primary:
+                                                Colors.red, // button text color
+                                          ),
+                                        ),
+                                      ),
+                                      child: child!,
+                                    );
+                                  },
+                                  context: context,
+                                  initialDate: today ?? DateTime.now(),
+                                  firstDate: DateTime(2000),
+                                  lastDate: DateTime(2023))
+                              .then((value) {
+                            setState(() {
+                              today = value;
+                              today =
+                                  DateFormat.yMMM().format(today!) as DateTime?;
+                            });
+                          });
+                        });
+                      },
+                      lottieUrl: "assets/icon.json"),
+                  SizedBox(width: size.width * 0.13),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {});
+                    },
+                    child: Text(today == null ? "select date" : today.toString(),
+                        style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(top: 5, left: 20, bottom: 10),
             child: Row(
