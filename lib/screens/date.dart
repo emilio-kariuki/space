@@ -97,9 +97,9 @@ class _DateState extends State<Date> {
                   ),
                 )),
                 Positioned(
-                  top: 5,
+                  top: 3,
                   right: 5,
-                  child: Lottie.asset("assets/celebration.json",height:200.1,width: 70.1,animate:true),
+                  child: Lottie.asset("assets/celebration.json",height:200.1,width: 100.1,animate:true),
                 ),
               ]
             ),
