@@ -41,7 +41,7 @@ class _DateState extends State<Date> {
             Material(
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),bottomRight:Radius.circular(30))),
               child:Container(
-                height: size.height * 0.2,
+                height: size.height * 0.1,
                 width: size.width,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30),bottomRight:Radius.circular(30)),
@@ -56,8 +56,8 @@ class _DateState extends State<Date> {
                 animatedTexts: [
                   WavyAnimatedText(
                     'Date',
-                    textStyle: GoogleFonts.robotoCondensed(
-                        fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
+                    textStyle: GoogleFonts.redressed(
+                        fontSize: 27, color: Colors.indigo, fontWeight: FontWeight.w600),
                     speed: const Duration(milliseconds: 400),
                   ),
                 ],
