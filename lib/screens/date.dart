@@ -95,9 +95,9 @@ class _DateState extends State<Date> {
                       ),
                     ),
                      Padding(
-                  padding: const EdgeInsets.only(left: 20, bottom: 5),
+                  padding: const EdgeInsets.only(left: 10, bottom: 5),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(1.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
