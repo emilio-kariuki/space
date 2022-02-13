@@ -107,7 +107,7 @@ class _DateState extends State<Date> {
             ),
             SizedBox(height: 10),
             Lottie.asset(
-              "assets/date.json",
+              "assets/calendar_date.json",
               animate: true,
               height: size.height * 0.4,
               width: size.width,
