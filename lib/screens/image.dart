@@ -11,6 +11,7 @@ import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/crop.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:space/screens/location.dart';
 
 class Picture extends StatefulWidget {
   const Picture({Key? key}) : super(key: key);
@@ -172,7 +173,7 @@ class _PictureState extends State<Picture> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Crop())));
+              .push(MaterialPageRoute(builder: ((context) => Location())));
         },
         tooltip: "Next Page",
         child: Center(
