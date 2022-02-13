@@ -79,7 +79,7 @@ class _DateState extends State<Date> {
                             WavyAnimatedText(
                               'Date',
                               textStyle: GoogleFonts.redressed(
-                                  fontSize: 27,
+                                  fontSize: 29,
                                   color: Colors.indigo,
                                   fontWeight: FontWeight.w600),
                               speed: const Duration(milliseconds: 400),
