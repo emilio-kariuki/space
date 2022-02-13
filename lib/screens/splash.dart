@@ -30,13 +30,14 @@ class _SplashState extends State<Splash> {
       backgroundColor: Color.fromARGB(239, 35, 156, 255),
       extendBodyBehindAppBar: true,
       body: Stack(children: [
-        Positioned(
-            bottom: size.height * 0.2,
-            right: size.width * 0.1,
-            child: Text("Kenya Space Agency",
-                style: GoogleFonts.roboto(fontSize: 28, color: kWhite))),
         Lottie.asset("assets/update_splash.json",
-            width: size.width, height: size.height * 2)
+            width: size.width, height: size.height * 2),
+        Positioned(
+            bottom: size.height * 0.3,
+            right: size.width * 0.21,
+            child: Text("Kenya Space Agency",
+                style: GoogleFonts.roboto(fontSize: 30, color: kWhite))),
+        
       ]),
     );
   }
