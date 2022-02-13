@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/date.dart';
 
 class Splash extends StatefulWidget {
@@ -26,7 +28,7 @@ class _SplashState extends State<Splash> {
     return Scaffold(
       backgroundColor: Color.fromARGB(239, 35, 156, 255),
       extendBodyBehindAppBar: true,
-      body: Lottie.asset("assets/update_splash.json",width: size.width,height: size.height * 2),
+      body: Stack(children:[Positioned(child: Text("Kenya Space Agency",style: GoogleFonts.roboto(fontSize: 28,color: kWhite))),Lottie.asset("assets/update_splash.json",width: size.width,height: size.height * 2)] ),
     );
   }
 }
