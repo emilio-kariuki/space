@@ -206,7 +206,7 @@ class _DateState extends State<Date> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Crop(value: User1(date_plantation: plantation.toString(),date_today: today.toString()) ))));
+              .push(MaterialPageRoute(builder: ((context) => Crop(value_1: User1(date_plantation: plantation.toString(),date_today: today.toString()) ))));
         },
         tooltip: "Next Page",
         child: Center(
