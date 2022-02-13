@@ -5,7 +5,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:lottie/lottie.dart';
+ import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -167,7 +167,7 @@ class _LocationState extends State<Location> {
         child: Center(
             child: Container(
                 padding: const EdgeInsets.all(5),
-                child: Image.asset("assets/right.json",
+                child: Lottie.asset("assets/right.json",
                     width: size.width * 0.2))),
       ),
     );
