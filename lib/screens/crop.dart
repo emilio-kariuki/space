@@ -130,17 +130,17 @@ class _CropState extends State<Crop> {
                   ),
                 ]
               ),
-              SizedBox(height: 10),
+              // SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
                 child: Lottie.asset(
-                  "assets/forest.json",
+                  "assets/vase.json",
                   animate: true,
                   height: size.height * 0.37,
                   width: size.width,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
