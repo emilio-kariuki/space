@@ -92,7 +92,7 @@ class _DateState extends State<Date> {
                             Padding(
                               padding: const EdgeInsets.only(top:10),
                               child: Text("Date Today",
-                                  style: GoogleFonts.roboto(fontSize: 22, color: Colors.indigo)),
+                                  style: GoogleFonts.robotoCondensed(fontSize: 22, color: Colors.indigo)),
                             ),
                           ],
                         ),
