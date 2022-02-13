@@ -69,15 +69,19 @@ class _DateState extends State<Date> {
             width: size.width,
             fit: BoxFit.fill,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, bottom: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text("Date Today",
-                    style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
-              ],
-            ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 20, bottom: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text("Date Today",
+                        style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
+                  ],
+                ),
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20, bottom: 5),
