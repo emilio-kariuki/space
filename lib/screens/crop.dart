@@ -59,8 +59,7 @@ class _CropState extends State<Crop> {
     print(widget.value_1.date_today);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.indigo[400],
-     
+     backgroundColor: Color.fromARGB(255, 36, 47, 53),
       body: Column(
         children: [
           Padding(
