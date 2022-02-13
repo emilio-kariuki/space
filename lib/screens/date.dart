@@ -101,10 +101,11 @@ class _DateState extends State<Date> {
                         children: [
                           Expanded(
                             child: Container(
-                                margin: const EdgeInsets.only(left: 15.0, right: 10.0),
+                                margin: const EdgeInsets.only(left: 20.0, right: 20.0),
                                 child: Divider(
                                   color: Color.fromARGB(255, 0, 0, 0),
                                   height: 5,
+                                  thickness: 0.4,
                                 )),
                           ),
                         ],
