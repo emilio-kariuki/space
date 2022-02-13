@@ -108,7 +108,7 @@ class _PictureState extends State<Picture> {
                   child: Container(
                     //  color: Colors.grey,
                     child: Center(
-                      child: image! != null
+                      child: image != null
                           ? ClipRRect(
                               borderRadius: BorderRadius.circular(30),
                               child: Image.file(
