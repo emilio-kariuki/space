@@ -50,8 +50,8 @@ class _CropState extends State<Crop> {
     "Rachel"
   ];
 
-  String ?selectedType;
-  String ?selectedVariety;
+  String selectedType = "Emilio";
+  String selectedVariety = "Rosie";
 
   @override
   Widget build(BuildContext context) {
@@ -251,7 +251,7 @@ class _CropState extends State<Crop> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Picture(value_2: User2(type: selectedType!, variety: selectedVariety!, date_plantation: widget.value_1.date_plantation, date_today: widget.value_1.date_today)))));
+              .push(MaterialPageRoute(builder: ((context) => Picture(value_2: User2(type: selectedType, variety: selectedVariety, date_plantation: widget.value_1.date_plantation, date_today: widget.value_1.date_today)))));
         },
         tooltip: "Next Page",
         child: Center(
