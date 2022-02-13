@@ -1,15 +1,15 @@
+// ignore_for_file: avoid_print
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/image.dart';
-import 'package:space/screens/location.dart';
 
 class Crop extends StatefulWidget {
-  Crop({Key? key}) : super(key: key);
+  const Crop({Key? key}) : super(key: key);
 
   @override
   State<Crop> createState() => _CropState();

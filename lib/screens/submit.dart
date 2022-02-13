@@ -4,7 +4,7 @@ import 'package:space/constants.dart/colors.dart';
 
 
 class Submit extends StatefulWidget {
-  Submit({Key? key}) : super(key: key);
+  const Submit({Key? key}) : super(key: key);
 
   @override
   State<Submit> createState() => _SubmitState();

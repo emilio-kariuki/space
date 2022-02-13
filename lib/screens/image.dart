@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, avoid_print
 
 import 'dart:io';
 
@@ -9,7 +9,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
-import 'package:space/screens/crop.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:space/screens/location.dart';
 

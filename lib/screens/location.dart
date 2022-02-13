@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, prefer_final_fields, unused_import, import_of_legacy_library_into_null_safe
+// ignore_for_file: avoid_print, prefer_final_fields, unused_import, import_of_legacy_library_into_null_safe, library_prefixes
 import "dart:async";
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/gestures.dart';
