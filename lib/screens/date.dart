@@ -39,7 +39,9 @@ class _DateState extends State<Date> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Material(
+            Stack(
+              children: [
+                Material(
               elevation: 20,
                 shadowColor: Color.fromARGB(255, 97, 94, 94),
                 shape: RoundedRectangleBorder(
@@ -94,6 +96,13 @@ class _DateState extends State<Date> {
                     ],
                   ),
                 )),
+                Positioned(
+                  top: 5,
+                  right: 5,
+                  child: Lottie.asset("assets/celebration.json",height:size.height * 0.1,width: size.width * 0.34,animate:true),
+                ),
+              ]
+            ),
             SizedBox(height: 10),
             Lottie.asset(
               "assets/date.json",
