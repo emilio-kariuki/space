@@ -72,6 +72,8 @@ class _DateState extends State<Date> {
                               },
                             ),
                           ),
+                          SizedBox(width: 25),
+                          Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
                         ],
                       ),
                       Padding(
