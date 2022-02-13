@@ -39,27 +39,15 @@ class _DateState extends State<Date> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: BuildBar(
-                    iconUrl: "assets/icons/back.png",
-                    func: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                ),
-              ],
-            ),
             Material(
+              elevation: 20,
+                shadowColor: Color.fromARGB(255, 97, 94, 94),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30))),
                 child: Container(
-                  height: size.height * 0.1,
+                  height: size.height * 0.15,
                   width: size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -67,6 +55,24 @@ class _DateState extends State<Date> {
                         bottomRight: Radius.circular(30)),
                     color: Colors.white,
                     shape: BoxShape.rectangle,
+                  ),
+                  child: Column(
+                    children: [
+                       Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
+                            child: BuildBar(
+                              iconUrl: "assets/icons/back.png",
+                              func: () {
+                                Navigator.pop(context);
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 )),
             Padding(
