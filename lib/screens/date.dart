@@ -98,7 +98,7 @@ class _DateState extends State<Date> {
                 )),
                 Positioned(
                   top: 3,
-                  right: 5,
+                  right: 15,
                   child: Lottie.asset("assets/celebration.json",height:200.1,width: 100.1,animate:true),
                 ),
               ]
@@ -411,7 +411,7 @@ class _DateState extends State<Date> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 189, 139, 31),
+        backgroundColor: Color.fromARGB(255, 216, 169, 31),
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: ((context) => Crop(
