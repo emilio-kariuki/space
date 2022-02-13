@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print, unnecessary_null_comparison
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -34,34 +35,26 @@ class _SubmitState extends State<Submit> {
               style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
           elevation: 0,
         ),
-        body: Center(
-          child: Material(
-                    elevation: 10,
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      //  color: Colors.grey,
-                      child: Center(
-                        child: Scaffold(
-                          body:GoogleMap(
-                              initialCameraPosition: CameraPosition(
-                                  target: LatLng(
-                                      widget.value_4.y_coordinate, widget.value_4.x_coordinate),zoom: 15.0),
-                              mapType: MapType.hybrid,
-                              zoomControlsEnabled: false,
-                              zoomGesturesEnabled: true,
-                              onMapCreated: (GoogleMapController controller) {
-                                _controller.complete(controller);
-                              },
-                            ) ,
-                        )
-                      ),
-                      height: size.height * 0.3,
-                      width: size.width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30), color: kWhite),
-                      // image: image
-                    ),
-                  ),
+        body: Column(
+          children: [
+            Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: AnimatedTextKit(
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  'Location',
+                  textStyle: GoogleFonts.robotoCondensed(
+                      fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
+                  speed: const Duration(milliseconds: 400),
+                ),
+              ],
+              totalRepeatCount: 4,
+              pause: const Duration(milliseconds: 1000),
+              displayFullTextOnTap: true,
+              // stopPauseOnTap: true,
+            ),
+          ),
+          ],
         ),
         );
   }
