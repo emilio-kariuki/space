@@ -1,5 +1,6 @@
-// ignore_for_file: avoid_print, prefer_final_fields, unused_import, import_of_legacy_library_into_null_safe, library_prefixes
+// ignore_for_file: avoid_print, prefer_final_fields, unused_import, import_of_legacy_library_into_null_safe, library_prefixes, non_constant_identifier_names
 import "dart:async";
+import 'dart:io';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
@@ -13,9 +14,28 @@ import 'package:geolocator/geolocator.dart';
 import 'package:space/screens/image.dart';
 import 'package:space/screens/submit.dart';
 
+class User4 {
+  String type;
+  String variety;
+  String date_plantation;
+  String date_today;
+  File image;
+  double x_coordinate;
+  double y_coordinate;
+  User4(
+      {
+      required this.x_coordinate,
+      required this.y_coordinate,
+      required this.image,
+      required this.type,
+      required this.variety,
+      required this.date_plantation,
+      required this.date_today});
+}
+
 class Location extends StatefulWidget {
   final User3 value_3;
-  const Location({Key? key, required  this.value_3}) : super(key: key);
+  const Location({Key? key, required this.value_3}) : super(key: key);
 
   @override
   State<Location> createState() => _LocationState();
