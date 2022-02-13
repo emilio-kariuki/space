@@ -39,11 +39,19 @@ class _DateState extends State<Date> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            BuildBar(
-              iconUrl: "assets/icons/back.png",
-              func: () {
-                Navigator.pop(context);
-              },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: BuildBar(
+                    iconUrl: "assets/icons/back.png",
+                    func: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+              ],
             ),
             Material(
                 shape: RoundedRectangleBorder(

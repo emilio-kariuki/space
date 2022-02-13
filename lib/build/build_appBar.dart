@@ -13,7 +13,7 @@ class BuildBar extends StatelessWidget {
       child: GestureDetector(
         onTap: func,
         child: BuildBox(
-          child: Image.asset(iconUrl),
+          child: Image.asset(iconUrl,color: Colors.white),
         ),
       ),
     );

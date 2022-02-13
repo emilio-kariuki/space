@@ -12,12 +12,12 @@ class BuildBox extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
         padding: const EdgeInsets.all(5),
-        height: size.height * 0.1,
-        width: size.width * 0.1,
+        height: size.height * 0.06,
+        width: size.width * 0.17,
         decoration : BoxDecoration(
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(10),
-          color: Colors.white
+          color: Color.fromARGB(255, 35, 47, 53)
         ),child: child,
       ),
     );
