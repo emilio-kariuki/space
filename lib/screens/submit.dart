@@ -34,16 +34,35 @@ class _SubmitState extends State<Submit> {
               style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
           elevation: 0,
         ),
-        body: GoogleMap(
-          initialCameraPosition: CameraPosition(
-              target: LatLng(
-                  widget.value_4.y_coordinate, widget.value_4.x_coordinate),zoom: 15.0),
-          mapType: MapType.hybrid,
-          zoomControlsEnabled: false,
-          zoomGesturesEnabled: true,
-          onMapCreated: (GoogleMapController controller) {
-            _controller.complete(controller);
-          },
-        ));
+        body: Center(
+          child: Material(
+                    elevation: 10,
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                      //  color: Colors.grey,
+                      child: Center(
+                        child: Scaffold(
+                          body:GoogleMap(
+                              initialCameraPosition: CameraPosition(
+                                  target: LatLng(
+                                      widget.value_4.y_coordinate, widget.value_4.x_coordinate),zoom: 15.0),
+                              mapType: MapType.hybrid,
+                              zoomControlsEnabled: false,
+                              zoomGesturesEnabled: true,
+                              onMapCreated: (GoogleMapController controller) {
+                                _controller.complete(controller);
+                              },
+                            ) ,
+                        )
+                      ),
+                      height: size.height * 0.3,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30), color: kWhite),
+                      // image: image
+                    ),
+                  ),
+        ),
+        );
   }
 }
