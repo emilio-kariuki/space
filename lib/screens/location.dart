@@ -90,20 +90,34 @@ class _LocationState extends State<Location> {
             style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
         elevation: 0,
       ),
-      body: Stack(
+      body: Column(
         children: [
-          Positioned(
-              top: 2, left: 2, child: TextConstant(body: "Get Location")),
-          GoogleMap(
-            mapType: MapType.hybrid,
-            myLocationEnabled: true,
-            zoomControlsEnabled: false,
-            zoomGesturesEnabled: true,
-            initialCameraPosition: _kGooglePlex,
-            onMapCreated: (GoogleMapController controller) {
-              _controller.complete(controller);
-              getLocation();
-            },
+          Material(
+            elevation: 10,
+            borderRadius: BorderRadius.circular(30),
+            child: Container(
+              //  color: Colors.grey,
+              child: Center(
+                child: Scaffold(
+                  body:GoogleMap(
+                    mapType: MapType.hybrid,
+                    myLocationEnabled: true,
+                    zoomControlsEnabled: false,
+                    zoomGesturesEnabled: true,
+                    initialCameraPosition: _kGooglePlex,
+                    onMapCreated: (GoogleMapController controller) {
+                      _controller.complete(controller);
+                      getLocation();
+                    },
+                  ),
+                )
+              ),
+              height: size.height * 0.3,
+              width: size.width,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30), color: kWhite),
+              // image: image
+            ),
           ),
         ],
       ),
