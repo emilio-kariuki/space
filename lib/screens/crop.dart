@@ -50,8 +50,8 @@ class _CropState extends State<Crop> {
     "Rachel"
   ];
 
-  String? selectedType;
-  String? selectedVariety;
+  String ?selectedType;
+  String ?selectedVariety;
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +130,7 @@ class _CropState extends State<Crop> {
                 onChanged: (value) {
                   setState(() {
                     selectedType = value as String;
-                    //print(selectedType);
+                    print(selectedType);
                   });
                 },
                 icon: const Icon(
@@ -196,7 +196,7 @@ class _CropState extends State<Crop> {
                 onChanged: (value) {
                   setState(() {
                     selectedVariety = value as String;
-                    // print(selectedVariety);
+                    print(selectedVariety);
                   });
                 },
                 icon: const Icon(
