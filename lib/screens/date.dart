@@ -92,7 +92,7 @@ class _DateState extends State<Date> {
                             Padding(
                               padding: const EdgeInsets.only(top:10),
                               child: Text("Date Today",
-                                  style: GoogleFonts.robotoCondensed(fontSize: 22, color: Colors.indigo)),
+                                  style: GoogleFonts.redressed(fontSize: 22, color: Colors.indigo)),
                             ),
                           ],
                         ),
@@ -163,10 +163,10 @@ class _DateState extends State<Date> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text("Current Date",style: GoogleFonts.roboto(fontSize:15,color: Color.fromARGB(255, 0, 0, 0))),
+                                Text("Current Date",style: GoogleFonts.redressed(fontSize:20,color: Color.fromARGB(255, 0, 0, 0))),
                                 SizedBox(height:4),
                                 Text(today == null ? "select date" : today.toString(),
-                                    style: GoogleFonts.roboto(fontSize: 24, color: Colors.indigo)),
+                                    style: GoogleFonts.redressed(fontSize: 21, color: Colors.indigo)),
                               ],
                             ),
                           ),
