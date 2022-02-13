@@ -72,11 +72,12 @@ class _DateState extends State<Date> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Material(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               elevation: 5,
               child: Container(
+                padding: const EdgeInsets.all(1),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(20),
                   color: kWhite,
                 ),
                 child: Column(
