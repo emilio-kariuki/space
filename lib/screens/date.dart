@@ -233,7 +233,7 @@ class _DateState extends State<Date> {
                                               ? "select date"
                                               : today.toString(),
                                           style: GoogleFonts.redressed(
-                                              fontSize: 20,
+                                              fontSize: 19,
                                               color: Colors.indigo)),
                                     ],
                                   ),
@@ -383,7 +383,7 @@ class _DateState extends State<Date> {
                                               ? "select date"
                                               : today.toString(),
                                           style: GoogleFonts.redressed(
-                                              fontSize: 20,
+                                              fontSize: 19,
                                               color: Colors.indigo)),
                                     ],
                                   ),
