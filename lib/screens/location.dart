@@ -111,7 +111,13 @@ class _LocationState extends State<Location> {
               // stopPauseOnTap: true,
             ),
           ),
-          
+          Lottie.asset(
+            "assets/point.json",
+            animate: true,
+            height: size.height * 0.37,
+            width: size.width,
+            fit: BoxFit.fill,
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Center(
