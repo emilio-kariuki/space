@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use, avoid_print, non_constant_identifier_names
+// ignore_for_file: deprecated_member_use, avoid_print, non_constant_identifier_names, unnecessary_null_comparison
 
 import 'dart:io';
 
@@ -108,7 +108,7 @@ class _PictureState extends State<Picture> {
                   child: Container(
                     //  color: Colors.grey,
                     child: Center(
-                      child: image != null
+                      child: image! != null
                           ? ClipRRect(
                               borderRadius: BorderRadius.circular(30),
                               child: Image.file(
