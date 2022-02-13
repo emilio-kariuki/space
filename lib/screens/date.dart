@@ -75,7 +75,7 @@ class _DateState extends State<Date> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               elevation: 5,
               child: Container(
-                padding: const EdgeInsets.all(1),
+                // padding: const EdgeInsets.all(1),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: kWhite,
@@ -158,8 +158,13 @@ class _DateState extends State<Date> {
                           onTap: () {
                             setState(() {});
                           },
-                          child: Text(today == null ? "select date" : today.toString(),
-                              style: GoogleFonts.roboto(fontSize: 24, color: Colors.indigo)),
+                          child: Column(
+                            children: [
+                              Text("Current Date",style: GoogleFonts.roboto(fontSize:10,color: Colors.indigo)),
+                              Text(today == null ? "select date" : today.toString(),
+                                  style: GoogleFonts.roboto(fontSize: 24, color: Colors.indigo)),
+                            ],
+                          ),
                         ),
                       ],
                     ),
