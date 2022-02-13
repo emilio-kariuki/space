@@ -48,7 +48,7 @@ class _DateState extends State<Date> {
             padding: const EdgeInsets.all(8.0),
             child: AnimatedTextKit(
               animatedTexts: [
-                TypewriterAnimatedText(
+                WavyAnimatedText(
                   'Date',
                   textStyle: GoogleFonts.robotoCondensed(
                       fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),

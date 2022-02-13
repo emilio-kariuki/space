@@ -72,7 +72,7 @@ class _CropState extends State<Crop> {
             padding: const EdgeInsets.only(top: 8),
             child: AnimatedTextKit(
               animatedTexts: [
-                TypewriterAnimatedText(
+                WavyAnimatedText(
                   'Plant',
                   textStyle: GoogleFonts.robotoCondensed(
                       fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),

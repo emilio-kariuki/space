@@ -98,7 +98,7 @@ class _LocationState extends State<Location> {
             padding: const EdgeInsets.only(top: 8),
             child: AnimatedTextKit(
               animatedTexts: [
-                TypewriterAnimatedText(
+                WavyAnimatedText(
                   'Location',
                   textStyle: GoogleFonts.robotoCondensed(
                       fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
