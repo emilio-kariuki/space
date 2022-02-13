@@ -41,19 +41,7 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
-  List<Marker> allMarker = [];
-
-  @override
-  void initState() {
-    super.initState();
-    allMarker.add(Marker(
-        markerId: MarkerId("my point"),
-        draggable: false,
-        position: LatLng(longitude!, latitude!),
-        onTap: () {
-          print("marker pressed");
-        }));
-  }
+  
 
   GoogleMapController? newGoogleMapController;
   double? latitude;
