@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import "package:google_fonts/google_fonts.dart";
@@ -6,6 +8,13 @@ import 'package:lottie/lottie.dart';
 import 'package:space/build/full_container.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/crop.dart';
+
+class User1 {
+  String date_plantation;
+  String date_today;
+
+   User1({required this.date_plantation, required this.date_today});
+}
 
 class Date extends StatefulWidget {
   const Date({Key? key}) : super(key: key);
@@ -29,7 +38,7 @@ class _DateState extends State<Date> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         title: Text("Kenya Space Agency",
             style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
-            elevation: 0,
+        elevation: 0,
       ),
       body: Column(
         mainAxisSize: MainAxisSize.min,
@@ -77,50 +86,48 @@ class _DateState extends State<Date> {
                 LottieContainer(
                     func: () {
                       setState(() {
-                      showDatePicker(
-                              builder: (context, child) {
-                                return Theme(
-                                  data: Theme.of(context).copyWith(
-                                    colorScheme: ColorScheme.light(
-                                      primary: Color.fromARGB(255, 201, 22,
-                                          31), // header background color
-                                      onPrimary:
-                                          Colors.black, // header text color
-                                      onSurface: Color.fromARGB(
-                                          255, 0, 0, 0), // body text color
-                                    ),
-                                    textButtonTheme: TextButtonThemeData(
-                                      style: TextButton.styleFrom(
-                                        primary:
-                                            Colors.red, // button text color
+                        showDatePicker(
+                                builder: (context, child) {
+                                  return Theme(
+                                    data: Theme.of(context).copyWith(
+                                      colorScheme: ColorScheme.light(
+                                        primary: Color.fromARGB(255, 201, 22,
+                                            31), // header background color
+                                        onPrimary:
+                                            Colors.black, // header text color
+                                        onSurface: Color.fromARGB(
+                                            255, 0, 0, 0), // body text color
+                                      ),
+                                      textButtonTheme: TextButtonThemeData(
+                                        style: TextButton.styleFrom(
+                                          primary:
+                                              Colors.red, // button text color
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  child: child!,
-                                );
-                              },
-                              context: context,
-                              initialDate: today ?? DateTime.now(),
-                              firstDate: DateTime(2000),
-                              lastDate: DateTime(2023))
-                          .then((value) {
-                        setState(() {
-                          today = value;
-                          today = DateFormat.yMMM().format(today!) as DateTime?;
+                                    child: child!,
+                                  );
+                                },
+                                context: context,
+                                initialDate: today ?? DateTime.now(),
+                                firstDate: DateTime(2000),
+                                lastDate: DateTime(2023))
+                            .then((value) {
+                          setState(() {
+                            today = value;
+                            today =
+                                DateFormat.yMMM().format(today!) as DateTime?;
+                          });
                         });
                       });
-                      });
                     },
-                    lottieUrl:
-                        "assets/icon.json"),
+                    lottieUrl: "assets/icon.json"),
                 SizedBox(width: size.width * 0.13),
                 GestureDetector(
-                  onTap: (){
-                    setState(() {
-                    });
+                  onTap: () {
+                    setState(() {});
                   },
-                  child: Text(
-                      today == null ? "select date" : today.toString(),
+                  child: Text(today == null ? "select date" : today.toString(),
                       style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
                 ),
               ],
@@ -172,20 +179,21 @@ class _DateState extends State<Date> {
                           .then((value) {
                         setState(() {
                           plantation = value;
-                          plantation = DateFormat.yMMM().format(plantation!) as DateTime?;
+                          plantation = DateFormat.yMMM().format(plantation!)
+                              as DateTime?;
                         });
                       });
                     },
-                    lottieUrl:
-                        "assets/icon.json"),
+                    lottieUrl: "assets/icon.json"),
                 SizedBox(width: size.width * 0.13),
                 GestureDetector(
-                  onTap: (){
-                    setState(() {
-                    });
+                  onTap: () {
+                    setState(() {});
                   },
                   child: Text(
-                      plantation == null ? "Select date" : plantation.toString(),
+                      plantation == null
+                          ? "Select date"
+                          : plantation.toString(),
                       style: GoogleFonts.roboto(fontSize: 24, color: kWhite)),
                 ),
               ],
@@ -203,8 +211,7 @@ class _DateState extends State<Date> {
         child: Center(
             child: Container(
                 padding: const EdgeInsets.all(5),
-                child: Lottie.asset(
-                    "assets/right.json",
+                child: Lottie.asset("assets/right.json",
                     width: size.width * 0.2))),
       ),
     );
