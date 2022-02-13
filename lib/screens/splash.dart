@@ -22,13 +22,22 @@ class _SplashState extends State<Splash> {
               MaterialPageRoute(builder: (context) => Date()),
             ));
   }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color.fromARGB(239, 35, 156, 255),
       extendBodyBehindAppBar: true,
-      body: Stack(children:[Positioned(child: Text("Kenya Space Agency",style: GoogleFonts.roboto(fontSize: 28,color: kWhite))),Lottie.asset("assets/update_splash.json",width: size.width,height: size.height * 2)] ),
+      body: Stack(children: [
+        Positioned(
+            bottom: size.height * 0.2,
+            right: size.width * 0.1,
+            child: Text("Kenya Space Agency",
+                style: GoogleFonts.roboto(fontSize: 28, color: kWhite))),
+        Lottie.asset("assets/update_splash.json",
+            width: size.width, height: size.height * 2)
+      ]),
     );
   }
 }
