@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, unnecessary_null_comparison
 
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
@@ -42,7 +42,7 @@ class _SubmitState extends State<Submit> {
                             ? ClipRRect(
                                 borderRadius: BorderRadius.circular(30),
                                 child: Image.file(
-                                  widget.value_4.image!,
+                                  widget.value_4.image,
                                   width: size.width,
                                   height: size.height * 0.32,
                                   fit: BoxFit.cover,
