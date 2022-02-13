@@ -57,7 +57,7 @@ class _SubmitState extends State<Submit> {
                         RotateAnimatedText(
                           'Submit',
                           textStyle: GoogleFonts.robotoCondensed(
-                              fontSize: 27, color: Colors.indigo, fontWeight: FontWeight.w600),
+                              fontSize: 27, color: Colors.indigo, fontWeight: FontWeight.w400),
                           // speed: const Duration(milliseconds: 400),
                         ),
                       ],
