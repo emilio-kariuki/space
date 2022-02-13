@@ -5,7 +5,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
+// import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -23,8 +23,7 @@ class User4 {
   double x_coordinate;
   double y_coordinate;
   User4(
-      {
-      required this.x_coordinate,
+      {required this.x_coordinate,
       required this.y_coordinate,
       required this.image,
       required this.type,
@@ -42,6 +41,20 @@ class Location extends StatefulWidget {
 }
 
 class _LocationState extends State<Location> {
+  List<Marker> allMarker = [];
+
+  @override
+  void initState() {
+    super.initState();
+    allMarker.add(Marker(
+        markerId: MarkerId("my point"),
+        draggable: false,
+        position: LatLng(longitude!, latitude!),
+        onTap: () {
+          print("marker pressed");
+        }));
+  }
+
   GoogleMapController? newGoogleMapController;
   double? latitude;
   double? longitude;
@@ -110,16 +123,15 @@ class _LocationState extends State<Location> {
               // stopPauseOnTap: true,
             ),
           ),
-          Lottie.asset(
-            "assets/point.json",
-            animate: true,
-            height: size.height * 0.37,
-            width: size.width,
-            fit: BoxFit.fill,
-          ),
+          
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Center(child: Text("Find Location",style: GoogleFonts.roboto(fontSize: 24,color: Colors.white,fontWeight: FontWeight.bold))),
+            child: Center(
+                child: Text("Find Location",
+                    style: GoogleFonts.roboto(
+                        fontSize: 24,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold))),
           ),
           Material(
             elevation: 10,
@@ -127,20 +139,19 @@ class _LocationState extends State<Location> {
             child: Container(
               //  color: Colors.grey,
               child: Center(
-                child: Scaffold(
-                  body:GoogleMap(
-                    mapType: MapType.hybrid,
-                    myLocationEnabled: true,
-                    zoomControlsEnabled: false,
-                    zoomGesturesEnabled: true,
-                    initialCameraPosition: _kGooglePlex,
-                    onMapCreated: (GoogleMapController controller) {
-                      _controller.complete(controller);
-                      getLocation();
-                    },
-                  ),
-                )
-              ),
+                  child: Scaffold(
+                body: GoogleMap(
+                  mapType: MapType.hybrid,
+                  myLocationEnabled: true,
+                  zoomControlsEnabled: false,
+                  zoomGesturesEnabled: true,
+                  initialCameraPosition: _kGooglePlex,
+                  onMapCreated: (GoogleMapController controller) {
+                    _controller.complete(controller);
+                    getLocation();
+                  },
+                ),
+              )),
               height: size.height * 0.3,
               width: size.width,
               decoration: BoxDecoration(
@@ -153,14 +164,22 @@ class _LocationState extends State<Location> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Submit(value_4: User4(x_coordinate: longitude!, y_coordinate: latitude!, image: widget.value_3.image, type: widget.value_3.type, variety: widget.value_3.variety, date_plantation: widget.value_3.date_plantation, date_today: widget.value_3.date_today)))));
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: ((context) => Submit(
+                  value_4: User4(
+                      x_coordinate: longitude!,
+                      y_coordinate: latitude!,
+                      image: widget.value_3.image,
+                      type: widget.value_3.type,
+                      variety: widget.value_3.variety,
+                      date_plantation: widget.value_3.date_plantation,
+                      date_today: widget.value_3.date_today)))));
         },
         tooltip: "Next Page",
         child: Center(
             child: Container(
                 padding: const EdgeInsets.all(5),
-                child: Lottie.asset("assets/right.json",
+                child: Image.asset("assets/right.json",
                     width: size.width * 0.2))),
       ),
     );
