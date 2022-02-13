@@ -54,11 +54,11 @@ class _SubmitState extends State<Submit> {
                     padding: const EdgeInsets.only(top: 8),
                     child: AnimatedTextKit(
                       animatedTexts: [
-                        TypewriterAnimatedText(
+                        RotateAnimatedText(
                           'Submit',
                           textStyle: GoogleFonts.robotoCondensed(
                               fontSize: 27, color: Colors.indigo, fontWeight: FontWeight.w600),
-                          speed: const Duration(milliseconds: 400),
+                          // speed: const Duration(milliseconds: 400),
                         ),
                       ],
                       totalRepeatCount: 4,
