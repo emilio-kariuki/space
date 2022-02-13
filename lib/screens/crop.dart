@@ -12,8 +12,10 @@ import 'package:space/screens/image.dart';
 class User2 {
   String type;
   String variety;
+  String date_plantation;
+  String date_today;
 
-  User2({required this.type, required this.variety});
+  User2({required this.type, required this.variety,required this.date_plantation, required this.date_today});
 }
 
 class Crop extends StatefulWidget {
@@ -249,7 +251,7 @@ class _CropState extends State<Crop> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Picture())));
+              .push(MaterialPageRoute(builder: ((context) => Picture(value_2: User2(type: selectedType!, variety: selectedVariety!, date_plantation: widget.value_1.date_plantation, date_today: widget.value_1.date_today)))));
         },
         tooltip: "Next Page",
         child: Center(

@@ -10,10 +10,12 @@ import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/Text.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:space/screens/crop.dart';
 import 'package:space/screens/location.dart';
 
 class Picture extends StatefulWidget {
-  const Picture({Key? key}) : super(key: key);
+  final User2 value_2;
+  const Picture({Key? key, required this.value_2}) : super(key: key);
 
   @override
   State<Picture> createState() => _PictureState();
@@ -39,6 +41,11 @@ class _PictureState extends State<Picture> {
 
   @override
   Widget build(BuildContext context) {
+    print(widget.value_2.date_plantation);
+    print(widget.value_2.date_today);
+    print(widget.value_2.type);
+    print(widget.value_2.variety);
+
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.indigo[400],
@@ -86,21 +93,22 @@ class _PictureState extends State<Picture> {
                     //  color: Colors.grey,
                     child: Center(
                       child: image != null
-                            ? ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
-                                child: Image.file(
-                                  image!,
-                                  width: size.width,
-                                  height: size.height * 0.32,
-                                  fit: BoxFit.cover,
-                                ),
-                              ) : Text("Select Image"),
+                          ? ClipRRect(
+                              borderRadius: BorderRadius.circular(30),
+                              child: Image.file(
+                                image!,
+                                width: size.width,
+                                height: size.height * 0.32,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                          : Text("Select Image"),
                     ),
                     height: size.height * 0.3,
                     width: size.width,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30), color: kWhite),
-                        // image: image
+                    // image: image
                   ),
                 ),
                 Positioned(
@@ -116,46 +124,49 @@ class _PictureState extends State<Picture> {
                                 width: size.width,
                                 height: size.height * 0.2,
                                 decoration: BoxDecoration(
-                                    //border: Border.all(color: Color.fromARGB(255, 182, 36, 116),width:1 ),
-                                    borderRadius: BorderRadius.circular(10),),
-                                  child: AlertDialog(
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20)),
-                                    contentPadding: EdgeInsets.all(5),
-                                    title: const Text('choose image from: '),
-                                    content: SingleChildScrollView(
-                                      child: ListBody(children: [
-                                        ListTile(
-                                          selectedColor: Colors.grey,
-                                          onTap: () {
-                                            takePhoto(ImageSource.camera);
+                                  //border: Border.all(color: Color.fromARGB(255, 182, 36, 116),width:1 ),
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: AlertDialog(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20)),
+                                  contentPadding: EdgeInsets.all(5),
+                                  title: const Text('choose image from: '),
+                                  content: SingleChildScrollView(
+                                    child: ListBody(children: [
+                                      ListTile(
+                                        selectedColor: Colors.grey,
+                                        onTap: () {
+                                          takePhoto(ImageSource.camera);
+                                          Navigator.pop(context);
+                                        },
+                                        leading: Icon(Icons.camera,
+                                            color: Colors.blueGrey[900]),
+                                        title: Text("Camera"),
+                                      ),
+                                      ListTile(
+                                        selectedColor: Colors.grey,
+                                        onTap: () {
+                                          setState(() {
+                                            takePhoto(ImageSource.gallery);
                                             Navigator.pop(context);
-                                          },
-                                          leading: Icon(Icons.camera,color: Colors.blueGrey[900]),
-                                          title: Text("Camera"),
-                                        ),
-                                        ListTile(
-                                          selectedColor: Colors.grey,
-                                          onTap: () {
-                                            setState(() {
-                                              takePhoto(ImageSource.gallery);
-                                              Navigator.pop(context);
-                                            });
-                                          },
-                                          leading: Icon(Icons.layers,color: Colors.blueGrey[900]),
-                                          title: GestureDetector(
-                                            onTap: (){
+                                          });
+                                        },
+                                        leading: Icon(Icons.layers,
+                                            color: Colors.blueGrey[900]),
+                                        title: GestureDetector(
+                                            onTap: () {
                                               setState(() {
-                                              takePhoto(ImageSource.gallery);
-                                              Navigator.pop(context);
-                                            });
+                                                takePhoto(ImageSource.gallery);
+                                                Navigator.pop(context);
+                                              });
                                             },
                                             child: Text("Gallery")),
-                                        ),
-                                      ]),
-                                    ),
+                                      ),
+                                    ]),
                                   ),
                                 ),
+                              ),
                             );
                           });
                         },
@@ -178,8 +189,7 @@ class _PictureState extends State<Picture> {
         child: Center(
             child: Container(
                 padding: const EdgeInsets.all(5),
-                child: Lottie.asset(
-                    "assets/right.json",
+                child: Lottie.asset("assets/right.json",
                     width: size.width * 0.2))),
       ),
     );
