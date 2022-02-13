@@ -38,23 +38,25 @@ class _SubmitState extends State<Submit> {
         ),
         body: Column(
           children: [
-            Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: AnimatedTextKit(
-              animatedTexts: [
-                TypewriterAnimatedText(
-                  'Location',
-                  textStyle: GoogleFonts.robotoCondensed(
-                      fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
-                  speed: const Duration(milliseconds: 400),
-                ),
-              ],
-              totalRepeatCount: 4,
-              pause: const Duration(milliseconds: 1000),
-              displayFullTextOnTap: true,
-              // stopPauseOnTap: true,
-            ),
+            Center(
+              child: Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  TypewriterAnimatedText(
+                    'Submit',
+                    textStyle: GoogleFonts.robotoCondensed(
+                        fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
+                    speed: const Duration(milliseconds: 400),
+                  ),
+                ],
+                totalRepeatCount: 4,
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                // stopPauseOnTap: true,
+              ),
           ),
+            ),
           ],
         ),
         );
