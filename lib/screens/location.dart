@@ -14,7 +14,8 @@ import 'package:space/screens/image.dart';
 import 'package:space/screens/submit.dart';
 
 class Location extends StatefulWidget {
-  const Location({Key? key}) : super(key: key);
+  final User3 value_3;
+  const Location({Key? key, required  this.value_3}) : super(key: key);
 
   @override
   State<Location> createState() => _LocationState();
@@ -22,8 +23,8 @@ class Location extends StatefulWidget {
 
 class _LocationState extends State<Location> {
   GoogleMapController? newGoogleMapController;
-  double ?latitude;
-  double ?longitude;
+  double? latitude;
+  double? longitude;
   // LatLng ltPosition = LatLng(latitude!, longitude!);
   getPermission() async {
     var locate = await Geolocator.getCurrentPosition(
@@ -56,6 +57,11 @@ class _LocationState extends State<Location> {
 
   @override
   Widget build(BuildContext context) {
+    print(widget.value_3.date_plantation);
+    print(widget.value_3.date_today);
+    print(widget.value_3.type);
+    print(widget.value_3.variety);
+    print(widget.value_3.image);
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -67,19 +73,16 @@ class _LocationState extends State<Location> {
       body: Stack(
         children: [
           Positioned(
-            top:2,
-            left: 2,
-            child: TextConstant(body: "Get Location")),
+              top: 2, left: 2, child: TextConstant(body: "Get Location")),
           GoogleMap(
             mapType: MapType.hybrid,
             myLocationEnabled: true,
             zoomControlsEnabled: false,
             zoomGesturesEnabled: true,
-            
             initialCameraPosition: _kGooglePlex,
             onMapCreated: (GoogleMapController controller) {
               _controller.complete(controller);
-               getLocation();
+              getLocation();
             },
           ),
         ],
@@ -94,8 +97,7 @@ class _LocationState extends State<Location> {
         child: Center(
             child: Container(
                 padding: const EdgeInsets.all(5),
-                child: Lottie.asset(
-                    "assets/right.json",
+                child: Lottie.asset("assets/right.json",
                     width: size.width * 0.2))),
       ),
     );

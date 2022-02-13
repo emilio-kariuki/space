@@ -199,7 +199,7 @@ class _PictureState extends State<Picture> {
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         onPressed: () {
           Navigator.of(context)
-              .push(MaterialPageRoute(builder: ((context) => Location())));
+              .push(MaterialPageRoute(builder: ((context) => Location(value_3: User3(image: image!, type: widget.value_2.type, variety: widget.value_2.variety, date_plantation: widget.value_2.date_plantation, date_today: widget.value_2.date_today)))));
         },
         tooltip: "Next Page",
         child: Center(
