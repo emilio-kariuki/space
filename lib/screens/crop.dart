@@ -60,12 +60,7 @@ class _CropState extends State<Crop> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.indigo[400],
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 189, 139, 31),
-        title: Text("Kenya Space Agency",
-            style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
-        elevation: 0,
-      ),
+     
       body: Column(
         children: [
           Padding(
