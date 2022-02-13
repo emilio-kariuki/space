@@ -274,8 +274,8 @@ class _DateState extends State<Date> {
                                           lastDate: DateTime(2023))
                                       .then((value) {
                                     setState(() {
-                                      today = value;
-                                      today =
+                                      plantation = value;
+                                      plantation =
                                           DateFormat.yMMM().format(today!) as DateTime?;
                                     });
                                   });
