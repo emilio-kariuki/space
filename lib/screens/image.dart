@@ -84,7 +84,7 @@ class _PictureState extends State<Picture> {
                   speed: const Duration(milliseconds: 400),
                 ),
               ],
-              totalRepeatCount: 4,
+              totalRepeatCount: 20,
               pause: const Duration(milliseconds: 1000),
               displayFullTextOnTap: true,
               // stopPauseOnTap: true,
