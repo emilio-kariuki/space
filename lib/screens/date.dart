@@ -34,7 +34,7 @@ class _DateState extends State<Date> {
     return Scaffold(
       key: mainKey,
       // extendBodyBehindAppBar: true,
-      backgroundColor: Colors.indigo[400],
+      backgroundColor: Color.fromARGB(255, 36, 47, 53),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         title: Text("Kenya Space Agency",
