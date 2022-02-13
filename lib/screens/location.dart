@@ -84,6 +84,7 @@ class _LocationState extends State<Location> {
     print(widget.value_3.image);
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.indigo[400],
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
         title: Text("Kenya Space Agency",
@@ -92,12 +93,33 @@ class _LocationState extends State<Location> {
       ),
       body: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: AnimatedTextKit(
+              animatedTexts: [
+                TypewriterAnimatedText(
+                  'Image',
+                  textStyle: GoogleFonts.robotoCondensed(
+                      fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
+                  speed: const Duration(milliseconds: 400),
+                ),
+              ],
+              totalRepeatCount: 4,
+              pause: const Duration(milliseconds: 1000),
+              displayFullTextOnTap: true,
+              // stopPauseOnTap: true,
+            ),
+          ),
           Lottie.asset(
             "assets/location.json",
             animate: true,
             height: size.height * 0.37,
             width: size.width,
             fit: BoxFit.fill,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(child: Text("Find Location",style: GoogleFonts.roboto(fontSize: 24,color: Colors.white,fontWeight: FontWeight.bold))),
           ),
           Material(
             elevation: 10,
