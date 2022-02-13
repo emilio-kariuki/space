@@ -159,8 +159,10 @@ class _DateState extends State<Date> {
                             setState(() {});
                           },
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Current Date",style: GoogleFonts.roboto(fontSize:10,color: Colors.indigo)),
+                              Text("Current Date",style: GoogleFonts.roboto(fontSize:15,color: Color.fromARGB(255, 0, 0, 0))),
+                              SizedBox(height:4),
                               Text(today == null ? "select date" : today.toString(),
                                   style: GoogleFonts.roboto(fontSize: 24, color: Colors.indigo)),
                             ],
