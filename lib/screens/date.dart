@@ -69,113 +69,127 @@ class _DateState extends State<Date> {
             width: size.width,
             fit: BoxFit.fill,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Material(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-              elevation: 5,
-              child: Container(
-                // padding: const EdgeInsets.all(1),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: kWhite,
-                ),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, bottom: 5),
+          Stack(
+            children: [
+              Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Material(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                elevation: 5,
+                child: Container(
+                  // padding: const EdgeInsets.all(1),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: kWhite,
+                  ),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20, bottom: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top:10),
+                              child: Text("Date Today",
+                                  style: GoogleFonts.roboto(fontSize: 22, color: Colors.indigo)),
+                            ),
+                          ],
+                        ),
+                      ),
+                       Row(
+                        children: [
+                          Expanded(
+                            child: Container(
+                                margin: const EdgeInsets.only(left: 15.0, right: 10.0),
+                                child: Divider(
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  height: 5,
+                                )),
+                          ),
+                        ],
+                      ),
+                       Padding(
+                    padding: const EdgeInsets.only(left: 10, bottom: 5),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left:8,bottom: 8,top:5),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(top:10),
-                            child: Text("Date Today",
-                                style: GoogleFonts.roboto(fontSize: 22, color: Colors.indigo)),
+                          LottieContainer(
+                              func: () {
+                                setState(() {
+                                  showDatePicker(
+                                          builder: (context, child) {
+                                            return Theme(
+                                              data: Theme.of(context).copyWith(
+                                                colorScheme: ColorScheme.light(
+                                                  primary: Color.fromARGB(255, 201, 22,
+                                                      31), // header background color
+                                                  onPrimary:
+                                                      Colors.black, // header text color
+                                                  onSurface: Color.fromARGB(
+                                                      255, 0, 0, 0), // body text color
+                                                ),
+                                                textButtonTheme: TextButtonThemeData(
+                                                  style: TextButton.styleFrom(
+                                                    primary:
+                                                        Colors.red, // button text color
+                                                  ),
+                                                ),
+                                              ),
+                                              child: child!,
+                                            );
+                                          },
+                                          context: context,
+                                          initialDate: today ?? DateTime.now(),
+                                          firstDate: DateTime(2000),
+                                          lastDate: DateTime(2023))
+                                      .then((value) {
+                                    setState(() {
+                                      today = value;
+                                      today =
+                                          DateFormat.yMMM().format(today!) as DateTime?;
+                                    });
+                                  });
+                                });
+                              },
+                              lottieUrl: "assets/icon.json"),
+                          SizedBox(width: size.width * 0.13),
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {});
+                            },
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Current Date",style: GoogleFonts.roboto(fontSize:15,color: Color.fromARGB(255, 0, 0, 0))),
+                                SizedBox(height:4),
+                                Text(today == null ? "select date" : today.toString(),
+                                    style: GoogleFonts.roboto(fontSize: 24, color: Colors.indigo)),
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
-                     Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                              margin: const EdgeInsets.only(left: 15.0, right: 10.0),
-                              child: Divider(
-                                color: Color.fromARGB(255, 0, 0, 0),
-                                height: 5,
-                              )),
-                        ),
-                      ],
-                    ),
-                     Padding(
-                  padding: const EdgeInsets.only(left: 10, bottom: 5),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left:8,bottom: 8,top:5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        LottieContainer(
-                            func: () {
-                              setState(() {
-                                showDatePicker(
-                                        builder: (context, child) {
-                                          return Theme(
-                                            data: Theme.of(context).copyWith(
-                                              colorScheme: ColorScheme.light(
-                                                primary: Color.fromARGB(255, 201, 22,
-                                                    31), // header background color
-                                                onPrimary:
-                                                    Colors.black, // header text color
-                                                onSurface: Color.fromARGB(
-                                                    255, 0, 0, 0), // body text color
-                                              ),
-                                              textButtonTheme: TextButtonThemeData(
-                                                style: TextButton.styleFrom(
-                                                  primary:
-                                                      Colors.red, // button text color
-                                                ),
-                                              ),
-                                            ),
-                                            child: child!,
-                                          );
-                                        },
-                                        context: context,
-                                        initialDate: today ?? DateTime.now(),
-                                        firstDate: DateTime(2000),
-                                        lastDate: DateTime(2023))
-                                    .then((value) {
-                                  setState(() {
-                                    today = value;
-                                    today =
-                                        DateFormat.yMMM().format(today!) as DateTime?;
-                                  });
-                                });
-                              });
-                            },
-                            lottieUrl: "assets/icon.json"),
-                        SizedBox(width: size.width * 0.13),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {});
-                          },
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("Current Date",style: GoogleFonts.roboto(fontSize:15,color: Color.fromARGB(255, 0, 0, 0))),
-                              SizedBox(height:4),
-                              Text(today == null ? "select date" : today.toString(),
-                                  style: GoogleFonts.roboto(fontSize: 24, color: Colors.indigo)),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
                   ),
-                ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
+            Positioned(
+              top:3,
+              right: 3,
+              child: IconButton(
+                onPressed: (){
+                  setState(() {});
+                },
+                icon: Icon(Icons.replay_outlined,size:27)
+              ),
+            ),
+            ]
           ),
          
           Padding(
