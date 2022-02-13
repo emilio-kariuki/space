@@ -111,7 +111,7 @@ class _LocationState extends State<Location> {
             ),
           ),
           Lottie.asset(
-            "assets/location.json",
+            "assets/point.json",
             animate: true,
             height: size.height * 0.37,
             width: size.width,
