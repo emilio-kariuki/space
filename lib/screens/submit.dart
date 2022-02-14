@@ -90,7 +90,7 @@ class _SubmitState extends State<Submit> {
                             child: AnimatedTextKit(
                               animatedTexts: [
                                 WavyAnimatedText(
-                                  'Location',
+                                  'Submit',
                                   textStyle: GoogleFonts.redressed(
                                       fontSize: 29,
                                       color: Colors.indigo,
@@ -121,7 +121,7 @@ class _SubmitState extends State<Submit> {
                   ]
                 ),
                 Lottie.asset(
-                    "assets/map_point.json",
+                    "assets/thanks.json",
                     animate: true,
                     height: size.height * 0.35,
                     width: size.width,
