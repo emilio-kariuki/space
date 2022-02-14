@@ -435,7 +435,7 @@ class _DateState extends State<Date> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 216, 169, 31),
+        backgroundColor: Color.fromARGB(255, 0, 0, 0),
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: ((context) => Crop(
@@ -446,9 +446,9 @@ class _DateState extends State<Date> {
         tooltip: "Next Page",
         child: Center(
             child: Container(
-                padding: const EdgeInsets.all(5),
-                child: Lottie.asset("assets/right.json",
-                    width: size.width * 0.2))),
+                // padding: const EdgeInsets.all(5),
+                child: Lottie.asset("assets/next.json",
+                    width: size.width * 0.5))),
       ),
     );
   }
