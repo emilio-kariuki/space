@@ -347,6 +347,7 @@ class _DateState extends State<Date> {
                                 children: [
                                   LottieContainer(
                                       func: () {
+                                        HapticFeedback.lightImpact();
                                         setState(() {
                                           showDatePicker(
                                                   builder: (context, child) {
@@ -446,6 +447,7 @@ class _DateState extends State<Date> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 0, 0, 0),
         onPressed: () {
+          HapticFeedback.lightImpact(); 
           Navigator.of(context).push(MaterialPageRoute(
               builder: ((context) => Crop(
                   value_1: User1(
