@@ -182,36 +182,67 @@ class _LocationState extends State<Location> {
               fit: BoxFit.fill,
             ),
             
-            Material(
-              child: Column(
-                children: [
-                  Material(
-                    elevation: 10,
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      //  color: Colors.grey,
-                      child: Center(
-                          child: Scaffold(
-                        body: GoogleMap(
-                          mapType: MapType.hybrid,
-                          myLocationEnabled: true,
-                          zoomControlsEnabled: false,
-                          zoomGesturesEnabled: true,
-                          initialCameraPosition: _kGooglePlex,
-                          onMapCreated: (GoogleMapController controller) {
-                            _controller.complete(controller);
-                            getLocation();
-                          },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Material(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                child: Column(
+                  children: [
+                    Row(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         children: [
+                           SizedBox(width: 20),
+                           Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Text("Choose Location",
+                                  style: GoogleFonts.redressed(
+                                      fontSize: 22, color: Colors.indigo)),
+                            ),
+                         ],
+                       ),
+                       Row(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                  margin: const EdgeInsets.only(
+                                      left: 20.0, right: 20.0),
+                                  child: Divider(
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    height: 5,
+                                    thickness: 0.4,
+                                  )),
+                            ),
+                          ],
                         ),
-                      )),
-                      height: size.height * 0.3,
-                      width: size.width,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30), color: kWhite),
-                      // image: image
+                        SizedBox(height: 10),
+                    Material(
+                      elevation: 10,
+                      borderRadius: BorderRadius.circular(30),
+                      child: Container(
+                        //  color: Colors.grey,
+                        child: Center(
+                            child: Scaffold(
+                          body: GoogleMap(
+                            mapType: MapType.hybrid,
+                            myLocationEnabled: true,
+                            zoomControlsEnabled: false,
+                            zoomGesturesEnabled: true,
+                            initialCameraPosition: _kGooglePlex,
+                            onMapCreated: (GoogleMapController controller) {
+                              _controller.complete(controller);
+                              getLocation();
+                            },
+                          ),
+                        )),
+                        height: size.height * 0.3,
+                        width: size.width,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30), color: kWhite),
+                        // image: image
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
