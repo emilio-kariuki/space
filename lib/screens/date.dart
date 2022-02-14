@@ -77,10 +77,10 @@ class _DateState extends State<Date> {
                                     },
                                   ),
                                 ),
-                                SizedBox(width: 95),
+                                SizedBox(width: 20),
                                 Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
                                 Padding(
-                                  padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
+                                  padding: const EdgeInsets.only(left:20,bottom:8,top: 8),
                                   child: BuildBar(
                                     iconUrl: "assets/seetings.json",
                                     func: () {
