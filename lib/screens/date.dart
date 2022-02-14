@@ -2,6 +2,7 @@
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import "package:google_fonts/google_fonts.dart";
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
@@ -50,9 +51,10 @@ class _DateState extends State<Date> {
                             bottomLeft: Radius.circular(40),
                             bottomRight: Radius.circular(40))),
                     child: Container(
-                      height: size.height * 0.14,
+                      height: size.height * 0.15,
                       width: size.width,
                       decoration: BoxDecoration(
+                        border: Border(bottom: BorderSide.none),
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(40),
                             bottomRight: Radius.circular(40)),
