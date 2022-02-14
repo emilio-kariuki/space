@@ -7,6 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/build/build_appBar.dart';
+import 'package:space/build/full_container.dart';
+import 'package:space/build/lottie_contain.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/date.dart';
 import 'package:space/screens/image.dart';
@@ -224,6 +226,7 @@ class _CropState extends State<Crop> {
                             ),
                             Row(
                               children: [
+                                LottieContain(lottieUrl: "assets/select.json"),
                                 DropdownButton2(
                                   value: selectedType,
                                   onChanged: (value) {
