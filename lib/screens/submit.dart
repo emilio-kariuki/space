@@ -128,7 +128,9 @@ class _SubmitState extends State<Submit> {
                     fit: BoxFit.fill,
                   ),
 
-                  
+                ElevatedButton(onPressed: (){
+
+                }, child: Center(child: Text("Submit",style: GoogleFonts.robotoCondensed(fontSize: 20,color: Colors.white))))
             ],
           ),
         ),
