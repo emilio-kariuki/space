@@ -34,7 +34,7 @@ class _SplashState extends State<Splash> {
             width: size.width, height: size.height * 2),
         Positioned(
             bottom: size.height * 0.3,
-            right: size.width * 0.21,
+            right: size.width * 0.20,
             child: Text("Kenya Space Agency",
                 style: GoogleFonts.roboto(fontSize: 30, color: kWhite))),
         
