@@ -3,6 +3,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import "package:flutter/material.dart";
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/build/build_appBar.dart';
@@ -152,9 +153,9 @@ class _CropState extends State<Crop> {
               padding: const EdgeInsets.all(8.0),
               child: Container(
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                child: Lottie.asset(
-                  "assets/vase.json",
-                  animate: true,
+                child: SvgPicture.asset(
+                  "assets/svg/signup.svg",
+                  // animate: true,
                   height: size.height * 0.37,
                   width: size.width,
                   fit: BoxFit.cover,
