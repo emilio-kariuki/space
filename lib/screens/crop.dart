@@ -90,11 +90,14 @@ class _CropState extends State<Crop> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(left:17,bottom:8,top: 8),
-                              child: BuildBar(
-                                iconUrl: "assets/backward.json",
-                                func: () {
-                                  Navigator.pop(context);
-                                },
+                              child: GestureDetector(
+                                onTap:()=> Navigator.pop(context),
+                                child: BuildBar(
+                                  iconUrl: "assets/backward.json",
+                                  func: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
                               ),
                             ),
                             SizedBox(width: 20),
