@@ -50,7 +50,7 @@ class _DateState extends State<Date> {
                             bottomLeft: Radius.circular(40),
                             bottomRight: Radius.circular(40))),
                     child: Container(
-                      height: size.height * 0.15,
+                      height: size.height * 0.14,
                       width: size.width,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -61,31 +61,34 @@ class _DateState extends State<Date> {
                       ),
                       child: Column(
                         children: [
-                           Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
-                                child: BuildBar(
-                                  iconUrl: "assets/backward.json",
-                                  func: () {
-                                    Navigator.pop(context);
-                                  },
+                           Padding(
+                             padding: const EdgeInsets.only(top: 5),
+                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
+                                  child: BuildBar(
+                                    iconUrl: "assets/backward.json",
+                                    func: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
                                 ),
-                              ),
-                              SizedBox(width: 25),
-                              Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
-                              Padding(
-                                padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
-                                child: BuildBar(
-                                  iconUrl: "assets/seetings.json",
-                                  func: () {
-                                    Navigator.pop(context);
-                                  },
+                                SizedBox(width: 25),
+                                Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
+                                Padding(
+                                  padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
+                                  child: BuildBar(
+                                    iconUrl: "assets/seetings.json",
+                                    func: () {
+                                      Navigator.pop(context);
+                                    },
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
                           ),
+                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: AnimatedTextKit(
