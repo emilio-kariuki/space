@@ -264,7 +264,8 @@ class _CropState extends State<Crop> {
                                     buttonDecoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       border: Border.all(
-                                        color: Color.fromARGB(255, 52, 70, 78),
+                                        width: 1,
+                                        color: Color.fromARGB(255, 163, 198, 212),
                                       ),
                                       color: Color.fromARGB(255, 255, 255, 255),
                                     ),
