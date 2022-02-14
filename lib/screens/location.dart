@@ -249,25 +249,25 @@ class _LocationState extends State<Location> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 189, 139, 31),
+        backgroundColor: Color.fromARGB(255, 0, 0, 0),
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
               builder: ((context) => Submit(
                   value_4: User4(
-                      x_coordinate: longitude!,
-                      y_coordinate: latitude!,
-                      image: widget.value_3.image,
-                      type: widget.value_3.type,
-                      variety: widget.value_3.variety,
-                      date_plantation: widget.value_3.date_plantation,
-                      date_today: widget.value_3.date_today)))));
+                  x_coordinate: longitude!,
+                  y_coordinate: latitude!,
+                  image: widget.value_3.image,
+                  type: widget.value_3.type,
+                  variety: widget.value_3.variety,
+                  date_plantation: widget.value_3.date_plantation,
+                  date_today: widget.value_3.date_today)))));
         },
         tooltip: "Next Page",
         child: Center(
             child: Container(
-                padding: const EdgeInsets.all(5),
-                child: Lottie.asset("assets/right.json",
-                    width: size.width * 0.2))),
+                // padding: const EdgeInsets.all(5),
+                child: Lottie.asset("assets/next.json",
+                    width: size.width * 0.3))),
       ),
     );
   }
