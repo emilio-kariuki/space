@@ -134,7 +134,7 @@ class _DateState extends State<Date> {
               ),
               Stack(children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left:8,right:8),
                   child: Material(
                     shadowColor: Colors.blueGrey[800],
                     shape: RoundedRectangleBorder(
@@ -284,6 +284,7 @@ class _DateState extends State<Date> {
               Stack(children: [
                 Padding(
                   padding: const EdgeInsets.only(
+                    top:5,
                     left: 8,
                     right: 8,
                   ),
