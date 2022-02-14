@@ -230,7 +230,7 @@ class _CropState extends State<Crop> {
                               child: Row(
                                 children: [
                                   LottieContain(lottieUrl: "assets/select.json"),
-                                  SizedBox(width: size.width * 0.13),
+                                  SizedBox(width: size.width * 0.06),
                                   DropdownButton2(
                                     value: selectedType,
                                     onChanged: (value) {
@@ -246,15 +246,15 @@ class _CropState extends State<Crop> {
                                     iconEnabledColor: Colors.indigo,
                                     iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
                                     buttonHeight: size.height * 0.06,
-                                    buttonWidth: size.width * 0.6,
+                                    buttonWidth: size.width * 0.65,
                                     items: items
                                         .map((item) => DropdownMenuItem<String>(
                                                   value: item,
                                                   child: Text(
                                                     item,
-                                                    style: GoogleFonts.roboto(
-                                                        fontSize: 16,
-                                                        color: Colors.blueGrey[800],
+                                                    style: GoogleFonts.notoSerif(
+                                                        fontSize: 18,
+                                                        color: Colors.indigo,
                                                         fontWeight: FontWeight.w600),
                                                     overflow: TextOverflow.ellipsis,
                                                   ),
