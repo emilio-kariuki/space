@@ -298,7 +298,7 @@ class _PictureState extends State<Picture> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 189, 139, 31),
+        backgroundColor: Color.fromARGB(255, 2, 2, 2),
         onPressed: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: ((context) => Location(value_3: User3(image: image!, type: widget.value_2.type, variety: widget.value_2.variety, date_plantation: widget.value_2.date_plantation, date_today: widget.value_2.date_today)))));
@@ -307,8 +307,8 @@ class _PictureState extends State<Picture> {
         child: Center(
             child: Container(
                 padding: const EdgeInsets.all(5),
-                child: Lottie.asset("assets/right.json",
-                    width: size.width * 0.2))),
+                child: Lottie.asset("assets/next.json",
+                    width: size.width * 0.5))),
       ),
     );
   }
