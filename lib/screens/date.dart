@@ -71,7 +71,7 @@ class _DateState extends State<Date> {
                                 Padding(
                                   padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
                                   child: BuildBar(
-                                    iconUrl: "assets/seetings.json",
+                                    iconUrl: "assets/backward.json",
                                     func: () {
                                       Navigator.pop(context);
                                     },
