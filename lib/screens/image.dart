@@ -286,6 +286,7 @@ class _PictureState extends State<Picture> {
                                 icon: Icon(
                                   Icons.add_a_photo,
                                   size: 30,
+                                  color: image !=  null ? Colors.white : Colors.black
                                 )))
                       ],
                     ),
