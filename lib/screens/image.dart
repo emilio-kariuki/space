@@ -196,30 +196,31 @@ class _PictureState extends State<Picture> {
                           ),
                         ],
                       ),
-                    Stack(
-                      children: [
-                        Material(
-                          elevation: 10,
-                          borderRadius: BorderRadius.circular(30),
-                          child: Container(
-                            //  color: Colors.grey,
-                            child: Center(
-                              child: image != null
-                                  ? ClipRRect(
-                                      borderRadius: BorderRadius.circular(30),
-                                      child: Image.file(
-                                        image!,
-                                        width: size.width,
-                                        height: size.height * 0.32,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    )
-                                  : Text("Select Image"),
-                            ),
-                            height: size.height * 0.3,
-                            width: size.width,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30), color: kWhite),
+                      SizedBox(height: 10),
+                      Stack(
+                        children: [
+                          Material(
+                            elevation: 10,
+                            borderRadius: BorderRadius.circular(20),
+                            child: Container(
+                              //  color: Colors.grey,
+                              child: Center(
+                                child: image != null
+                                    ? ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.file(
+                                          image!,
+                                          width: size.width,
+                                          height: size.height * 0.32,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      )
+                                    : Text("Select Image"),
+                              ),
+                              height: size.height * 0.3,
+                              width: size.width,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20), color: kWhite),
                             // image: image
                           ),
                         ),
