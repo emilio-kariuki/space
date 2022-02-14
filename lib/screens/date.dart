@@ -54,7 +54,7 @@ class _DateState extends State<Date> {
                       height: size.height * 0.15,
                       width: size.width,
                       decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide.none),
+                        border: Border.all(),
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(40),
                             bottomRight: Radius.circular(40)),
