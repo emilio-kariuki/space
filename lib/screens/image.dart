@@ -168,8 +168,20 @@ class _PictureState extends State<Picture> {
                   borderRadius: BorderRadius.circular(20),
                   color: kWhite),
                 child: Column(
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextConstant(body: "Take Picture"),
+                     Row(
+                       mainAxisAlignment: MainAxisAlignment.start,
+                       children: [
+                         SizedBox(width: 20),
+                         Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Text("Choose Image",
+                                style: GoogleFonts.redressed(
+                                    fontSize: 22, color: Colors.indigo)),
+                          ),
+                       ],
+                     ),
                     Padding(
                       padding: const EdgeInsets.all(10),
                       child: Stack(
