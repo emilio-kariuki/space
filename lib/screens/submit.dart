@@ -31,7 +31,7 @@ class _SubmitState extends State<Submit> {
     print(widget.value_4.y_coordinate);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 186, 190, 192),
+      backgroundColor: Color.fromARGB(255, 36, 47, 53),
         body: SafeArea(
           child: Column(
             children: [
