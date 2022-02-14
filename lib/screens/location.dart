@@ -145,7 +145,7 @@ class _LocationState extends State<Location> {
                             child: AnimatedTextKit(
                               animatedTexts: [
                                 WavyAnimatedText(
-                                  'Date',
+                                  'Location',
                                   textStyle: GoogleFonts.redressed(
                                       fontSize: 29,
                                       color: Colors.indigo,
@@ -177,7 +177,7 @@ class _LocationState extends State<Location> {
             Lottie.asset(
               "assets/map_point.json",
               animate: true,
-              height: size.height * 0.3,
+              height: size.height * 0.35,
               width: size.width,
               fit: BoxFit.fill,
             ),
