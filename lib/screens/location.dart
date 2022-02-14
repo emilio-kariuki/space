@@ -181,39 +181,37 @@ class _LocationState extends State<Location> {
               width: size.width,
               fit: BoxFit.fill,
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Center(
-                  child: Text("Find Location",
-                      style: GoogleFonts.roboto(
-                          fontSize: 24,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold))),
-            ),
+            
             Material(
-              elevation: 10,
-              borderRadius: BorderRadius.circular(30),
-              child: Container(
-                //  color: Colors.grey,
-                child: Center(
-                    child: Scaffold(
-                  body: GoogleMap(
-                    mapType: MapType.hybrid,
-                    myLocationEnabled: true,
-                    zoomControlsEnabled: false,
-                    zoomGesturesEnabled: true,
-                    initialCameraPosition: _kGooglePlex,
-                    onMapCreated: (GoogleMapController controller) {
-                      _controller.complete(controller);
-                      getLocation();
-                    },
+              child: Column(
+                children: [
+                  Material(
+                    elevation: 10,
+                    borderRadius: BorderRadius.circular(30),
+                    child: Container(
+                      //  color: Colors.grey,
+                      child: Center(
+                          child: Scaffold(
+                        body: GoogleMap(
+                          mapType: MapType.hybrid,
+                          myLocationEnabled: true,
+                          zoomControlsEnabled: false,
+                          zoomGesturesEnabled: true,
+                          initialCameraPosition: _kGooglePlex,
+                          onMapCreated: (GoogleMapController controller) {
+                            _controller.complete(controller);
+                            getLocation();
+                          },
+                        ),
+                      )),
+                      height: size.height * 0.3,
+                      width: size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30), color: kWhite),
+                      // image: image
+                    ),
                   ),
-                )),
-                height: size.height * 0.3,
-                width: size.width,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30), color: kWhite),
-                // image: image
+                ],
               ),
             ),
           ],
