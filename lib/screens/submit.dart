@@ -128,11 +128,26 @@ class _SubmitState extends State<Submit> {
                     fit: BoxFit.fill,
                   ),
 
-                Padding(
-                  padding: const EdgeInsets.only(left: 30,),
-                  child: ElevatedButton(onPressed: (){
+                InkWell(
+                  onTap:(){
 
-                  }, child: Center(child: Text("Submit",style: GoogleFonts.robotoCondensed(fontSize: 30,color: Colors.white,fontWeight: FontWeight.w500,letterSpacing: 0.3)))),
+                  },
+                  child: Container(
+                    height: size.height * 0.067,
+                    width: size.width * 0.5,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.indigo,
+                    ),
+                    child: Center(
+                      child: Text(
+                                'Submit',
+                                style: GoogleFonts.redressed(
+                                fontSize: 40,
+                                color: kWhite,
+                                fontWeight: FontWeight.w600),),
+                    ),
+                  ),
                 )
             ],
           ),
