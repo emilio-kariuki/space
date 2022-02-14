@@ -99,6 +99,15 @@ class _CropState extends State<Crop> {
                             ),
                             SizedBox(width: 30),
                             Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
+                            Padding(
+                              padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
+                              child: BuildBar(
+                                iconUrl: "assets/seettings.json",
+                                func: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            ),
                           ],
                         ),
                         Padding(
