@@ -447,7 +447,7 @@ class _DateState extends State<Date> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 0, 0, 0),
         onPressed: () {
-          HapticFeedback.lightImpact(); 
+          HapticFeedback.mediumImpact(); 
           Navigator.of(context).push(MaterialPageRoute(
               builder: ((context) => Crop(
                   value_1: User1(
