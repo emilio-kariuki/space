@@ -29,13 +29,7 @@ class _SubmitState extends State<Submit> {
     print(widget.value_4.y_coordinate);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.indigo[400],
-        appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 189, 139, 31),
-          title: Text("Kenya Space Agency",
-              style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
-          elevation: 0,
-        ),
+      backgroundColor: Color.fromARGB(255, 36, 47, 53),
         body: Column(
           children: [
             Center(
