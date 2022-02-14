@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:lottie/lottie.dart';
 import 'package:space/build/build_container.dart';
+import 'package:space/build/build_lottie.dart';
 
 class LottieContain extends StatelessWidget {
   final String lottieUrl;
@@ -10,7 +11,7 @@ class LottieContain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        child: BuildContainer(
+        child: BuildContain(
           color: Color.fromARGB(255, 61, 78, 87),
           child: Lottie.asset(lottieUrl,height: 500),
         ));
