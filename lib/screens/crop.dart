@@ -89,7 +89,7 @@ class _CropState extends State<Crop> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left:18,bottom:8,top: 8),
+                              padding: const EdgeInsets.only(left:17,bottom:8,top: 8),
                               child: BuildBar(
                                 iconUrl: "assets/backward.json",
                                 func: () {

@@ -69,7 +69,7 @@ class _DateState extends State<Date> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
+                                  padding: const EdgeInsets.only(left:17,bottom:8,top: 8),
                                   child: BuildBar(
                                     iconUrl: "assets/backward.json",
                                     func: () {
