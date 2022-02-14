@@ -74,6 +74,7 @@ class _DateState extends State<Date> {
                                   child: BuildBar(
                                     iconUrl: "assets/backward.json",
                                     func: () {
+                                      HapticFeedback.lightImpact();
                                       Navigator.pop(context);
                                     },
                                   ),
@@ -192,6 +193,7 @@ class _DateState extends State<Date> {
                                 children: [
                                   LottieContainer(
                                       func: () {
+                                        HapticFeedback.lightImpact();
                                         setState(() {
                                           showDatePicker(
                                                   builder: (context, child) {
