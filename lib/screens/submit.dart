@@ -121,12 +121,14 @@ class _SubmitState extends State<Submit> {
                   ]
                 ),
                 Lottie.asset(
-                    "assets/thanks.json",
+                    "assets/wow.json",
                     animate: true,
-                    height: size.height * 0.35,
+                    height: size.height * 0.45,
                     width: size.width,
                     fit: BoxFit.fill,
                   ),
+
+                  
             ],
           ),
         ),
