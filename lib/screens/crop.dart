@@ -186,13 +186,24 @@ class _CropState extends State<Crop> {
             ),
             Material(
               child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20)
+                ),
                 child: Column(
                   children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: Text("Date Today",
-                            style: GoogleFonts.redressed(
-                                fontSize: 22, color: Colors.indigo)),
+                        padding: const EdgeInsets.only(left:5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Text("Date Today",
+                                  style: GoogleFonts.redressed(
+                                      fontSize: 22, color: Colors.indigo)),
+                            ),
+                          ],
+                        ),
                       ),
                        Row(
                             children: [
