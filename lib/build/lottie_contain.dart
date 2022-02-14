@@ -13,7 +13,7 @@ class LottieContain extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SizedBox(
         child: BuildContain(
-          color: Color.fromARGB(255, 166, 192, 206),
+          color: Color.fromARGB(255, 189, 139, 31),
           child: Lottie.asset(lottieUrl,height:size.height * 0.4,width: size.width ),
         ));
   }
