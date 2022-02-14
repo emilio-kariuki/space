@@ -85,75 +85,54 @@ class _LocationState extends State<Location> {
     print(widget.value_3.image);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.indigo[400],
-      appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 189, 139, 31),
-        title: Text("Kenya Space Agency",
-            style: GoogleFonts.robotoCondensed(fontSize: 27, color: kWhite)),
-        elevation: 0,
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: AnimatedTextKit(
-              animatedTexts: [
-                WavyAnimatedText(
-                  'Location',
-                  textStyle: GoogleFonts.robotoCondensed(
-                      fontSize: 27, color: kWhite, fontWeight: FontWeight.w600),
-                  speed: const Duration(milliseconds: 400),
-                ),
-              ],
-              totalRepeatCount: 20,
-              pause: const Duration(milliseconds: 1000),
-              displayFullTextOnTap: true,
-              // stopPauseOnTap: true,
-            ),
-          ),
-          Lottie.asset(
-            "assets/point.json",
-            animate: true,
-            height: size.height * 0.37,
-            width: size.width,
-            fit: BoxFit.fill,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(
-                child: Text("Find Location",
-                    style: GoogleFonts.roboto(
-                        fontSize: 24,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold))),
-          ),
-          Material(
-            elevation: 10,
-            borderRadius: BorderRadius.circular(30),
-            child: Container(
-              //  color: Colors.grey,
-              child: Center(
-                  child: Scaffold(
-                body: GoogleMap(
-                  mapType: MapType.hybrid,
-                  myLocationEnabled: true,
-                  zoomControlsEnabled: false,
-                  zoomGesturesEnabled: true,
-                  initialCameraPosition: _kGooglePlex,
-                  onMapCreated: (GoogleMapController controller) {
-                    _controller.complete(controller);
-                    getLocation();
-                  },
-                ),
-              )),
-              height: size.height * 0.3,
+      backgroundColor: Color.fromARGB(255, 36, 47, 53),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Lottie.asset(
+              "assets/point.json",
+              animate: true,
+              height: size.height * 0.37,
               width: size.width,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: kWhite),
-              // image: image
+              fit: BoxFit.fill,
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Center(
+                  child: Text("Find Location",
+                      style: GoogleFonts.roboto(
+                          fontSize: 24,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold))),
+            ),
+            Material(
+              elevation: 10,
+              borderRadius: BorderRadius.circular(30),
+              child: Container(
+                //  color: Colors.grey,
+                child: Center(
+                    child: Scaffold(
+                  body: GoogleMap(
+                    mapType: MapType.hybrid,
+                    myLocationEnabled: true,
+                    zoomControlsEnabled: false,
+                    zoomGesturesEnabled: true,
+                    initialCameraPosition: _kGooglePlex,
+                    onMapCreated: (GoogleMapController controller) {
+                      _controller.complete(controller);
+                      getLocation();
+                    },
+                  ),
+                )),
+                height: size.height * 0.3,
+                width: size.width,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30), color: kWhite),
+                // image: image
+              ),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 189, 139, 31),
