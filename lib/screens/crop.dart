@@ -89,7 +89,7 @@ class _CropState extends State<Crop> {
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
+                              padding: const EdgeInsets.only(left:18,bottom:8,top: 8),
                               child: BuildBar(
                                 iconUrl: "assets/backward.json",
                                 func: () {
@@ -97,10 +97,10 @@ class _CropState extends State<Crop> {
                                 },
                               ),
                             ),
-                            SizedBox(width: 30),
+                            SizedBox(width: 20),
                             Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
                             Padding(
-                              padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
+                              padding: const EdgeInsets.only(left:20,bottom:8,top: 8),
                               child: BuildBar(
                                 iconUrl: "assets/seetings.json",
                                 func: () {
@@ -135,6 +135,11 @@ class _CropState extends State<Crop> {
                   Positioned(
                     top: 3,
                     right: 25,
+                    child: Lottie.asset("assets/celebration.json",height:200.1,width: 100.1,animate:true),
+                  ),
+                  Positioned(
+                    top: 3,
+                    left: 25,
                     child: Lottie.asset("assets/celebration.json",height:200.1,width: 100.1,animate:true),
                   ),
                 ]
