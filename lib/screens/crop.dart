@@ -207,7 +207,7 @@ class _CropState extends State<Crop> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(top: 10,left: 20,bottom: 4),
-                                    child: Text("Date Today",
+                                    child: Text("Type",
                                         style: GoogleFonts.redressed(
                                             fontSize: 22, color: Colors.indigo)),
                                   ),
@@ -315,7 +315,7 @@ class _CropState extends State<Crop> {
                                 children: [
                                   Padding(
                                     padding: const EdgeInsets.only(top: 10,left: 20,bottom: 4),
-                                    child: Text("Date Today",
+                                    child: Text("Variety",
                                         style: GoogleFonts.redressed(
                                             fontSize: 22, color: Colors.indigo)),
                                   ),
@@ -344,10 +344,10 @@ class _CropState extends State<Crop> {
                                       LottieContain(lottieUrl: "assets/select.json"),
                                       SizedBox(width: size.width * 0.06),
                                       DropdownButton2(
-                                        value: selectedType,
+                                        value: selectedVariety,
                                         onChanged: (value) {
                                           setState(() {
-                                            selectedType = value as String;
+                                            selectedVariety = value as String;
                                             print(selectedType);
                                           });
                                         },
