@@ -184,108 +184,168 @@ class _CropState extends State<Crop> {
                 ),
               ],
             ),
-            Material(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20)
-                ),
-                child: Column(
-                  children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left:5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Text("Date Today",
-                                  style: GoogleFonts.redressed(
-                                      fontSize: 22, color: Colors.indigo)),
-                            ),
-                          ],
-                        ),
-                      ),
-                       Row(
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Material(
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Column(
+                    children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left:5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              Expanded(
-                                child: Container(
-                                    margin: const EdgeInsets.only(
-                                        left: 20.0, right: 20.0),
-                                    child: Divider(
-                                      color: Color.fromARGB(255, 0, 0, 0),
-                                      height: 5,
-                                      thickness: 0.4,
-                                    )),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text("Date Today",
+                                    style: GoogleFonts.redressed(
+                                        fontSize: 22, color: Colors.indigo)),
                               ),
                             ],
                           ),
-                  ],
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 13),
-                  child: Text("Variety",
-                      style: GoogleFonts.roboto(
-                          fontSize: 26,
-                          color: kWhite,
-                          fontWeight: FontWeight.w600)),
-                ),
-                SizedBox(width: size.width * 0.07),
-                DropdownButton2(
-                  value: selectedVariety,
-                  onChanged: (value) {
-                    setState(() {
-                      selectedVariety = value as String;
-                      print(selectedVariety);
-                    });
-                  },
-                  icon: const Icon(
-                    Icons.arrow_forward_ios_outlined,
-                  ),
-                  iconSize: 18,
-                  iconEnabledColor: Color.fromARGB(255, 216, 166, 3),
-                  iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
-                  buttonHeight: size.height * 0.06,
-                  buttonWidth: size.width * 0.65,
-                  items: itemz
-                      .map((item) => DropdownMenuItem<String>(
-                            value: item,
-                            child: Text(
-                              item,
-                              style: GoogleFonts.roboto(
-                                  fontSize: 16,
-                                  color: Colors.blueGrey[800],
-                                  fontWeight: FontWeight.w600),
-                              overflow: TextOverflow.ellipsis,
+                        ),
+                         Row(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                      margin: const EdgeInsets.only(
+                                          left: 20.0, right: 20.0),
+                                      child: Divider(
+                                        color: Color.fromARGB(255, 0, 0, 0),
+                                        height: 5,
+                                        thickness: 0.4,
+                                      )),
+                                ),
+                              ],
                             ),
-                          ))
-                      .toList(),
-                  buttonPadding: const EdgeInsets.only(left: 14, right: 14),
-                  buttonDecoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    border: Border.all(
-                      color: Color.fromARGB(255, 52, 70, 78),
-                    ),
-                    color: Color.fromARGB(255, 255, 255, 255),
-                  ),
-                  buttonElevation: 0,
-                  itemHeight: 40,
-                  itemPadding: const EdgeInsets.only(left: 14, right: 14),
-                  dropdownMaxHeight: 200,
-                  dropdownWidth: 200,
-                  dropdownPadding: null,
-                  dropdownDecoration: BoxDecoration(
-                    color: Color.fromARGB(255, 236, 234, 234),
-                  ),
-                  dropdownElevation: 8,
-                  scrollbarRadius: const Radius.circular(40),
-                  scrollbarThickness: 6,
-                  scrollbarAlwaysShow: true,
-                  offset: const Offset(-20, 0),
+                            Row(
+                              children: [
+                                DropdownButton2(
+                                  value: selectedType,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      selectedType = value as String;
+                                      print(selectedType);
+                                    });
+                                  },
+                                  icon: const Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                  ),
+                                  iconSize: 18,
+                                  iconEnabledColor: Color.fromARGB(255, 209, 160, 0),
+                                  iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
+                                  buttonHeight: size.height * 0.06,
+                                  buttonWidth: size.width * 0.65,
+                                  items: items
+                                      .map((item) => DropdownMenuItem<String>(
+                                                value: item,
+                                                child: Text(
+                                                  item,
+                                                  style: GoogleFonts.roboto(
+                                                      fontSize: 16,
+                                                      color: Colors.blueGrey[800],
+                                                      fontWeight: FontWeight.w600),
+                                                  overflow: TextOverflow.ellipsis,
+                                                ),
+                                              ))
+                                      .toList(),
+                                  buttonPadding: const EdgeInsets.only(left: 14, right: 14),
+                                  buttonDecoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                      color: Color.fromARGB(255, 52, 70, 78),
+                                    ),
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                  ),
+                                  buttonElevation: 0,
+                                  itemHeight: 40,
+                                  itemPadding: const EdgeInsets.only(left: 14, right: 14),
+                                  dropdownMaxHeight: 200,
+                                  dropdownWidth: 200,
+                                  dropdownPadding: null,
+                                  dropdownDecoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 236, 234, 234),
+                                  ),
+                                  dropdownElevation: 8,
+                                  scrollbarRadius: const Radius.circular(40),
+                                  scrollbarThickness: 6,
+                                  scrollbarAlwaysShow: true,
+                                  offset: const Offset(-20, 0),
+                                ),
+                                            ],
+                                          ),
+                                  ],
+                                ),
+                              ),
+                            ),
+            ),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 13),
+                                child: Text("Variety",
+                                    style: GoogleFonts.roboto(
+                                        fontSize: 26,
+                                        color: kWhite,
+                                        fontWeight: FontWeight.w600)),
+                              ),
+                              SizedBox(width: size.width * 0.07),
+                              DropdownButton2(
+                                value: selectedVariety,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectedVariety = value as String;
+                                    print(selectedVariety);
+                                  });
+                                },
+                                icon: const Icon(
+                                  Icons.arrow_forward_ios_outlined,
+                                ),
+                                iconSize: 18,
+                                iconEnabledColor: Color.fromARGB(255, 216, 166, 3),
+                                iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
+                                buttonHeight: size.height * 0.06,
+                                buttonWidth: size.width * 0.65,
+                                items: itemz
+                                    .map((item) => DropdownMenuItem<String>(
+                                          value: item,
+                                          child: Text(
+                                            item,
+                                            style: GoogleFonts.roboto(
+                                                fontSize: 16,
+                                                color: Colors.blueGrey[800],
+                                                fontWeight: FontWeight.w600),
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ))
+                                    .toList(),
+                                buttonPadding: const EdgeInsets.only(left: 14, right: 14),
+                                buttonDecoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
+                                    color: Color.fromARGB(255, 52, 70, 78),
+                                  ),
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                                buttonElevation: 0,
+                                itemHeight: 40,
+                                itemPadding: const EdgeInsets.only(left: 14, right: 14),
+                                dropdownMaxHeight: 200,
+                                dropdownWidth: 200,
+                                dropdownPadding: null,
+                                dropdownDecoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 236, 234, 234),
+                                ),
+                                dropdownElevation: 8,
+                                scrollbarRadius: const Radius.circular(40),
+                                scrollbarThickness: 6,
+                                scrollbarAlwaysShow: true,
+                                offset: const Offset(-20, 0),
                 ),
               ],
             )
