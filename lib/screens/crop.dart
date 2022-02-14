@@ -184,19 +184,19 @@ class _CropState extends State<Crop> {
                 ),
               ],
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 13),
-                  child: Text("Type",
-                      style: GoogleFonts.roboto(
-                          fontSize: 26,
-                          color: kWhite,
-                          fontWeight: FontWeight.w600)),
+            Material(
+              child: Container(
+                child: Column(
+                  children: [
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: Text("Date Today",
+                            style: GoogleFonts.redressed(
+                                fontSize: 22, color: Colors.indigo)),
+                      ),
+                  ],
                 ),
-                SizedBox(width: size.width * 0.13),
-                
-              ],
+              ),
             ),
             SizedBox(height: 10),
             Row(
