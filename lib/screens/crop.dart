@@ -159,9 +159,9 @@ class _CropState extends State<Crop> {
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                        child: SvgPicture.asset(
-                          "assets/svg/signup.svg",
-                          // animate: true,
+                        child: Lottie.asset(
+                          "assets/calendar_date.json",
+                          animate: true,
                           height: size.height * 0.37,
                           width: size.width,
                           fit: BoxFit.cover,
