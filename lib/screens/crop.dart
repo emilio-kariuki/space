@@ -202,7 +202,7 @@ class _CropState extends State<Crop> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(top: 10),
+                                padding: const EdgeInsets.only(top: 10,left: 20,bottom: 4),
                                 child: Text("Date Today",
                                     style: GoogleFonts.redressed(
                                         fontSize: 22, color: Colors.indigo)),
@@ -226,7 +226,7 @@ class _CropState extends State<Crop> {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 8, bottom: 8, top: 5),
+                                  left: 20, bottom: 8, top: 5),
                               child: Row(
                                 children: [
                                   LottieContain(lottieUrl: "assets/select.json"),
