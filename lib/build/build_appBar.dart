@@ -5,7 +5,8 @@ import 'package:space/build/build_box.dart';
 class BuildBar extends StatelessWidget {
   final String iconUrl;
   final Function() func;
-  const BuildBar({Key? key, required this.iconUrl, required this.func})
+  
+  const BuildBar({Key? key, required this.iconUrl, required this.func, })
       : super(key: key);
 
   @override
@@ -15,7 +16,7 @@ class BuildBar extends StatelessWidget {
       child: GestureDetector(
         onTap: func,
         child: BuildBox(
-          click: false,
+          // click: click,
           child: Lottie.asset(iconUrl, width: size.width * 0.2),
         ),
       ),

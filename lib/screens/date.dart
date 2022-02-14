@@ -72,8 +72,12 @@ class _DateState extends State<Date> {
                                   padding: const EdgeInsets.only(
                                       left: 17, bottom: 8, top: 8),
                                   child: BuildBar(
+                                    // click: true,
                                     iconUrl: "assets/backward.json",
                                     func: () {
+                                      // setState(() {
+                                      //   click = !click;
+                                      // });
                                       HapticFeedback.lightImpact();
                                       Navigator.pop(context);
                                     },
@@ -447,7 +451,7 @@ class _DateState extends State<Date> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color.fromARGB(255, 0, 0, 0),
         onPressed: () {
-          HapticFeedback.vibrate(); 
+          HapticFeedback.vibrate();
           Navigator.of(context).push(MaterialPageRoute(
               builder: ((context) => Crop(
                   value_1: User1(

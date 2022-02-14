@@ -2,8 +2,8 @@ import "package:flutter/material.dart";
 
 class BuildBox extends StatelessWidget {
   final Widget child;
-  final bool click;
-  const BuildBox({Key? key, required this.child, required this.click}) : super(key: key);
+  // final bool click;
+  const BuildBox({Key? key, required this.child, }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,8 @@ class BuildBox extends StatelessWidget {
       child: AnimatedContainer(
         duration: Duration(milliseconds: 500),
         padding: const EdgeInsets.all(5),
-        height: click ? size.height * 0.06 : size.height * 0.09,
-        width: click ? size.width * 0.2 : size.width * 0.17,
+        height: size.height * 0.07,
+        width:  size.width * 0.17,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(10),
