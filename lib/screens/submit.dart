@@ -117,8 +117,16 @@ class _SubmitState extends State<Submit> {
                       left: 25,
                       child: Lottie.asset("assets/celebration.json",height:200.1,width: 100.1,animate:true),
                     ),
+                    
                   ]
                 ),
+                Lottie.asset(
+                    "assets/map_point.json",
+                    animate: true,
+                    height: size.height * 0.35,
+                    width: size.width,
+                    fit: BoxFit.fill,
+                  ),
             ],
           ),
         ),
