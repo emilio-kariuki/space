@@ -243,7 +243,7 @@ class _CropState extends State<Crop> {
                                       Icons.arrow_forward_ios_outlined,
                                     ),
                                     iconSize: 18,
-                                    iconEnabledColor: Color.fromARGB(255, 209, 160, 0),
+                                    iconEnabledColor: Colors.indigo,
                                     iconDisabledColor: Color.fromARGB(255, 255, 255, 255),
                                     buttonHeight: size.height * 0.06,
                                     buttonWidth: size.width * 0.6,
@@ -265,7 +265,7 @@ class _CropState extends State<Crop> {
                                       borderRadius: BorderRadius.circular(10),
                                       border: Border.all(
                                         width: 1,
-                                        color: Color.fromARGB(255, 163, 198, 212),
+                                        color: Color.fromARGB(255, 180, 182, 184),
                                       ),
                                       color: Color.fromARGB(255, 255, 255, 255),
                                     ),
