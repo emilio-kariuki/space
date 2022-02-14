@@ -15,6 +15,7 @@ class BuildBar extends StatelessWidget {
       child: GestureDetector(
         onTap: func,
         child: BuildBox(
+          click: false,
           child: Lottie.asset(iconUrl, width: size.width * 0.2),
         ),
       ),

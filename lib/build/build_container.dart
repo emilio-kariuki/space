@@ -8,8 +8,8 @@ class BuildContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final size = MediaQuery.of(context).size;
-    return AnimatedContainer(
-      duration: Duration(milliseconds: 500),
+    return Container(
+      
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         shape: BoxShape.rectangle,
