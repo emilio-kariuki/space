@@ -163,6 +163,7 @@ class _PictureState extends State<Picture> {
             
             Container(
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
                 color: kWhite),
               child: Column(
                 children: [
