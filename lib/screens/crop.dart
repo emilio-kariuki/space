@@ -283,7 +283,7 @@ class _CropState extends State<Crop> {
                                     scrollbarRadius: const Radius.circular(20),
                                     scrollbarThickness: 10,
                                     scrollbarAlwaysShow: true,
-                                    // offset: const Offset(-30, 10),
+                                     offset: const Offset(18, -50),
                                   ),
                                               ],
                                             ),
