@@ -225,7 +225,8 @@ class _CropState extends State<Crop> {
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.only(
+                                  left: 8, bottom: 8, top: 5),
                               child: Row(
                                 children: [
                                   LottieContain(lottieUrl: "assets/select.json"),
