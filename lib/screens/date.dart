@@ -3,6 +3,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 import "package:google_fonts/google_fonts.dart";
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
@@ -41,13 +42,12 @@ class _DateState extends State<Date> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-               Stack(
-                  children: [
-                    Material(
-                  elevation: 20,
+              Stack(children: [
+                Material(
+                    elevation: 20,
                     shadowColor: Color.fromARGB(255, 97, 94, 94),
                     shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(40),
                             bottomRight: Radius.circular(40))),
                     child: Container(
@@ -63,13 +63,14 @@ class _DateState extends State<Date> {
                       ),
                       child: Column(
                         children: [
-                           Padding(
-                             padding: const EdgeInsets.only(top: 5),
-                             child: Row(
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5),
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(left:17,bottom:8,top: 8),
+                                  padding: const EdgeInsets.only(
+                                      left: 17, bottom: 8, top: 8),
                                   child: BuildBar(
                                     iconUrl: "assets/backward.json",
                                     func: () {
@@ -78,19 +79,23 @@ class _DateState extends State<Date> {
                                   ),
                                 ),
                                 SizedBox(width: 20),
-                                Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
+                                Text("Kenya Space Agency",
+                                    style: GoogleFonts.redressed(
+                                        fontSize: 25, color: Colors.indigo)),
                                 Padding(
-                                  padding: const EdgeInsets.only(left:20,bottom:8,top: 8),
+                                  padding: const EdgeInsets.only(
+                                      left: 20, bottom: 8, top: 8),
                                   child: BuildBar(
                                     iconUrl: "assets/seetings.json",
                                     func: () {
+                                      HapticFeedback.lightImpact();
                                       Navigator.pop(context);
                                     },
                                   ),
                                 ),
                               ],
+                            ),
                           ),
-                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: AnimatedTextKit(
@@ -113,18 +118,19 @@ class _DateState extends State<Date> {
                         ],
                       ),
                     )),
-                    Positioned(
-                      top: 3,
-                      right: 25,
-                      child: Lottie.asset("assets/celebration.json",height:200.1,width: 100.1,animate:true),
-                    ),
-                    Positioned(
-                      top: 3,
-                      left: 25,
-                      child: Lottie.asset("assets/celebration.json",height:200.1,width: 100.1,animate:true),
-                    ),
-                  ]
+                Positioned(
+                  top: 3,
+                  right: 25,
+                  child: Lottie.asset("assets/celebration.json",
+                      height: 200.1, width: 100.1, animate: true),
                 ),
+                Positioned(
+                  top: 3,
+                  left: 25,
+                  child: Lottie.asset("assets/celebration.json",
+                      height: 200.1, width: 100.1, animate: true),
+                ),
+              ]),
               Lottie.asset(
                 "assets/calendar_date.json",
                 animate: true,
@@ -134,7 +140,7 @@ class _DateState extends State<Date> {
               ),
               Stack(children: [
                 Padding(
-                  padding: const EdgeInsets.only(left:8,right:8),
+                  padding: const EdgeInsets.only(left: 8, right: 8),
                   child: Material(
                     shadowColor: Colors.blueGrey[800],
                     shape: RoundedRectangleBorder(
@@ -284,7 +290,7 @@ class _DateState extends State<Date> {
               Stack(children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                    top:5,
+                    top: 5,
                     left: 8,
                     right: 8,
                   ),
@@ -448,8 +454,8 @@ class _DateState extends State<Date> {
         child: Center(
             child: Container(
                 // padding: const EdgeInsets.all(5),
-                child: Lottie.asset("assets/next.json",
-                    width: size.width * 0.3))),
+                child:
+                    Lottie.asset("assets/next.json", width: size.width * 0.3))),
       ),
     );
   }
