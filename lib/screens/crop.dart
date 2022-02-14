@@ -102,7 +102,7 @@ class _CropState extends State<Crop> {
                             Padding(
                               padding: const EdgeInsets.only(left:15,bottom:8,top: 8),
                               child: BuildBar(
-                                iconUrl: "assets/seettings.json",
+                                iconUrl: "assets/seetings.json",
                                 func: () {
                                   Navigator.pop(context);
                                 },
