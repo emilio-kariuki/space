@@ -310,7 +310,7 @@ class _CropState extends State<Crop> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Color.fromARGB(255, 189, 139, 31),
+        backgroundColor: Color.fromARGB(255, 0, 0, 0),
         onPressed: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: ((context) =>Picture(value_2: User2(type: selectedType!, variety: selectedVariety!, date_plantation: widget.value_1.date_plantation, date_today: widget.value_1.date_today)))));
@@ -318,9 +318,9 @@ class _CropState extends State<Crop> {
         tooltip: "Next Page",
         child: Center(
             child: Container(
-                padding: const EdgeInsets.all(5),
-                child: Lottie.asset("assets/right.json",
-                    width: size.width * 0.2))),
+                // padding: const EdgeInsets.all(5),
+                child: Lottie.asset("assets/next.json",
+                    width: size.width * 0.3))),
       ),
     );
   }

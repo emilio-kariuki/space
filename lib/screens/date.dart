@@ -448,7 +448,7 @@ class _DateState extends State<Date> {
             child: Container(
                 // padding: const EdgeInsets.all(5),
                 child: Lottie.asset("assets/next.json",
-                    width: size.width * 0.5))),
+                    width: size.width * 0.3))),
       ),
     );
   }
