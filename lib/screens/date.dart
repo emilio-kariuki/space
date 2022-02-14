@@ -104,7 +104,7 @@ class _DateState extends State<Date> {
                                   speed: const Duration(milliseconds: 400),
                                 ),
                               ],
-                              totalRepeatCount: 50,
+                              totalRepeatCount: 100,
                               pause: const Duration(milliseconds: 1000),
                               displayFullTextOnTap: true,
                               stopPauseOnTap: true,
