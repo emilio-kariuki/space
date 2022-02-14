@@ -183,7 +183,7 @@ class _LocationState extends State<Location> {
             ),
             
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(7.0),
               child: Material(
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                 child: Column(
