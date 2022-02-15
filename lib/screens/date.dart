@@ -64,44 +64,34 @@ class _DateState extends State<Date> {
                         flex : 1,
                         child: Column(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 17, bottom: 8, top: 8),
-                                    child: BuildBar(
-                                      // click: true,
-                                      iconUrl: "assets/backward.json",
-                                      func: () {
-                                        // setState(() {
-                                        //   click = !click;
-                                        // });
-                                        HapticFeedback.lightImpact();
-                                        Navigator.pop(context);
-                                      },
-                                    ),
+                            Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left:17,bottom:8,top: 8),
+                                child: GestureDetector(
+                                  onTap:()=> Navigator.pop(context),
+                                  child: BuildBar(
+                                    iconUrl: "assets/backward.json",
+                                    func: () {
+                                      Navigator.pop(context);
+                                    },
                                   ),
-                                  SizedBox(width: 20),
-                                  Text("Kenya Space Agency",
-                                      style: GoogleFonts.redressed(
-                                          fontSize: 25, color: Colors.indigo)),
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 20, bottom: 8, top: 8),
-                                    child: BuildBar(
-                                      iconUrl: "assets/seetings.json",
-                                      func: () {
-                                        HapticFeedback.lightImpact();
-                                        Navigator.pop(context);
-                                      },
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
+                              SizedBox(width: 20),
+                              Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
+                              Padding(
+                                padding: const EdgeInsets.only(left:20,bottom:8,top: 8),
+                                child: BuildBar(
+                                  iconUrl: "assets/seetings.json",
+                                  func: () {
+                                    Navigator.pop(context);
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: AnimatedTextKit(
