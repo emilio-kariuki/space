@@ -1,13 +1,11 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, non_constant_identifier_names
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import "package:flutter/material.dart";
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/build/build_appBar.dart';
-import 'package:space/build/full_container.dart';
 import 'package:space/build/lottie_contain.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/date.dart';

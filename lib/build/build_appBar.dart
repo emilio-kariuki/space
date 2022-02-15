@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, avoid_unnecessary_containers
+
 import "package:flutter/material.dart";
 import 'package:lottie/lottie.dart';
 import 'package:space/build/build_box.dart';

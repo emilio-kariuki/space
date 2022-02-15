@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, unnecessary_null_comparison
+// ignore_for_file: avoid_print, unnecessary_null_comparison, unused_field
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import "package:flutter/material.dart";
@@ -19,7 +19,7 @@ class Submit extends StatefulWidget {
 }
 
 class _SubmitState extends State<Submit> {
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
   @override
   Widget build(BuildContext context) {
     print(widget.value_4.date_plantation);
