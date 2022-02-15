@@ -55,56 +55,59 @@ class _SubmitState extends State<Submit> {
                         color: Colors.white,
                         shape: BoxShape.rectangle,
                       ),
-                      child: Column(
-                        children: [
-                           Padding(
-                             padding: const EdgeInsets.only(top: 5),
-                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left:17,bottom:8,top: 8),
-                                  child: BuildBar(
-                                    iconUrl: "assets/backward.json",
-                                    func: () {
-                                      Navigator.pop(context);
-                                    },
+                      child: Expanded(
+                        flex: 1,
+                        child: Column(
+                          children: [
+                             Padding(
+                               padding: const EdgeInsets.only(top: 5),
+                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(left:17,bottom:8,top: 8),
+                                    child: BuildBar(
+                                      iconUrl: "assets/backward.json",
+                                      func: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
                                   ),
-                                ),
-                                SizedBox(width: 20),
-                                Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
-                                Padding(
-                                  padding: const EdgeInsets.only(left:20,bottom:8,top: 8),
-                                  child: BuildBar(
-                                    iconUrl: "assets/seetings.json",
-                                    func: () {
-                                      Navigator.pop(context);
-                                    },
+                                  SizedBox(width: 20),
+                                  Text("Kenya Space Agency",style: GoogleFonts.redressed(fontSize:25,color: Colors.indigo)),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left:20,bottom:8,top: 8),
+                                    child: BuildBar(
+                                      iconUrl: "assets/seetings.json",
+                                      func: () {
+                                        Navigator.pop(context);
+                                      },
+                                    ),
                                   ),
-                                ),
-                              ],
-                          ),
-                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: AnimatedTextKit(
-                              animatedTexts: [
-                                WavyAnimatedText(
-                                  'Submit',
-                                  textStyle: GoogleFonts.redressed(
-                                      fontSize: 29,
-                                      color: Colors.indigo,
-                                      fontWeight: FontWeight.w600),
-                                  speed: const Duration(milliseconds: 400),
-                                ),
-                              ],
-                              totalRepeatCount: 100,
-                              pause: const Duration(milliseconds: 1000),
-                              displayFullTextOnTap: true,
-                              stopPauseOnTap: true,
+                                ],
                             ),
-                          ),
-                        ],
+                             ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: AnimatedTextKit(
+                                animatedTexts: [
+                                  WavyAnimatedText(
+                                    'Submit',
+                                    textStyle: GoogleFonts.redressed(
+                                        fontSize: 29,
+                                        color: Colors.indigo,
+                                        fontWeight: FontWeight.w600),
+                                    speed: const Duration(milliseconds: 400),
+                                  ),
+                                ],
+                                totalRepeatCount: 100,
+                                pause: const Duration(milliseconds: 1000),
+                                displayFullTextOnTap: true,
+                                stopPauseOnTap: true,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     )),
                     Positioned(
