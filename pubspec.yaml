@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 flutter_icons:
+  adaptive_icon_background: "000000"
   android: true
   ios: true
   image_path: "assets/spca.jpg"
