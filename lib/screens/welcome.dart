@@ -16,7 +16,7 @@ class _WelcomeState extends State<Welcome> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      
+      backgroundColor: Color.fromARGB(255, 36, 47, 53),
         body: SafeArea(
       child: Column(
         children: [
