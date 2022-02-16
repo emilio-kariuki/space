@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:space/constants.dart/colors.dart';
 import 'package:space/screens/date.dart';
+import 'package:space/screens/welcome.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _SplashState extends State<Splash> {
         const Duration(seconds: 7),
         () => Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => Date()),
+              MaterialPageRoute(builder: (context) => Welcome()),
             ));
   }
 
