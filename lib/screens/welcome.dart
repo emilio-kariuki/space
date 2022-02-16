@@ -16,6 +16,7 @@ class _WelcomeState extends State<Welcome> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      
         body: SafeArea(
       child: Column(
         children: [
@@ -40,26 +41,22 @@ class _WelcomeState extends State<Welcome> {
                   ),
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          
-                          SizedBox(width: 100),
-                          Text("Kenya Space Agency",
-                              style: GoogleFonts.redressed(
-                                  fontSize: 25, color: Colors.indigo)),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 20, bottom: 8, top: 8),
-                            child: BuildBar(
-                              iconUrl: "assets/seetings.json",
-                              func: () {
-                                Navigator.pop(context);
-                              },
-                            ),
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.only(top: 25),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          // mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            
+                            // SizedBox(width: 100),
+                            Text("Kenya Space Agency",
+                                style: GoogleFonts.redressed(
+                                    fontSize: 25, color: Colors.indigo)),
+                            
+                          ],
+                        ),
                       ),
+                      SizedBox(height: 5),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: AnimatedTextKit(
@@ -67,7 +64,7 @@ class _WelcomeState extends State<Welcome> {
                             WavyAnimatedText(
                               'Crop',
                               textStyle: GoogleFonts.redressed(
-                                  fontSize: 29,
+                                  fontSize: 30,
                                   color: Colors.indigo,
                                   fontWeight: FontWeight.w600),
                               speed: const Duration(milliseconds: 400),
