@@ -26,6 +26,10 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
+flutter_icons:
+  android: "Ksa"
+  ios: true
+  image_path: "assets/spca.jpg"
 dependencies:
   flutter:
     sdk: flutter
@@ -42,6 +46,7 @@ dependencies:
   image_picker: ^0.8.4+8
   dropdown_button2: ^1.1.1
   geolocator: ^8.1.1
+  flutter_launcher_icons: ^0.9.2
   # google_maps_flutter: ^2.1.1
   flutter_map:
   
