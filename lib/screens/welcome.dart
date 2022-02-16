@@ -19,7 +19,8 @@ class _WelcomeState extends State<Welcome> {
         body: SafeArea(
       child: Column(
         children: [
-          Stack(children: [
+          Stack(
+            children: [
             Material(
                 elevation: 20,
                 shadowColor: Color.fromARGB(255, 97, 94, 94),
@@ -42,20 +43,8 @@ class _WelcomeState extends State<Welcome> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 17, bottom: 8, top: 8),
-                            child: GestureDetector(
-                              onTap: () => Navigator.pop(context),
-                              child: BuildBar(
-                                iconUrl: "assets/backward.json",
-                                func: () {
-                                  Navigator.pop(context);
-                                },
-                              ),
-                            ),
-                          ),
-                          SizedBox(width: 20),
+                          
+                          SizedBox(width: 100),
                           Text("Kenya Space Agency",
                               style: GoogleFonts.redressed(
                                   fontSize: 25, color: Colors.indigo)),
