@@ -53,7 +53,8 @@ class _DateState extends State<Date> {
                       height: size.height * 0.15,
                       width: size.width,
                       decoration: BoxDecoration(
-                        // border: Border(bottom: BorderSide(color: Colors.blueGrey![800])),
+                        
+                          // border: Border(bottom: BorderSide(color: Colors.blueGrey![800])),
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(40),
                             bottomRight: Radius.circular(40)),
@@ -146,6 +147,14 @@ class _DateState extends State<Date> {
                     child: Container(
                       // padding: const EdgeInsets.all(1),
                       decoration: BoxDecoration(
+                        // gradient: LinearGradient(
+                        //   begin: Alignment.topRight,
+                        //   end: Alignment.bottomLeft,
+                        //   colors: [
+                        //     Color.fromARGB(255, 243, 170, 33),
+                        //     Color.fromARGB(255, 124, 244, 54),
+                        //   ],
+                        // ),
                         borderRadius: BorderRadius.circular(20),
                         color: kWhite,
                       ),
