@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 
 
 class Welcome extends StatefulWidget {
-  Welcome({Key? key}) : super(key: key);
+  const Welcome({Key? key}) : super(key: key);
 
   @override
   State<Welcome> createState() => _WelcomeState();
@@ -11,6 +11,13 @@ class Welcome extends StatefulWidget {
 class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SafeArea(
+        child: Column(children: [
+          
+        ],
+        ),
+      )
+    );
   }
 }
