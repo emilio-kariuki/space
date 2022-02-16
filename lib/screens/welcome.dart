@@ -51,7 +51,7 @@ class _WelcomeState extends State<Welcome> {
                             // SizedBox(width: 100),
                             Text("Kenya Space Agency",
                                 style: GoogleFonts.redressed(
-                                    fontSize: 25, color: Colors.indigo)),
+                                    fontSize: 26, color: Colors.indigo)),
                             
                           ],
                         ),
